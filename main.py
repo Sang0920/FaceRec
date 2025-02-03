@@ -10,9 +10,6 @@ from queue import Queue
 from concurrent.futures import ThreadPoolExecutor
 import yaml
 # import asyncio
-from img_recg import load_gallery_faces, recognize_image, upscale_image
-from PIL import Image
-import json
 
 # Constants
 load_dotenv()
@@ -109,86 +106,19 @@ def extract_face(frame, box, padding=0.2):
         print(f"Error extracting face: {e}")
         return None
 
-def process_track_profiles(frames_buffers, track_id, profile_manager, gallery_features, gallery_names):
-    """Process and recognize faces for a track"""
-    best_recognition = {
-        'confidence': 0,
-        'name': "Unknown",
-        'timestamp': None
-    }
-    
-    if frames_buffers[track_id]:
-        best_frames = sorted(frames_buffers[track_id], 
-                           key=lambda x: x[1], 
-                           reverse=True)[:MIN_FRAMES_PER_TRACK]
-        
-        for face_img, conf in best_frames:
-            try:
-                # Save temporary profile for recognition
-                temp_path = f"temp_profile_{track_id}.jpg"
-                cv2.imwrite(temp_path, face_img)
-                
-                # Convert to PIL and upscale
-                pil_img = Image.open(temp_path)
-                pil_img = upscale_image(pil_img)
-                pil_img.save(temp_path)
-                
-                # Recognize face
-                names, confidences, _, _ = recognize_image(
-                    temp_path,
-                    gallery_features,
-                    gallery_names,
-                    threshold=0.19
-                )
-                
-                os.remove(temp_path)
-                
-                if names and confidences and names[0] != "Unknown":
-                    if confidences[0] > best_recognition['confidence']:
-                        best_recognition = {
-                            'confidence': float(confidences[0]),
-                            'name': names[0],
-                            'timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-                        }
-                        print(f"Track {track_id}: Recognized as {names[0]} ({confidences[0]:.3f})")
-                
-            except Exception as e:
-                print(f"Error processing recognition for track {track_id}: {e}")
-                
-        # Save best profile with recognition info
-        if best_recognition['name'] != "Unknown":
-            profile_manager.add_profile(
-                best_frames[0][0],  # Best quality face image
-                track_id,
-                best_frames[0][1]   # Original confidence
-            )
-            
-            # Save recognition results
-            with open(f"profiles/track_{track_id}_recognition.json", 'w') as f:
-                json.dump(best_recognition, f)
-                
-    return best_recognition
-
 def process_tracks(frames_buffers, track_last_seen, saved_tracks, profile_manager, frame_count):
     expired_tracks = [
         track_id for track_id, last_seen in track_last_seen.items()
         if frame_count - last_seen >= TRACK_BUFFER_TIMEOUT
     ]
-    
-    # Load gallery once
-    gallery_features, gallery_names = load_gallery_faces("faces")
-    
     for track_id in expired_tracks:
         if track_id not in saved_tracks and frames_buffers[track_id]:
-            recognition = process_track_profiles(
-                frames_buffers,
-                track_id,
-                profile_manager,
-                gallery_features,
-                gallery_names
-            )
+            best_frames = sorted(frames_buffers[track_id], 
+                               key=lambda x: x[1], 
+                               reverse=True)[:MIN_FRAMES_PER_TRACK]
+            for face_img, conf in best_frames:
+                profile_manager.add_profile(face_img, track_id, conf)
             saved_tracks.add(track_id)
-            
         del frames_buffers[track_id]
         del track_last_seen[track_id]
 
@@ -253,3 +183,4 @@ if __name__ == "__main__":
         # del TRACK_BUFFER_TIMEOUT
     except Exception as e:
         print(f"Unexpected error: {e}")
+    
