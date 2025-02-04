@@ -58,24 +58,35 @@ except Exception as e:
 TRACK_BUFFER_TIMEOUT = int(frame_rate/30.0 * track_buffer)  # frames
 print(f"Frame rate: {frame_rate} FPS")
 print(f"Track buffer timeout: {TRACK_BUFFER_TIMEOUT} frames")
+Client = DracoAPIClient()
 CHECKIN_TYPES = ["IN", "OUT"]
 CHECKIN_TYPE = CHECKIN_TYPES[0]
-Client = DracoAPIClient()
+BASE_PROFILE_DIR = os.path.join(PROFILES_DIR, datetime.now().strftime("%Y-%m-%d"), CHECKIN_TYPE)
+os.makedirs(BASE_PROFILE_DIR, exist_ok=True)
 
 class ProfileManager:
-    def __init__(self, checkin_type="IN"):
-        self.checkin_type = checkin_type.lower()
+    def __init__(self):
+        self.save_queue = Queue()
+        self.worker = threading.Thread(target=self._process_queue, daemon=True)
         self.current_date = datetime.now().strftime("%Y-%m-%d")
-        # Create base directories
-        self.profile_dir = os.path.join(PROFILES_DIR, self.current_date, self.checkin_type)
+        # self.profile_dir = os.path.join(PROFILES_DIR, self.current_date)
+        self.profile_dir = BASE_PROFILE_DIR
         os.makedirs(self.profile_dir, exist_ok=True)
+        self.worker.start()
+        self.executor = ThreadPoolExecutor(max_workers=NUM_WORKERS)
+
+    def _process_queue(self):
+        while True:
+            item = self.save_queue.get()
+            if item is None:
+                break
+            self._save_profile(*item)
+            self.save_queue.task_done()
 
     def _save_profile(self, face_img, track_id, confidence, timestamp):
         try:
-            # Create track directory under checkin type
             track_dir = os.path.join(self.profile_dir, f"track_{track_id}")
             os.makedirs(track_dir, exist_ok=True)
-            
             filename = f"profile_{timestamp}_{confidence:.3f}.png"
             filepath = os.path.join(track_dir, filename)
             cv2.imwrite(filepath, face_img)
@@ -105,7 +116,7 @@ class RecognitionProcess:
         signal.signal(signal.SIGINT, signal.SIG_IGN)
         try:
             gallery_features, gallery_names = load_gallery_faces("faces")
-            profile_manager = ProfileManager(checkin_type=CHECKIN_TYPE)
+            profile_manager = ProfileManager()
             while not self.stop_event.is_set():
                 try:
                     track_id, frames = self.input_queue.get(timeout=1)
@@ -168,42 +179,7 @@ def extract_face(frame, box, padding=0.2):
         print(f"Error extracting face: {e}")
         return None
 
-class CheckinTracker:
-    def __init__(self):
-        self.checkin_file = "logs/checkins.json"
-        os.makedirs("logs", exist_ok=True)
-        self.today = datetime.now().strftime("%Y-%m-%d")
-        self.load_checkins()
-
-    def load_checkins(self):
-        try:
-            if os.path.exists(self.checkin_file):
-                with open(self.checkin_file, 'r') as f:
-                    self.checkins = json.load(f)
-            else:
-                self.checkins = {}
-        except Exception:
-            self.checkins = {}
-
-    def save_checkins(self):
-        with open(self.checkin_file, 'w') as f:
-            json.dump(self.checkins, f, indent=2)
-
-    def can_checkin(self, email):
-        # Clean old records
-        if self.today not in self.checkins:
-            self.checkins = {self.today: []}
-            
-        return email not in self.checkins[self.today]
-
-    def record_checkin(self, email):
-        if self.today not in self.checkins:
-            self.checkins[self.today] = []
-        self.checkins[self.today].append(email)
-        self.save_checkins()
-
 def process_track_profiles(frames_buffers, track_id, profile_manager, gallery_features, gallery_names):
-    checkin_tracker = CheckinTracker()
     best_recognition = {
         'confidence': 0,
         'name': "Unknown",
@@ -241,34 +217,25 @@ def process_track_profiles(frames_buffers, track_id, profile_manager, gallery_fe
             except Exception as e:
                 print(f"Error processing recognition for track {track_id}: {e}")
         if best_recognition['name'] != "Unknown":
-            email = best_recognition['name']
-            if checkin_tracker.can_checkin(email):
-                try:
-                    track_dir = os.path.join(profile_manager.profile_dir, f"track_{track_id}")
-                    json_path = os.path.join(track_dir, "recognition.json")
-                    with open(json_path, 'w') as f:
-                        json.dump(best_recognition, f, indent=2)
-                    try:
-                        timestamp = best_recognition['timestamp']
-                        email = best_recognition['name']
-                        if best_recognition['best_profile']:
-                            with open(best_recognition['best_profile'], 'rb') as img_file:
-                                base64_image = base64.b64encode(img_file.read()).decode('utf-8')
-                        else:
-                            base64_image = None
-                        success = Client.create_checkin(
-                            email=email,
-                            timestamp=timestamp,
-                            log_type="IN",
-                            image_base64=base64_image
-                        )
-                        if success:
-                            checkin_tracker.record_checkin(email)
-                            print(f"Check-in created for {email}")
-                    except Exception as e:
-                        print(f"Error creating checkin: {e}")
-                except Exception as e:
-                    print(f"Error creating check-in: {e}")
+            track_dir = os.path.join(profile_manager.profile_dir, f"track_{track_id}")
+            json_path = os.path.join(track_dir, "recognition.json")
+            with open(json_path, 'w') as f:
+                json.dump(best_recognition, f, indent=2)
+            try:
+                timestamp = best_recognition['timestamp']
+                email = best_recognition['name']
+                if best_recognition['best_profile']:
+                    with open(best_recognition['best_profile'], 'rb') as img_file:
+                        base64_image = base64.b64encode(img_file.read()).decode('utf-8')
+                else:
+                    base64_image = None
+                Client.create_checkin(email=email, 
+                                      timestamp=timestamp,
+                                      log_type="IN",
+                                      image_base64=base64_image
+                                      )
+            except Exception as e:
+                print(f"Error creating checkin: {e}")
     return best_recognition
 
 def process_tracks(frames_buffers, track_last_seen, saved_tracks, recognition_manager, frame_count):

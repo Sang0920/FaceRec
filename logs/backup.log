@@ -118,3 +118,47 @@ Backup complete!
 2025-02-04 16:00:06 Backup complete!
 2025-02-04 17:00:01 Starting backup script...
 2025-02-04 17:00:01 Adding files...
+2025-02-04 17:00:01 Committing changes...
+2025-02-04 17:00:01 [main 2148245] Backup 2025-02-04 17:00:01
+2025-02-04 17:00:01 39 files changed, 198 insertions(+), 87 deletions(-)
+2025-02-04 17:00:01 create mode 100644 logs/checkins.json
+2025-02-04 17:00:01 delete mode 100644 profiles/2025-01-21/track_1_17-25-39_0.78.jpg
+2025-02-04 17:00:01 delete mode 100644 profiles/2025-01-21/track_1_17-25-39_0.79.jpg
+2025-02-04 17:00:01 delete mode 100644 profiles/2025-01-21/track_1_17-31-46_0.81.jpg
+2025-02-04 17:00:01 delete mode 100644 profiles/2025-01-21/track_1_17-35-31_0.80.jpg
+2025-02-04 17:00:01 delete mode 100644 profiles/2025-01-21/track_2_17-35-31_0.80.jpg
+2025-02-04 17:00:01 delete mode 100644 profiles/2025-01-21/track_2_17-35-31_0.81.jpg
+2025-02-04 17:00:01 delete mode 100644 profiles/2025-01-21/track_3_17-35-31_0.64.jpg
+2025-02-04 17:00:01 delete mode 100644 profiles/2025-01-21/track_3_17-35-31_0.69.jpg
+2025-02-04 17:00:01 delete mode 100644 profiles/2025-01-22/track_1_10-47-53_0.675.jpg
+2025-02-04 17:00:01 delete mode 100644 profiles/2025-01-22/track_1_10-47-53_0.681.jpg
+2025-02-04 17:00:01 delete mode 100644 profiles/2025-01-22/track_1_10-47-53_0.707.jpg
+2025-02-04 17:00:01 delete mode 100644 profiles/2025-01-22/track_1_10-55-36-705422_0.658.jpg
+2025-02-04 17:00:01 delete mode 100644 profiles/2025-01-22/track_1_10-55-36-705489_0.652.jpg
+2025-02-04 17:00:01 delete mode 100644 profiles/2025-01-22/track_1_10-55-36-705505_0.647.jpg
+2025-02-04 17:00:01 delete mode 100644 profiles/2025-01-22/track_2_10-48-20_0.743.jpg
+2025-02-04 17:00:01 delete mode 100644 profiles/2025-01-22/track_2_10-48-20_0.744.jpg
+2025-02-04 17:00:01 delete mode 100644 profiles/2025-01-22/track_2_10-48-20_0.749.jpg
+2025-02-04 17:00:01 delete mode 100644 profiles/2025-02-03/track_1_17-04-08-692320_0.747.png
+2025-02-04 17:00:01 delete mode 100644 profiles/2025-02-03/track_1_17-04-08-692389_0.734.png
+2025-02-04 17:00:01 delete mode 100644 profiles/2025-02-03/track_1_17-04-08-692404_0.733.png
+2025-02-04 17:00:01 delete mode 100644 profiles/2025-02-03/track_2_17-04-25-632155_0.823.png
+2025-02-04 17:00:01 delete mode 100644 profiles/2025-02-03/track_2_17-04-25-632235_0.805.png
+2025-02-04 17:00:01 delete mode 100644 profiles/2025-02-03/track_2_17-04-25-632251_0.804.png
+2025-02-04 17:00:01 delete mode 100644 profiles/2025-02-03/track_3_17-27-44-097164_0.817.png
+2025-02-04 17:00:01 create mode 100644 profiles/2025-02-04/in/track_1/profile_16-59-06-363797_0.819.png
+2025-02-04 17:00:01 create mode 100644 profiles/2025-02-04/in/track_1/profile_16-59-06-800091_0.801.png
+2025-02-04 17:00:01 create mode 100644 profiles/2025-02-04/in/track_1/profile_16-59-07-164646_0.801.png
+2025-02-04 17:00:01 create mode 100644 profiles/2025-02-04/track_1/profile_16-46-16-906848_0.816.png
+2025-02-04 17:00:01 create mode 100644 profiles/2025-02-04/track_1/profile_16-46-17-361313_0.809.png
+2025-02-04 17:00:01 create mode 100644 profiles/2025-02-04/track_1/profile_16-46-17-731701_0.806.png
+2025-02-04 17:00:01 rewrite profiles/2025-02-04/track_1/recognition.json (83%)
+2025-02-04 17:00:01 create mode 100644 profiles/2025-02-04/track_2/profile_16-46-18-638752_0.676.png
+2025-02-04 17:00:01 create mode 100644 profiles/2025-02-04/track_3/profile_16-46-18-965678_0.716.png
+2025-02-04 17:00:01 create mode 100644 profiles/2025-02-04/track_4/profile_16-46-23-710633_0.720.png
+2025-02-04 17:00:01 Pushing to remote...
+2025-02-04 17:00:05 To https://github.com/Sang0920/TestingFaceRec.git
+2025-02-04 17:00:05 8a4da1e..2148245  main -> main
+2025-02-04 17:00:05 Backup complete!
+2025-02-04 18:00:02 Starting backup script...
+2025-02-04 18:00:02 Adding files...
