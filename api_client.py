@@ -6,6 +6,7 @@ import logging
 import sys
 from datetime import datetime
 from dotenv import load_dotenv
+from typing import Union, Literal
 
 os.makedirs('logs', exist_ok=True)
 logging.basicConfig(
@@ -37,7 +38,7 @@ class DracoAPIClient:
         }
         logger.info("DracoAPIClient initialized successfully")
 
-    def create_checkin(self, email, timestamp, log_type="IN", image_base64=None, pdf_base64=None):
+    def create_checkin(self, email: str, timestamp: str, log_type: Literal["IN", "OUT"]="IN", image_base64=None, pdf_base64=None) -> Union[bool, dict]:
         """Create employee check-in record with logging"""
         url = f"{self.api_url}/hrms.hr.doctype.employee_checkin.employee_checkin.create_employee_checkin"
         data = {
@@ -48,6 +49,7 @@ class DracoAPIClient:
             "pdf_base64": pdf_base64
         }
         
+        response = None
         try:
             logger.info(f"Creating check-in for {email} at {timestamp}")
             response = requests.post(url, headers=self.headers, json=data)
@@ -63,10 +65,11 @@ class DracoAPIClient:
                 return False, result
                 
         except Exception as e:
-            logger.error(f"❌ Error creating check-in - {email}: {str(e)} - Data: {data} - Response: {response.text}")
+            error_response = response.text if response else "No response"
+            logger.error(f"❌ Error creating check-in - {email}: {str(e)} - Data: {data} - Response: {error_response}")
             return False, {"error": str(e)}
 
-    def get_employee_photos(self, branch: str = None):
+    def get_employee_photos(self, branch: str = None) -> dict:
         """Get employee photos with logging"""
         url = f"{self.api_url}/draerp.setup.doctype.employee.employee.get_employee_photos"
         params = {"branch": branch} if branch else {}

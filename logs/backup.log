@@ -1,2 +1,46 @@
 Checking Git status...
 Adding files...
+Committing changes...
+[main 3001e46] Backup 2025-02-04 14:37:54
+ 42 files changed, 583 insertions(+), 244 deletions(-)
+ create mode 100644 __init__.py
+ create mode 100644 __pycache__/api_client.cpython-38.pyc
+ create mode 100644 crontab_commands
+ create mode 100644 logs/backup.log
+ rewrite output.png (97%)
+ create mode 100644 profiles/2025-02-04/track_1/profile_11-43-27-479167_0.770.png
+ create mode 100644 profiles/2025-02-04/track_1/profile_12-03-09-952443_0.816.png
+ create mode 100644 profiles/2025-02-04/track_1/profile_12-03-10-409233_0.816.png
+ create mode 100644 profiles/2025-02-04/track_1/profile_12-03-10-800505_0.804.png
+ create mode 100644 profiles/2025-02-04/track_1/profile_12-06-20-090759_0.825.png
+ create mode 100644 profiles/2025-02-04/track_1/profile_12-06-20-525171_0.823.png
+ create mode 100644 profiles/2025-02-04/track_1/profile_12-06-20-882016_0.808.png
+ create mode 100644 profiles/2025-02-04/track_1/recognition.json
+ create mode 100644 profiles/2025-02-04/track_10/profile_11-43-33-763530_0.838.png
+ create mode 100644 profiles/2025-02-04/track_10/profile_11-43-34-135617_0.812.png
+ create mode 100644 profiles/2025-02-04/track_10/profile_11-43-34-498268_0.811.png
+ create mode 100644 profiles/2025-02-04/track_10/recognition.json
+ create mode 100644 profiles/2025-02-04/track_12/profile_11-43-36-275088_0.787.png
+ create mode 100644 profiles/2025-02-04/track_12/profile_11-43-36-943270_0.674.png
+ create mode 100644 profiles/2025-02-04/track_4/profile_11-43-28-268203_0.786.png
+ create mode 100644 profiles/2025-02-04/track_4/profile_12-06-22-101109_0.547.png
+ create mode 100644 profiles/2025-02-04/track_5/profile_11-43-30-809516_0.585.png
+ create mode 100644 profiles/2025-02-04/track_5/profile_11-43-30-872630_0.547.png
+ create mode 100644 profiles/2025-02-04/track_6/profile_11-43-35-177079_0.793.png
+ create mode 100644 profiles/2025-02-04/track_6/profile_11-43-35-551944_0.792.png
+ create mode 100644 profiles/2025-02-04/track_6/profile_11-43-35-922993_0.788.png
+ create mode 100644 profiles/2025-02-04/track_6/recognition.json
+ create mode 100644 profiles/2025-02-04/track_7/profile_11-43-30-005768_0.750.png
+ create mode 100644 profiles/2025-02-04/track_7/profile_11-43-30-386101_0.681.png
+ create mode 100644 profiles/2025-02-04/track_8/profile_11-43-30-680650_0.741.png
+ create mode 100644 profiles/2025-02-04/track_8/profile_11-43-30-747517_0.672.png
+ delete mode 100644 profiles/track_3_recognition.json
+ rewrite track.testing.py (76%)
+ create mode 100644 track_manager.py
+ create mode 100644 track_testing.py
+Pushing to remote...
+To https://github.com/Sang0920/TestingFaceRec.git
+   1036af1..3001e46  main -> main
+Backup complete!
+2025-02-04 15:25:51 Starting backup script...
+2025-02-04 15:25:51 Adding files...

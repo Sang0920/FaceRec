@@ -17,6 +17,7 @@ from multiprocessing import Process, Queue, Event
 import signal
 from api_client import DracoAPIClient
 import base64
+from queue import Empty, Full
 
 load_dotenv()
 # Environment and configuration
@@ -28,7 +29,7 @@ PROFILES_DIR = "profiles"
 CONFIG_FILE = "./new_bytetrack.yml"
 MODEL_PATH = "./yolov11n-face.pt"
 # Processing parameters
-PROCESS_DURATION = 30  # seconds
+PROCESS_DURATION = 60  # seconds
 MIN_PROFILES_PER_TRACK = 3
 MAX_BUFFER_SIZE = 15
 NUM_WORKERS = 5
@@ -109,12 +110,12 @@ class RecognitionProcess:
 
     def _recognition_worker(self):
         signal.signal(signal.SIGINT, signal.SIG_IGN)
-        gallery_features, gallery_names = load_gallery_faces("faces")
-        profile_manager = ProfileManager()
-        
-        while not self.stop_event.is_set():
-            try:
-                if not self.input_queue.empty():
+        try:
+            gallery_features, gallery_names = load_gallery_faces("faces")
+            profile_manager = ProfileManager()
+            
+            while not self.stop_event.is_set():
+                try:
                     track_id, frames = self.input_queue.get(timeout=1)
                     process_track_profiles(
                         {track_id: frames},
@@ -123,18 +124,42 @@ class RecognitionProcess:
                         gallery_features,
                         gallery_names
                     )
-            except Exception as e:
-                print(f"Recognition worker error: {e}")
-                continue
+                except Empty:
+                    continue
+                except Exception as e:
+                    print(f"Recognition worker error: {e}")
+                    continue
+                    
+        except Exception as e:
+            print(f"Fatal worker error: {e}")
+        finally:
+            profile_manager.shutdown()
 
     def add_track(self, track_id, frames):
-        self.input_queue.put((track_id, frames))
+        if not self.stop_event.is_set() and self.process.is_alive():
+            try:
+                self.input_queue.put((track_id, frames), timeout=1)
+            except Full:
+                print(f"Queue full - skipping track {track_id}")
+            except Exception as e:
+                print(f"Error adding track: {e}")
 
     def shutdown(self):
+        print("Shutting down recognition process...")
         self.stop_event.set()
+        
+        # Wait for queue to empty
+        while not self.input_queue.empty():
+            try:
+                self.input_queue.get_nowait()
+            except Empty:
+                break
+                
         self.process.join(timeout=5)
         if self.process.is_alive():
+            print("Force terminating recognition process...")
             self.process.terminate()
+            self.process.join()
 
 def extract_face(frame, box, padding=0.2):
     try:
@@ -207,7 +232,11 @@ def process_track_profiles(frames_buffers, track_id, profile_manager, gallery_fe
                         base64_image = base64.b64encode(img_file.read()).decode('utf-8')
                 else:
                     base64_image = None
-                Client.create_checkin(email, timestamp, base64_image)
+                Client.create_checkin(email=email, 
+                                      timestamp=timestamp,
+                                      log_type="IN",
+                                      image_base64=base64_image
+                                      )
             except Exception as e:
                 print(f"Error creating checkin: {e}")
     return best_recognition
@@ -226,17 +255,18 @@ def process_tracks(frames_buffers, track_last_seen, saved_tracks, recognition_ma
         del track_last_seen[track_id]
 
 def main():
-    Client.sync_employee_photos()
     print("Starting face tracking...")
     model = YOLO(MODEL_PATH)
     recognition_process = RecognitionProcess()
-    frames_buffers = {}
-    track_last_seen = {}
-    saved_tracks = set()
-    start_time = datetime.now()
-    frame_count = 0
     
     try:
+        Client.sync_employee_photos()
+        frames_buffers = {}
+        track_last_seen = {}
+        saved_tracks = set()
+        start_time = datetime.now()
+        frame_count = 0
+        
         cap = cv2.VideoCapture(RTSP_URL)
         while (datetime.now() - start_time).total_seconds() <= PROCESS_DURATION:
             success, frame = cap.read()
@@ -288,15 +318,18 @@ def main():
             frame_count += 1
             
     except KeyboardInterrupt:
-        print("Stopping tracking...")
+        print("\nStopping tracking...")
+    except Exception as e:
+        print(f"Error in main: {e}")
     finally:
-        # Process remaining tracks
-        for track_id, buffer in frames_buffers.items():
-            if track_id not in saved_tracks and buffer:
-                recognition_process.add_track(track_id, buffer)
-        
-        recognition_process.shutdown()
+        # Process any remaining unsaved tracks before shutdown
+        for track_id, frames in frames_buffers.items():
+            if track_id not in saved_tracks and frames:
+                recognition_process.add_track(track_id, frames)
+                saved_tracks.add(track_id)
+
         cap.release()
+        recognition_process.shutdown()
         cv2.destroyAllWindows()
 
 if __name__ == "__main__":

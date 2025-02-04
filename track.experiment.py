@@ -13,6 +13,10 @@ import yaml
 from img_recg import load_gallery_faces, recognize_image, upscale_image
 from PIL import Image
 import json
+from multiprocessing import Process, Queue, Event
+import signal
+from api_client import DracoAPIClient
+import base64
 
 load_dotenv()
 # Environment and configuration
@@ -25,7 +29,7 @@ CONFIG_FILE = "./new_bytetrack.yml"
 MODEL_PATH = "./yolov11n-face.pt"
 # Processing parameters
 PROCESS_DURATION = 30  # seconds
-MIN_FRAMES_PER_TRACK = 3
+MIN_PROFILES_PER_TRACK = 3
 MAX_BUFFER_SIZE = 15
 NUM_WORKERS = 5
 # Load tracker configuration
@@ -53,6 +57,7 @@ except Exception as e:
 TRACK_BUFFER_TIMEOUT = int(frame_rate/30.0 * track_buffer)  # frames
 print(f"Frame rate: {frame_rate} FPS")
 print(f"Track buffer timeout: {TRACK_BUFFER_TIMEOUT} frames")
+Client = DracoAPIClient()
 
 class ProfileManager:
     def __init__(self):
@@ -95,41 +100,41 @@ class ProfileManager:
         self.worker.join()
         self.executor.shutdown()
 
-class RecognitionManager:
-    def __init__(self, profile_manager):
-        self.profile_manager = profile_manager
-        self.recognition_queue = Queue()
-        self.worker = threading.Thread(target=self._process_recognition, daemon=True)
-        self.gallery_features, self.gallery_names = load_gallery_faces("faces")
-        self.worker.start()
+class RecognitionProcess:
+    def __init__(self):
+        self.input_queue = Queue()
+        self.stop_event = Event()
+        self.process = Process(target=self._recognition_worker, daemon=True)
+        self.process.start()
 
-    def _process_recognition(self):
-        while True:
-            item = self.recognition_queue.get()
-            if item is None:
-                break
-            track_id, frames_buffer = item
-            self._recognize_track(track_id, frames_buffer)
-            self.recognition_queue.task_done()
+    def _recognition_worker(self):
+        signal.signal(signal.SIGINT, signal.SIG_IGN)
+        gallery_features, gallery_names = load_gallery_faces("faces")
+        profile_manager = ProfileManager()
+        
+        while not self.stop_event.is_set():
+            try:
+                if not self.input_queue.empty():
+                    track_id, frames = self.input_queue.get(timeout=1)
+                    process_track_profiles(
+                        {track_id: frames},
+                        track_id,
+                        profile_manager,
+                        gallery_features,
+                        gallery_names
+                    )
+            except Exception as e:
+                print(f"Recognition worker error: {e}")
+                continue
 
-    def _recognize_track(self, track_id, frames_buffer):
-        try:
-            recognition = process_track_profiles(
-                {track_id: frames_buffer},
-                track_id,
-                self.profile_manager,
-                self.gallery_features,
-                self.gallery_names
-            )
-        except Exception as e:
-            print(f"Error processing recognition for track {track_id}: {e}")
-
-    def add_track(self, track_id, frames_buffer):
-        self.recognition_queue.put((track_id, frames_buffer.copy()))
+    def add_track(self, track_id, frames):
+        self.input_queue.put((track_id, frames))
 
     def shutdown(self):
-        self.recognition_queue.put(None)
-        self.worker.join()
+        self.stop_event.set()
+        self.process.join(timeout=5)
+        if self.process.is_alive():
+            self.process.terminate()
 
 def extract_face(frame, box, padding=0.2):
     try:
@@ -158,7 +163,7 @@ def process_track_profiles(frames_buffers, track_id, profile_manager, gallery_fe
     if frames_buffers[track_id]:
         best_frames = sorted(frames_buffers[track_id], 
                            key=lambda x: x[1], 
-                           reverse=True)[:MIN_FRAMES_PER_TRACK]
+                           reverse=True)[:MIN_PROFILES_PER_TRACK]
         
         for face_img, conf in best_frames:
             try:
@@ -191,6 +196,26 @@ def process_track_profiles(frames_buffers, track_id, profile_manager, gallery_fe
             json_path = os.path.join(track_dir, "recognition.json")
             with open(json_path, 'w') as f:
                 json.dump(best_recognition, f, indent=2)
+            
+            # create checkin
+            try:
+                timestamp = best_recognition['timestamp']
+                # convert to datetime object
+                timestamp = datetime.strptime(timestamp, "%Y-%m-%d %H:%M:%S")
+                email = best_recognition['name']
+                # Convert best profile image to base64
+                if best_recognition['best_profile']:
+                    with open(best_recognition['best_profile'], 'rb') as img_file:
+                        base64_image = base64.b64encode(img_file.read()).decode('utf-8')
+                else:
+                    base64_image = None
+                Client.create_checkin(email=email, 
+                                      timestamp=timestamp,
+                                      log_type="IN",
+                                      image_base64=base64_image
+                                      )
+            except Exception as e:
+                print(f"Error creating checkin: {e}")
     return best_recognition
 
 def process_tracks(frames_buffers, track_last_seen, saved_tracks, recognition_manager, frame_count):
@@ -207,10 +232,10 @@ def process_tracks(frames_buffers, track_last_seen, saved_tracks, recognition_ma
         del track_last_seen[track_id]
 
 def main():
+    Client.sync_employee_photos()
     print("Starting face tracking...")
     model = YOLO(MODEL_PATH)
-    profile_manager = ProfileManager()
-    recognition_manager = RecognitionManager(profile_manager)
+    recognition_process = RecognitionProcess()
     frames_buffers = {}
     track_last_seen = {}
     saved_tracks = set()
@@ -252,8 +277,20 @@ def main():
                         frames_buffers[track_id].append((face_crop, confidence))
                 
                 # Process expired tracks in background
-                process_tracks(frames_buffers, track_last_seen, saved_tracks, 
-                             recognition_manager, frame_count)
+                expired_tracks = [
+                    track_id for track_id, last_seen in track_last_seen.items()
+                    if frame_count - last_seen >= TRACK_BUFFER_TIMEOUT
+                ]
+                
+                for track_id in expired_tracks:
+                    if track_id not in saved_tracks and frames_buffers[track_id]:
+                        recognition_process.add_track(
+                            track_id, 
+                            frames_buffers[track_id]
+                        )
+                        saved_tracks.add(track_id)
+                    del frames_buffers[track_id]
+                    del track_last_seen[track_id]
             frame_count += 1
             
     except KeyboardInterrupt:
@@ -262,10 +299,9 @@ def main():
         # Process remaining tracks
         for track_id, buffer in frames_buffers.items():
             if track_id not in saved_tracks and buffer:
-                recognition_manager.add_track(track_id, buffer)
+                recognition_process.add_track(track_id, buffer)
         
-        recognition_manager.shutdown()
-        profile_manager.shutdown()
+        recognition_process.shutdown()
         cap.release()
         cv2.destroyAllWindows()
 

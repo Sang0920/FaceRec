@@ -1,30 +1,30 @@
 #!/bin/bash
 set -e
 
-# Set log file
-LOG_FILE="./logs/backup.log"
+# Environment setup
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export HOME=/home/teamdev
+
+# Change to project directory
+cd /home/teamdev/FaceRec/testing_app
+
+# Set log file with absolute path
+LOG_FILE="/home/teamdev/FaceRec/testing_app/logs/backup.log"
 mkdir -p "$(dirname "$LOG_FILE")"
 
-# Redirect output to log file
-exec 1>> "$LOG_FILE" 2>&1
+# Redirect output with timestamps
+exec 1> >(while read line; do echo "$(date '+%Y-%m-%d %H:%M:%S') $line" >> "$LOG_FILE"; done)
+exec 2>&1
 
-echo "Checking Git status..."
-# if ! git diff-index --quiet HEAD --; then
-#     read -p "There are uncommitted changes. Continue? (y/n) " -n 1 -r
-#     echo
-#     if [[ ! $REPLY =~ ^[Yy]$ ]]
-#     then
-#         exit 1
-#     fi
-# fi
+echo "Starting backup script..."
 
 echo "Adding files..."
-git add .
+/usr/bin/git add .
 
 echo "Committing changes..."
-git commit -m "Backup $(date '+%Y-%m-%d %H:%M:%S')"
+/usr/bin/git commit -m "Backup $(date '+%Y-%m-%d %H:%M:%S')" || true
 
 echo "Pushing to remote..."
-git push origin main --force
+/usr/bin/git push origin main --force
 
 echo "Backup complete!"
