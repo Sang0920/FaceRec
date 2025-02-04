@@ -1,11 +1,11 @@
 {
-  "confidence": 0.40339338779449463,
+  "confidence": 0.33455753326416016,
   "name": "sangdt@draco.biz",
-  "timestamp": "2025-02-04 15:43:52",
+  "timestamp": "2025-02-04 16:46:18",
   "profiles": [
-    "profiles/2025-02-04/track_1/profile_15-43-51-616513_0.841.png",
-    "profiles/2025-02-04/track_1/profile_15-43-52-009855_0.837.png",
-    "profiles/2025-02-04/track_1/profile_15-43-52-339903_0.828.png"
+    "profiles/2025-02-04/track_1/profile_16-46-16-906848_0.816.png",
+    "profiles/2025-02-04/track_1/profile_16-46-17-361313_0.809.png",
+    "profiles/2025-02-04/track_1/profile_16-46-17-731701_0.806.png"
   ],
-  "best_profile": "profiles/2025-02-04/track_1/profile_15-43-52-009855_0.837.png"
+  "best_profile": "profiles/2025-02-04/track_1/profile_16-46-17-731701_0.806.png"
 }

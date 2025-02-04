@@ -81,3 +81,40 @@ Backup complete!
 2025-02-04 15:25:55 3001e46..d562b61  main -> main
 2025-02-04 15:25:55 Backup complete!
 2025-02-04 16:00:01 Starting backup script...
+2025-02-04 16:00:01 Adding files...
+2025-02-04 16:00:01 Committing changes...
+2025-02-04 16:00:01 [main 8a4da1e] Backup 2025-02-04 16:00:01
+2025-02-04 16:00:01 31 files changed, 123 insertions(+), 19 deletions(-)
+2025-02-04 16:00:01 create mode 100644 logs/cron.log
+2025-02-04 16:00:01 delete mode 100644 output.png
+2025-02-04 16:00:01 create mode 100644 profiles/2025-02-04/track_1/profile_15-43-51-616513_0.841.png
+2025-02-04 16:00:01 create mode 100644 profiles/2025-02-04/track_1/profile_15-43-52-009855_0.837.png
+2025-02-04 16:00:01 create mode 100644 profiles/2025-02-04/track_1/profile_15-43-52-339903_0.828.png
+2025-02-04 16:00:01 create mode 100644 profiles/2025-02-04/track_1/profile_15-46-32-473434_0.556.png
+2025-02-04 16:00:01 create mode 100644 profiles/2025-02-04/track_1/recognition.json
+2025-02-04 16:00:01 create mode 100644 profiles/2025-02-04/track_10/profile_15-46-44-478735_0.519.png
+2025-02-04 16:00:01 create mode 100644 profiles/2025-02-04/track_13/profile_15-46-44-535827_0.764.png
+2025-02-04 16:00:01 create mode 100644 profiles/2025-02-04/track_13/profile_15-46-44-875787_0.704.png
+2025-02-04 16:00:01 create mode 100644 profiles/2025-02-04/track_13/profile_15-46-45-213953_0.668.png
+2025-02-04 16:00:01 create mode 100644 profiles/2025-02-04/track_2/profile_15-46-33-291539_0.730.png
+2025-02-04 16:00:01 create mode 100644 profiles/2025-02-04/track_2/profile_15-46-33-393574_0.725.png
+2025-02-04 16:00:01 create mode 100644 profiles/2025-02-04/track_2/profile_15-46-33-865830_0.507.png
+2025-02-04 16:00:01 create mode 100644 profiles/2025-02-04/track_3/profile_15-46-36-005561_0.827.png
+2025-02-04 16:00:01 create mode 100644 profiles/2025-02-04/track_3/profile_15-46-36-384589_0.827.png
+2025-02-04 16:00:01 create mode 100644 profiles/2025-02-04/track_3/profile_15-46-36-747878_0.823.png
+2025-02-04 16:00:01 create mode 100644 profiles/2025-02-04/track_3/recognition.json
+2025-02-04 16:00:01 create mode 100644 profiles/2025-02-04/track_6/profile_15-46-42-530876_0.803.png
+2025-02-04 16:00:01 create mode 100644 profiles/2025-02-04/track_6/profile_15-46-43-183420_0.800.png
+2025-02-04 16:00:01 create mode 100644 profiles/2025-02-04/track_6/profile_15-46-43-810860_0.800.png
+2025-02-04 16:00:01 create mode 100644 profiles/2025-02-04/track_6/recognition.json
+2025-02-04 16:00:01 create mode 100644 profiles/2025-02-04/track_7/profile_15-46-37-810798_0.710.png
+2025-02-04 16:00:01 create mode 100644 profiles/2025-02-04/track_8/profile_15-46-40-769605_0.813.png
+2025-02-04 16:00:01 create mode 100644 profiles/2025-02-04/track_8/profile_15-46-41-426844_0.810.png
+2025-02-04 16:00:01 create mode 100644 profiles/2025-02-04/track_8/profile_15-46-41-765824_0.807.png
+2025-02-04 16:00:01 create mode 100644 profiles/2025-02-04/track_8/recognition.json
+2025-02-04 16:00:01 Pushing to remote...
+2025-02-04 16:00:06 To https://github.com/Sang0920/TestingFaceRec.git
+2025-02-04 16:00:06 d562b61..8a4da1e  main -> main
+2025-02-04 16:00:06 Backup complete!
+2025-02-04 17:00:01 Starting backup script...
+2025-02-04 17:00:01 Adding files...

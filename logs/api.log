@@ -38,3 +38,25 @@
 2025-02-04 15:46:42,527 - INFO - ✅ Check-in successful - sangdt@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000022', 'pdf_url': None}}
 2025-02-04 15:46:44,169 - INFO - Creating check-in for annh@draco.biz at 2025-02-04 15:46:44
 2025-02-04 15:46:44,477 - INFO - ✅ Check-in successful - annh@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000023', 'pdf_url': None}}
+2025-02-04 16:45:49,501 - INFO - DracoAPIClient initialized successfully
+2025-02-04 16:45:49,595 - INFO - Starting employee photo sync
+2025-02-04 16:45:49,597 - INFO - Loaded existing metadata for 9 employees
+2025-02-04 16:45:49,597 - INFO - Fetching employee photos
+2025-02-04 16:45:49,762 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-04 16:45:50,593 - ERROR - ❌ Failed to download photo for: duyth@draco.biz
+2025-02-04 16:45:51,463 - ERROR - ❌ Failed to download photo for: loint@draco.biz
+2025-02-04 16:45:53,178 - ERROR - ❌ Failed to download photo for: phuoctth@draco.biz
+2025-02-04 16:45:53,984 - ERROR - ❌ Failed to download photo for: tuanla@draco.biz
+2025-02-04 16:45:53,985 - INFO - ✅ Photo sync completed successfully
+2025-02-04 16:46:18,077 - INFO - Creating check-in for sangdt@draco.biz at 2025-02-04 16:46:18
+2025-02-04 16:46:18,636 - INFO - ✅ Check-in successful - sangdt@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000023', 'pdf_url': None}}
+2025-02-04 16:58:35,939 - INFO - DracoAPIClient initialized successfully
+2025-02-04 16:58:36,042 - INFO - Starting employee photo sync
+2025-02-04 16:58:36,044 - INFO - Loaded existing metadata for 9 employees
+2025-02-04 16:58:36,044 - INFO - Fetching employee photos
+2025-02-04 16:58:36,268 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-04 16:58:37,017 - ERROR - ❌ Failed to download photo for: duyth@draco.biz
+2025-02-04 16:58:37,740 - ERROR - ❌ Failed to download photo for: loint@draco.biz
+2025-02-04 16:58:39,369 - ERROR - ❌ Failed to download photo for: phuoctth@draco.biz
+2025-02-04 16:58:40,143 - ERROR - ❌ Failed to download photo for: tuanla@draco.biz
+2025-02-04 16:58:40,145 - INFO - ✅ Photo sync completed successfully
