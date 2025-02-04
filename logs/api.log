@@ -1,0 +1,40 @@
+2025-02-04 15:34:12,121 - INFO - DracoAPIClient initialized successfully
+2025-02-04 15:34:12,219 - INFO - Starting employee photo sync
+2025-02-04 15:34:12,220 - INFO - Loaded existing metadata for 9 employees
+2025-02-04 15:34:12,221 - INFO - Fetching employee photos
+2025-02-04 15:34:12,452 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-04 15:34:13,336 - ERROR - ❌ Failed to download photo for: duyth@draco.biz
+2025-02-04 15:34:14,102 - ERROR - ❌ Failed to download photo for: loint@draco.biz
+2025-02-04 15:34:15,757 - ERROR - ❌ Failed to download photo for: phuoctth@draco.biz
+2025-02-04 15:34:16,575 - ERROR - ❌ Failed to download photo for: tuanla@draco.biz
+2025-02-04 15:34:16,576 - INFO - ✅ Photo sync completed successfully
+2025-02-04 15:34:47,170 - INFO - Creating check-in for sangdt@draco.biz at 2025-02-04 15:34:46
+2025-02-04 15:34:47,591 - INFO - ✅ Check-in successful - sangdt@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000019', 'pdf_url': None}}
+2025-02-04 15:43:27,373 - INFO - DracoAPIClient initialized successfully
+2025-02-04 15:43:27,475 - INFO - Starting employee photo sync
+2025-02-04 15:43:27,477 - INFO - Loaded existing metadata for 9 employees
+2025-02-04 15:43:27,478 - INFO - Fetching employee photos
+2025-02-04 15:43:27,676 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-04 15:43:28,410 - ERROR - ❌ Failed to download photo for: duyth@draco.biz
+2025-02-04 15:43:29,177 - ERROR - ❌ Failed to download photo for: loint@draco.biz
+2025-02-04 15:43:30,775 - ERROR - ❌ Failed to download photo for: phuoctth@draco.biz
+2025-02-04 15:43:31,501 - ERROR - ❌ Failed to download photo for: tuanla@draco.biz
+2025-02-04 15:43:31,502 - INFO - ✅ Photo sync completed successfully
+2025-02-04 15:43:52,673 - INFO - Creating check-in for sangdt@draco.biz at 2025-02-04 15:43:52
+2025-02-04 15:43:53,004 - INFO - ✅ Check-in successful - sangdt@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000020', 'pdf_url': None}}
+2025-02-04 15:46:10,367 - INFO - DracoAPIClient initialized successfully
+2025-02-04 15:46:10,463 - INFO - Starting employee photo sync
+2025-02-04 15:46:10,465 - INFO - Loaded existing metadata for 9 employees
+2025-02-04 15:46:10,466 - INFO - Fetching employee photos
+2025-02-04 15:46:10,624 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-04 15:46:11,366 - ERROR - ❌ Failed to download photo for: duyth@draco.biz
+2025-02-04 15:46:12,121 - ERROR - ❌ Failed to download photo for: loint@draco.biz
+2025-02-04 15:46:13,748 - ERROR - ❌ Failed to download photo for: phuoctth@draco.biz
+2025-02-04 15:46:14,561 - ERROR - ❌ Failed to download photo for: tuanla@draco.biz
+2025-02-04 15:46:14,563 - INFO - ✅ Photo sync completed successfully
+2025-02-04 15:46:37,090 - INFO - Creating check-in for annh@draco.biz at 2025-02-04 15:46:36
+2025-02-04 15:46:37,624 - INFO - ✅ Check-in successful - annh@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000021', 'pdf_url': None}}
+2025-02-04 15:46:42,111 - INFO - Creating check-in for sangdt@draco.biz at 2025-02-04 15:46:41
+2025-02-04 15:46:42,527 - INFO - ✅ Check-in successful - sangdt@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000022', 'pdf_url': None}}
+2025-02-04 15:46:44,169 - INFO - Creating check-in for annh@draco.biz at 2025-02-04 15:46:44
+2025-02-04 15:46:44,477 - INFO - ✅ Check-in successful - annh@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000023', 'pdf_url': None}}

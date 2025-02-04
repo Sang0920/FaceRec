@@ -1,1 +1,2 @@
-0 * * * * /home/teamdev/FaceRec/testing_app/backup.sh
+0 * * * * /home/teamdev/FaceRec/testing_app/backup.sh >> /home/teamdev/FaceRec/testing_app/logs/cron.log 2>&1
+

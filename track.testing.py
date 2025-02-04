@@ -82,7 +82,6 @@ class ProfileManager:
         try:
             track_dir = os.path.join(self.profile_dir, f"track_{track_id}")
             os.makedirs(track_dir, exist_ok=True)
-            
             filename = f"profile_{timestamp}_{confidence:.3f}.png"
             filepath = os.path.join(track_dir, filename)
             cv2.imwrite(filepath, face_img)
@@ -113,7 +112,6 @@ class RecognitionProcess:
         try:
             gallery_features, gallery_names = load_gallery_faces("faces")
             profile_manager = ProfileManager()
-            
             while not self.stop_event.is_set():
                 try:
                     track_id, frames = self.input_queue.get(timeout=1)
@@ -147,7 +145,6 @@ class RecognitionProcess:
     def shutdown(self):
         print("Shutting down recognition process...")
         self.stop_event.set()
-        
         # Wait for queue to empty
         while not self.input_queue.empty():
             try:
@@ -189,7 +186,6 @@ def process_track_profiles(frames_buffers, track_id, profile_manager, gallery_fe
         best_frames = sorted(frames_buffers[track_id], 
                            key=lambda x: x[1], 
                            reverse=True)[:MIN_PROFILES_PER_TRACK]
-        
         for face_img, conf in best_frames:
             try:
                 timestamp = datetime.now().strftime("%H-%M-%S-%f")
@@ -215,18 +211,14 @@ def process_track_profiles(frames_buffers, track_id, profile_manager, gallery_fe
                         print(f"Track {track_id}: Recognized as {names[0]} ({confidences[0]:.3f})")
             except Exception as e:
                 print(f"Error processing recognition for track {track_id}: {e}")
-        # Save recognition results in track directory
         if best_recognition['name'] != "Unknown":
             track_dir = os.path.join(profile_manager.profile_dir, f"track_{track_id}")
             json_path = os.path.join(track_dir, "recognition.json")
             with open(json_path, 'w') as f:
                 json.dump(best_recognition, f, indent=2)
-            
-            # create checkin
             try:
                 timestamp = best_recognition['timestamp']
                 email = best_recognition['name']
-                # Convert best profile image to base64
                 if best_recognition['best_profile']:
                     with open(best_recognition['best_profile'], 'rb') as img_file:
                         base64_image = base64.b64encode(img_file.read()).decode('utf-8')
@@ -258,7 +250,6 @@ def main():
     print("Starting face tracking...")
     model = YOLO(MODEL_PATH)
     recognition_process = RecognitionProcess()
-    
     try:
         Client.sync_employee_photos()
         frames_buffers = {}
@@ -266,14 +257,11 @@ def main():
         saved_tracks = set()
         start_time = datetime.now()
         frame_count = 0
-        
         cap = cv2.VideoCapture(RTSP_URL)
         while (datetime.now() - start_time).total_seconds() <= PROCESS_DURATION:
             success, frame = cap.read()
             if not success:
                 continue
-            
-            # Tracking loop
             frame = np.rot90(frame, 3)
             results = next(model.track(
                 source=frame,
@@ -284,7 +272,6 @@ def main():
                 conf=.5,
                 show=False
             ))
-            
             if results.boxes is not None:
                 for box in results.boxes:
                     if box.id is None:
@@ -292,20 +279,15 @@ def main():
                     track_id = int(box.id.item())
                     confidence = float(box.conf.item())
                     track_last_seen[track_id] = frame_count
-                    
                     if track_id not in frames_buffers:
                         frames_buffers[track_id] = deque(maxlen=MAX_BUFFER_SIZE)
-                    
                     face_crop = extract_face(frame, box)
                     if face_crop is not None:
                         frames_buffers[track_id].append((face_crop, confidence))
-                
-                # Process expired tracks in background
                 expired_tracks = [
                     track_id for track_id, last_seen in track_last_seen.items()
                     if frame_count - last_seen >= TRACK_BUFFER_TIMEOUT
                 ]
-                
                 for track_id in expired_tracks:
                     if track_id not in saved_tracks and frames_buffers[track_id]:
                         recognition_process.add_track(
