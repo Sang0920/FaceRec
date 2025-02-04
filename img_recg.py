@@ -112,9 +112,16 @@ def process_batch(images):
             features.append(feature.cpu())
     return features
 
-def recognize_image(image_path, gallery_features, gallery_names, threshold=.35):
+def recognize_image(img, gallery_features, gallery_names, threshold=.35):
     try:
-        orig_img = Image.open(image_path).convert('RGB')
+        if isinstance(img, str):
+            orig_img = Image.open(img).convert('RGB')
+        elif isinstance(img, Image.Image):
+            orig_img = img
+        else:
+            raise ValueError("Input must be PIL Image or path to image")
+
+        # orig_img = Image.open(image_path).convert('RGB')
         orig_img = upscale_image(orig_img)
         bboxes, faces = align.mtcnn_model.align_multi(orig_img)    
         if not faces:
@@ -136,7 +143,7 @@ def recognize_image(image_path, gallery_features, gallery_names, threshold=.35):
         return names, confidences, bboxes, orig_img
             
     except Exception as e:
-        print(f"Error processing {image_path}: {str(e)}")
+        print(f"Error processing {img}: {str(e)}")
         return [], [], [], None
 
 def draw_box_and_label(image, bbox, name, confidence):
@@ -167,5 +174,5 @@ def process_single_image(image_path, gallery_features, gallery_names, threshold=
 if __name__ == '__main__':
     start = time.time()
     gallery_features, gallery_names = load_gallery_faces("faces")
-    process_single_image("./profiles/2025-02-03/track_2_17-04-25-632251_0.804.png", gallery_features, gallery_names)
+    process_single_image("./profiles/2025-02-04/track_1/profile_10-15-32-669438_0.795.png", gallery_features, gallery_names)
     print("Time elapsed:", time.time() - start)

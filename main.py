@@ -10,8 +10,10 @@ from queue import Queue
 from concurrent.futures import ThreadPoolExecutor
 import yaml
 # import asyncio
+from img_recg import load_gallery_faces, recognize_image, upscale_image
+from PIL import Image
+import json
 
-# Constants
 load_dotenv()
 # Environment and configuration
 RTSP_URL = os.getenv('RTSP_URL')
@@ -22,7 +24,7 @@ PROFILES_DIR = "profiles"
 CONFIG_FILE = "./new_bytetrack.yml"
 MODEL_PATH = "./yolov11n-face.pt"
 # Processing parameters
-PROCESS_DURATION = 60  # seconds
+PROCESS_DURATION = 30  # seconds
 MIN_FRAMES_PER_TRACK = 3
 MAX_BUFFER_SIZE = 15
 NUM_WORKERS = 5
@@ -72,14 +74,17 @@ class ProfileManager:
 
     def _save_profile(self, face_img, track_id, confidence, timestamp):
         try:
-            filename = f"track_{track_id}_{timestamp}_{confidence:.3f}.png"
-            filepath = os.path.join(self.profile_dir, filename)
-            # cv2.imwrite(filepath, face_img, COMPRESSION_PARAMS)
-            # or
+            track_dir = os.path.join(self.profile_dir, f"track_{track_id}")
+            os.makedirs(track_dir, exist_ok=True)
+            
+            filename = f"profile_{timestamp}_{confidence:.3f}.png"
+            filepath = os.path.join(track_dir, filename)
             cv2.imwrite(filepath, face_img)
             print(f"Saved profile: {filepath}")
+            return filepath
         except Exception as e:
             print(f"Error saving profile: {e}")
+            return None
 
     def add_profile(self, face_img, track_id, confidence):
         timestamp = datetime.now().strftime("%H-%M-%S-%f")
@@ -106,18 +111,68 @@ def extract_face(frame, box, padding=0.2):
         print(f"Error extracting face: {e}")
         return None
 
+def process_track_profiles(frames_buffers, track_id, profile_manager, gallery_features, gallery_names):
+    best_recognition = {
+        'confidence': 0,
+        'name': "Unknown",
+        'timestamp': None,
+        'profiles': []
+    }
+    
+    if frames_buffers[track_id]:
+        best_frames = sorted(frames_buffers[track_id], 
+                           key=lambda x: x[1], 
+                           reverse=True)[:MIN_FRAMES_PER_TRACK]
+        
+        for face_img, conf in best_frames:
+            try:
+                timestamp = datetime.now().strftime("%H-%M-%S-%f")
+                profile_path = profile_manager._save_profile(face_img, track_id, conf, timestamp)
+                if profile_path:
+                    best_recognition['profiles'].append(profile_path)                
+                pil_img = Image.fromarray(cv2.cvtColor(face_img, cv2.COLOR_BGR2RGB))
+                names, confidences, _, _ = recognize_image(
+                    pil_img,
+                    gallery_features,
+                    gallery_names,
+                    threshold=0.19
+                )
+                print(f"Track {track_id}: Recognized as {names} ({confidences})")
+                if names and confidences and names[0] != "Unknown":
+                    if confidences[0] > best_recognition['confidence']:
+                        best_recognition.update({
+                            'confidence': float(confidences[0]),
+                            'name': names[0],
+                            'timestamp': datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                            'best_profile': profile_path
+                        })
+                        print(f"Track {track_id}: Recognized as {names[0]} ({confidences[0]:.3f})")
+            except Exception as e:
+                print(f"Error processing recognition for track {track_id}: {e}")
+        # Save recognition results in track directory
+        if best_recognition['name'] != "Unknown":
+            track_dir = os.path.join(profile_manager.profile_dir, f"track_{track_id}")
+            json_path = os.path.join(track_dir, "recognition.json")
+            with open(json_path, 'w') as f:
+                json.dump(best_recognition, f, indent=2)
+    return best_recognition
+
 def process_tracks(frames_buffers, track_last_seen, saved_tracks, profile_manager, frame_count):
     expired_tracks = [
         track_id for track_id, last_seen in track_last_seen.items()
         if frame_count - last_seen >= TRACK_BUFFER_TIMEOUT
     ]
+    # Load gallery once
+    gallery_features, gallery_names = load_gallery_faces("faces")
     for track_id in expired_tracks:
         if track_id not in saved_tracks and frames_buffers[track_id]:
-            best_frames = sorted(frames_buffers[track_id], 
-                               key=lambda x: x[1], 
-                               reverse=True)[:MIN_FRAMES_PER_TRACK]
-            for face_img, conf in best_frames:
-                profile_manager.add_profile(face_img, track_id, conf)
+            recognition = process_track_profiles(
+                frames_buffers,
+                track_id,
+                profile_manager,
+                gallery_features,
+                gallery_names
+            )
             saved_tracks.add(track_id)
         del frames_buffers[track_id]
         del track_last_seen[track_id]
@@ -183,4 +238,3 @@ if __name__ == "__main__":
         # del TRACK_BUFFER_TIMEOUT
     except Exception as e:
         print(f"Unexpected error: {e}")
-    
