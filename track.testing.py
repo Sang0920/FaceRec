@@ -18,6 +18,7 @@ import signal
 from api_client import DracoAPIClient
 import base64
 from queue import Empty, Full
+import argparse
 
 load_dotenv()
 # Environment and configuration
@@ -61,6 +62,19 @@ print(f"Track buffer timeout: {TRACK_BUFFER_TIMEOUT} frames")
 Client = DracoAPIClient()
 CHECKIN_TYPES = ["IN", "OUT"]
 CHECKIN_TYPE = CHECKIN_TYPES[0]
+
+# get the process_duration and checkin_type from the command line (argparse)
+def parse_args():
+    parser = argparse.ArgumentParser(description='Face Recognition Check-out System')
+    parser.add_argument('--process_duration', type=int, default=60,
+                      help='Duration for face recognition processing (seconds)')
+    parser.add_argument('--checkin_type', type=str, default="IN",
+                        help='Check-in type (IN or OUT)')
+    args = parser.parse_args()
+    return args
+args = parse_args()
+PROCESS_DURATION = args.process_duration
+CHECKIN_TYPE = args.checkin_type
 BASE_PROFILE_DIR = os.path.join(PROFILES_DIR, datetime.now().strftime("%Y-%m-%d"), CHECKIN_TYPE)
 os.makedirs(BASE_PROFILE_DIR, exist_ok=True)
 
@@ -179,6 +193,8 @@ def extract_face(frame, box, padding=0.2):
         print(f"Error extracting face: {e}")
         return None
 
+checkins = set() # set of checkins (email)
+
 def process_track_profiles(frames_buffers, track_id, profile_manager, gallery_features, gallery_names):
     best_recognition = {
         'confidence': 0,
@@ -216,7 +232,11 @@ def process_track_profiles(frames_buffers, track_id, profile_manager, gallery_fe
                         print(f"Track {track_id}: Recognized as {names[0]} ({confidences[0]:.3f})")
             except Exception as e:
                 print(f"Error processing recognition for track {track_id}: {e}")
+        checkins.add(best_recognition['name'])
         if best_recognition['name'] != "Unknown":
+            if best_recognition['name'] in checkins:
+                print(f"Already checked in: {best_recognition['name']}")
+                return None
             track_dir = os.path.join(profile_manager.profile_dir, f"track_{track_id}")
             json_path = os.path.join(track_dir, "recognition.json")
             with open(json_path, 'w') as f:
@@ -231,7 +251,7 @@ def process_track_profiles(frames_buffers, track_id, profile_manager, gallery_fe
                     base64_image = None
                 Client.create_checkin(email=email, 
                                       timestamp=timestamp,
-                                      log_type="IN",
+                                      log_type=CHECKIN_TYPE,
                                       image_base64=base64_image
                                       )
             except Exception as e:
@@ -319,7 +339,7 @@ def main():
         recognition_process.shutdown()
         cv2.destroyAllWindows()
 
-if __name__ == "__main__":
+if __name__ == "__main__": # python main.py --process_duration 60 --checkin_type IN
     try:
         main()
         # del TRACK_BUFFER_TIMEOUT

@@ -7,6 +7,8 @@ import sys
 from datetime import datetime
 from dotenv import load_dotenv
 from typing import Union, Literal
+from functools import lru_cache
+from time import time
 
 os.makedirs('logs', exist_ok=True)
 logging.basicConfig(
@@ -161,9 +163,108 @@ class DracoAPIClient:
             
         except Exception as e:
             logger.error(f"❌ Error during photo sync: {str(e)}")
+ 
+    # @lru_cache(maxsize=1)
+    # def get_shift_details(self, shift_name: str = "Ca chuẩn") -> dict:
+    #     """Get shift details including holidays and timing"""
+    #     url = f"{self.api_url}/hrms.hr.doctype.shift_type.shift_type.get_shift_details"
+    #     params = {"shift_name": shift_name}
+        
+    #     try:
+    #         logger.info(f"Fetching shift details for: {shift_name}")
+    #         response = requests.get(url, headers=self.headers, params=params)
+    #         response.raise_for_status()
+    #         data = response.json()
+            
+    #         # Only log error if not successful
+    #         if data.get("success"):
+    #             # Parse timing strings to time objects
+    #             shift_timing = data["shift_timing"]
+    #             for key in ["start_time", "end_time"]:
+    #                 if shift_timing.get(key):
+    #                     time_str = shift_timing[key]
+    #                     try:
+    #                         h, m, s = map(int, time_str.split(":"))
+    #                         shift_timing[key] = time(h, m, s)
+    #                     except ValueError as e:
+    #                         logger.warning(f"Could not parse time {time_str}: {e}")
+                
+    #             # Parse holiday dates
+    #             holidays = data["holiday_list"]["holidays"]
+    #             for holiday in holidays:
+    #                 if holiday.get("date"):
+    #                     holiday["date"] = datetime.strptime(
+    #                         holiday["date"], 
+    #                         "%Y-%m-%d"
+    #                     ).date()
+                
+    #             logger.info("✅ Successfully fetched shift details")
+    #             return data
+                
+    #         logger.error(f"❌ API Error: {data.get('message')}")
+    #         return data
+            
+    #     except requests.RequestException as e:
+    #         logger.error(f"❌ Network error: {str(e)}")
+    #         return {"success": False, "message": str(e)}
+    #     except Exception as e:
+    #         logger.error(f"❌ Processing error: {str(e)}")
+    #         return {"success": False, "message": str(e)}
+
+    @lru_cache(maxsize=1)
+    def get_shift_details(self, shift_name: str = "Ca chuẩn") -> dict:
+        """Get shift details including holidays and timing"""
+        url = f"{self.api_url}/hrms.hr.doctype.shift_type.shift_type.get_shift_details"
+        params = {"shift_name": shift_name}
+        
+        try:
+            logger.info(f"Fetching shift details for: {shift_name}")
+            response = requests.get(url, headers=self.headers, params=params)
+            response.raise_for_status()
+            data = response.json()
+            
+            if isinstance(data, dict) and data.get("message"):
+                # Extract actual data from message wrapper
+                data = data["message"]
+                
+            if data.get("success"):
+                logger.info("✅ Successfully fetched shift details")
+                return data
+            else:
+                logger.error(f"❌ API Error: {data.get('message')}")
+                return data
+                
+        except requests.RequestException as e:
+            logger.error(f"❌ Network error: {str(e)}")
+            return {"success": False, "message": str(e)}
+        except Exception as e:
+            logger.error(f"❌ Processing error: {str(e)}")
+            return {"success": False, "message": str(e)}
+
+# Main script
+if __name__ == "__main__":
+    client = DracoAPIClient()
+    details = client.get_shift_details()
+    if details.get("success"):
+        print("\nShift Details:")
+        print(json.dumps(details, indent=2, default=str))
+    else:
+        print(f"\nError: {details.get('message')}")
+
+# Main script
+if __name__ == "__main__":
+    client = DracoAPIClient()
+    details = client.get_shift_details()
+    if details.get("success"):
+        print(json.dumps(details, indent=2, default=str))
+    else:
+        print(f"Error: {details.get('message')}")
+
 
 if __name__ == "__main__":
     client = DracoAPIClient()
     # Example usage:
     # client.sync_employee_photos()
-    client.create_checkin("sangdt@draco.biz", "2025-02-03 08:10:11")
+    # client.create_checkin("sangdt@draco.biz", "2025-02-03 08:10:11")
+    shift_details = client.get_shift_details()
+    print(json.dumps(shift_details, indent=2, default=str))
