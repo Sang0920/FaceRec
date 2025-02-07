@@ -232,7 +232,6 @@ def process_track_profiles(frames_buffers, track_id, profile_manager, gallery_fe
                         print(f"Track {track_id}: Recognized as {names[0]} ({confidences[0]:.3f})")
             except Exception as e:
                 print(f"Error processing recognition for track {track_id}: {e}")
-        checkins.add(best_recognition['name'])
         if best_recognition['name'] != "Unknown":
             if best_recognition['name'] in checkins:
                 print(f"Already checked in: {best_recognition['name']}")
@@ -254,6 +253,7 @@ def process_track_profiles(frames_buffers, track_id, profile_manager, gallery_fe
                                       log_type=CHECKIN_TYPE,
                                       image_base64=base64_image
                                       )
+                checkins.add(best_recognition['name'])
             except Exception as e:
                 print(f"Error creating checkin: {e}")
     return best_recognition
@@ -341,7 +341,18 @@ def main():
 
 if __name__ == "__main__": # python main.py --process_duration 60 --checkin_type IN
     try:
+        shift_details = Client.get_shift_details()
+        if not shift_details.get('success'):
+            raise ValueError(f"Failed to get shift details: {shift_details.get('message')}")
+        current_date = datetime.now().strftime("%Y-%m-%d")
+        print(f"Current date: {current_date}")  
+        holidays = shift_details.get('holiday_list', {}).get('holidays', [])
+        print(f'First holiday: {holidays[0]["date"]}')
+        is_holiday = any(holiday['date'] == current_date for holiday in holidays)
+        if is_holiday:
+            print(f"Today ({current_date}) is a holiday. Skipping processing.")
+            exit()
+
         main()
-        # del TRACK_BUFFER_TIMEOUT
     except Exception as e:
         print(f"Unexpected error: {e}")

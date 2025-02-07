@@ -420,3 +420,51 @@ Backup complete!
 2025-02-05 16:00:04 Backup complete!
 2025-02-05 17:00:01 Starting backup script...
 2025-02-05 17:00:01 Adding files...
+2025-02-05 17:00:02 Committing changes...
+2025-02-05 17:00:03 [main 7ebccb7] Backup 2025-02-05 17:00:02
+2025-02-05 17:00:03 45 files changed, 470 insertions(+), 79 deletions(-)
+2025-02-05 17:00:03 rename faces/{annh@draco.biz => an@gmai.com}/profile.jpg (100%)
+2025-02-05 17:00:03 create mode 100644 faces/dothesang20@gmail.com/profile.jpg
+2025-02-05 17:00:03 delete mode 100644 faces/dungntk@draco.biz/profile.jpg
+2025-02-05 17:00:03 delete mode 100644 faces/khanhtn@draco.biz/profile.jpg
+2025-02-05 17:00:03 delete mode 100644 faces/minhvdx@draco.biz/profile.jpg
+2025-02-05 17:00:03 delete mode 100644 faces/nghianhm@draco.biz/profile.jpg
+2025-02-05 17:00:03 delete mode 100644 faces/sangdt@draco.biz/profile.jpg
+2025-02-05 17:00:03 rename faces/{sangnlh@dracorp.com.vn => sangnhl@draco.biz}/profile.jpg (100%)
+2025-02-05 17:00:03 create mode 100644 faces/vinh@gmail.com/profile.jpg
+2025-02-05 17:00:03 delete mode 100644 faces/vinhnh@draco.biz/profile.jpg
+2025-02-05 17:00:03 rewrite gallery_cache.pt (81%)
+2025-02-05 17:00:03 create mode 100644 profiles/2025-02-05/IN/track_1/profile_16-14-17-131125_0.546.png
+2025-02-05 17:00:03 create mode 100644 profiles/2025-02-05/IN/track_1/profile_16-16-11-789006_0.738.png
+2025-02-05 17:00:03 create mode 100644 profiles/2025-02-05/IN/track_1/profile_16-16-11-965594_0.504.png
+2025-02-05 17:00:03 create mode 100644 profiles/2025-02-05/IN/track_1/profile_16-37-24-952121_0.510.png
+2025-02-05 17:00:03 create mode 100644 profiles/2025-02-05/IN/track_2/profile_16-16-14-662506_0.830.png
+2025-02-05 17:00:03 create mode 100644 profiles/2025-02-05/IN/track_2/profile_16-16-15-170412_0.821.png
+2025-02-05 17:00:03 create mode 100644 profiles/2025-02-05/IN/track_2/profile_16-16-15-615539_0.817.png
+2025-02-05 17:00:03 create mode 100644 profiles/2025-02-05/IN/track_2/recognition.json
+2025-02-05 17:00:03 create mode 100644 profiles/2025-02-05/IN/track_3/profile_16-16-17-574806_0.652.png
+2025-02-05 17:00:03 create mode 100644 profiles/2025-02-05/IN/track_3/profile_16-37-27-968475_0.813.png
+2025-02-05 17:00:03 create mode 100644 profiles/2025-02-05/IN/track_3/profile_16-37-28-462586_0.805.png
+2025-02-05 17:00:03 create mode 100644 profiles/2025-02-05/IN/track_3/profile_16-37-28-796595_0.803.png
+2025-02-05 17:00:03 create mode 100644 profiles/2025-02-05/IN/track_3/recognition.json
+2025-02-05 17:00:03 create mode 100644 profiles/2025-02-05/OUT/track_1/profile_16-42-05-525058_0.829.png
+2025-02-05 17:00:03 create mode 100644 profiles/2025-02-05/OUT/track_1/profile_16-42-05-964839_0.827.png
+2025-02-05 17:00:03 create mode 100644 profiles/2025-02-05/OUT/track_1/profile_16-42-06-652579_0.819.png
+2025-02-05 17:00:03 create mode 100644 profiles/2025-02-05/OUT/track_1/profile_16-44-28-793448_0.854.png
+2025-02-05 17:00:03 create mode 100644 profiles/2025-02-05/OUT/track_1/profile_16-44-29-207104_0.833.png
+2025-02-05 17:00:03 create mode 100644 profiles/2025-02-05/OUT/track_1/profile_16-44-29-589313_0.828.png
+2025-02-05 17:00:03 create mode 100644 profiles/2025-02-05/OUT/track_1/recognition.json
+2025-02-05 17:00:03 create mode 100644 profiles/2025-02-05/OUT/track_5/profile_16-44-39-904272_0.819.png
+2025-02-05 17:00:03 create mode 100644 profiles/2025-02-05/OUT/track_5/profile_16-44-40-563916_0.818.png
+2025-02-05 17:00:03 create mode 100644 profiles/2025-02-05/OUT/track_5/profile_16-44-40-935762_0.818.png
+2025-02-05 17:00:03 create mode 100644 profiles/2025-02-05/OUT/track_6/profile_16-42-17-363630_0.825.png
+2025-02-05 17:00:03 create mode 100644 profiles/2025-02-05/OUT/track_6/profile_16-42-17-734290_0.823.png
+2025-02-05 17:00:03 create mode 100644 profiles/2025-02-05/OUT/track_6/profile_16-42-18-108874_0.817.png
+2025-02-05 17:00:03 create mode 100644 profiles/2025-02-05/OUT/track_6/recognition.json
+2025-02-05 17:00:03 rewrite sync_metadata.json (95%)
+2025-02-05 17:00:03 Pushing to remote...
+2025-02-05 17:00:09 To https://github.com/Sang0920/TestingFaceRec.git
+2025-02-05 17:00:09 6d902f6..7ebccb7  main -> main
+2025-02-05 17:00:09 Backup complete!
+2025-02-07 09:21:41 Starting backup script...
+2025-02-07 09:21:41 Adding files...

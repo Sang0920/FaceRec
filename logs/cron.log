@@ -1,0 +1,8 @@
+Running on device: cpu
+Track buffer: 150
+Frame rate: 12.0 FPS
+Track buffer timeout: 60 frames
+2025-02-06 17:26:10,627 - INFO - DracoAPIClient initialized successfully
+2025-02-06 17:26:10,628 - INFO - Fetching shift details for: Ca Chuẩn
+2025-02-06 17:26:10,995 - ERROR - ❌ Network error: 403 Client Error: FORBIDDEN for url: https://fintechdraco.draerp.vn/api/method/hrms.hr.doctype.shift_type.shift_type.get_shift_details?shift_name=Ca+Chu%E1%BA%A9n
+Unexpected error: Failed to get shift details: 403 Client Error: FORBIDDEN for url: https://fintechdraco.draerp.vn/api/method/hrms.hr.doctype.shift_type.shift_type.get_shift_details?shift_name=Ca+Chu%E1%BA%A9n

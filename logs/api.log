@@ -247,3 +247,425 @@
 2025-02-05 16:55:57,951 - INFO - DracoAPIClient initialized successfully
 2025-02-05 16:55:57,951 - INFO - Fetching shift details for: Ca chuẩn
 2025-02-05 16:55:58,293 - INFO - ✅ Successfully fetched shift details
+2025-02-05 17:03:11,946 - INFO - DracoAPIClient initialized successfully
+2025-02-05 17:03:11,946 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-05 17:03:12,423 - INFO - ✅ Successfully fetched shift details
+2025-02-05 17:21:11,082 - INFO - DracoAPIClient initialized successfully
+2025-02-05 17:21:11,178 - INFO - Starting employee photo sync
+2025-02-05 17:21:11,180 - INFO - Loaded existing metadata for 5 employees
+2025-02-05 17:21:11,180 - INFO - Fetching employee photos
+2025-02-05 17:21:11,948 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-05 17:21:12,574 - INFO - ✅ Photo sync completed successfully
+2025-02-06 08:00:15,542 - INFO - DracoAPIClient initialized successfully
+2025-02-06 08:00:15,628 - INFO - Starting employee photo sync
+2025-02-06 08:00:15,629 - INFO - Loaded existing metadata for 5 employees
+2025-02-06 08:00:15,629 - INFO - Fetching employee photos
+2025-02-06 08:00:16,169 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-06 08:00:17,950 - INFO - ✅ Photo sync completed successfully
+2025-02-06 09:30:03,135 - INFO - DracoAPIClient initialized successfully
+2025-02-06 09:30:03,135 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 09:30:03,770 - INFO - ✅ Successfully fetched shift details
+2025-02-06 09:30:03,772 - INFO - DracoAPIClient initialized successfully
+2025-02-06 09:30:03,772 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 09:30:04,130 - INFO - ✅ Successfully fetched shift details
+2025-02-06 09:30:04,134 - INFO - DracoAPIClient initialized successfully
+2025-02-06 09:30:04,134 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 09:30:04,505 - INFO - ✅ Successfully fetched shift details
+2025-02-06 09:44:18,006 - INFO - DracoAPIClient initialized successfully
+2025-02-06 09:44:18,006 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 09:44:18,536 - INFO - ✅ Successfully fetched shift details
+2025-02-06 09:47:35,650 - INFO - DracoAPIClient initialized successfully
+2025-02-06 09:47:35,650 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 09:47:36,104 - INFO - ✅ Successfully fetched shift details
+2025-02-06 09:55:32,583 - INFO - DracoAPIClient initialized successfully
+2025-02-06 09:55:32,583 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 09:55:33,144 - INFO - ✅ Successfully fetched shift details
+2025-02-06 09:57:25,211 - INFO - DracoAPIClient initialized successfully
+2025-02-06 09:57:25,211 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 09:57:29,151 - INFO - ✅ Successfully fetched shift details
+2025-02-06 09:58:09,575 - INFO - DracoAPIClient initialized successfully
+2025-02-06 09:58:09,575 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 09:58:09,920 - INFO - ✅ Successfully fetched shift details
+2025-02-06 09:59:50,870 - INFO - DracoAPIClient initialized successfully
+2025-02-06 09:59:50,870 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 09:59:51,239 - INFO - ✅ Successfully fetched shift details
+2025-02-06 10:01:15,540 - INFO - DracoAPIClient initialized successfully
+2025-02-06 10:01:15,540 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 10:01:16,016 - INFO - ✅ Successfully fetched shift details
+2025-02-06 10:02:05,289 - INFO - DracoAPIClient initialized successfully
+2025-02-06 10:02:05,289 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 10:02:05,666 - INFO - ✅ Successfully fetched shift details
+2025-02-06 10:02:35,085 - INFO - DracoAPIClient initialized successfully
+2025-02-06 10:02:35,085 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 10:02:35,461 - INFO - ✅ Successfully fetched shift details
+2025-02-06 10:02:54,906 - INFO - DracoAPIClient initialized successfully
+2025-02-06 10:02:54,906 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 10:02:55,272 - INFO - ✅ Successfully fetched shift details
+2025-02-06 10:04:25,680 - INFO - DracoAPIClient initialized successfully
+2025-02-06 10:04:25,680 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 10:04:26,046 - INFO - ✅ Successfully fetched shift details
+2025-02-06 10:08:25,762 - INFO - DracoAPIClient initialized successfully
+2025-02-06 10:08:25,762 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 10:08:31,464 - INFO - ✅ Successfully fetched shift details
+2025-02-06 10:09:39,600 - INFO - DracoAPIClient initialized successfully
+2025-02-06 10:09:39,600 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 10:09:40,011 - INFO - ✅ Successfully fetched shift details
+2025-02-06 10:18:03,055 - INFO - DracoAPIClient initialized successfully
+2025-02-06 10:18:03,058 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 10:18:03,518 - INFO - ✅ Successfully fetched shift details
+2025-02-06 10:19:35,214 - INFO - DracoAPIClient initialized successfully
+2025-02-06 10:19:35,218 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 10:19:35,600 - INFO - ✅ Successfully fetched shift details
+2025-02-06 10:38:28,976 - INFO - DracoAPIClient initialized successfully
+2025-02-06 10:38:28,980 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 10:38:29,482 - INFO - ✅ Successfully fetched shift details
+2025-02-06 10:38:29,593 - INFO - Starting employee photo sync
+2025-02-06 10:38:29,595 - INFO - Loaded existing metadata for 5 employees
+2025-02-06 10:38:29,595 - INFO - Fetching employee photos
+2025-02-06 10:38:29,948 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-06 10:38:31,722 - INFO - ✅ Photo sync completed successfully
+2025-02-06 10:42:37,214 - INFO - DracoAPIClient initialized successfully
+2025-02-06 10:42:37,217 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 10:42:37,927 - INFO - ✅ Successfully fetched shift details
+2025-02-06 10:42:38,032 - INFO - Starting employee photo sync
+2025-02-06 10:42:38,034 - INFO - Loaded existing metadata for 5 employees
+2025-02-06 10:42:38,034 - INFO - Fetching employee photos
+2025-02-06 10:42:38,528 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-06 10:42:40,765 - INFO - ✅ Photo sync completed successfully
+2025-02-06 10:44:16,830 - INFO - DracoAPIClient initialized successfully
+2025-02-06 10:44:16,832 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 10:44:17,328 - INFO - ✅ Successfully fetched shift details
+2025-02-06 10:44:17,423 - INFO - Starting employee photo sync
+2025-02-06 10:44:17,425 - INFO - Loaded existing metadata for 5 employees
+2025-02-06 10:44:17,426 - INFO - Fetching employee photos
+2025-02-06 10:44:17,810 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-06 10:44:18,889 - INFO - ✅ Photo sync completed successfully
+2025-02-06 10:44:44,479 - INFO - Creating check-in for dothesang20@gmail.com at 2025-02-06 10:44:43
+2025-02-06 10:44:46,206 - INFO - ✅ Check-in successful - dothesang20@gmail.com - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000006', 'pdf_url': None}}
+2025-02-06 10:48:15,733 - INFO - DracoAPIClient initialized successfully
+2025-02-06 10:48:15,734 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 10:48:16,154 - INFO - ✅ Successfully fetched shift details
+2025-02-06 10:48:16,157 - INFO - DracoAPIClient initialized successfully
+2025-02-06 10:48:16,157 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 10:48:16,559 - INFO - ✅ Successfully fetched shift details
+2025-02-06 10:48:16,562 - INFO - DracoAPIClient initialized successfully
+2025-02-06 10:48:16,562 - INFO - Starting employee photo sync
+2025-02-06 10:48:16,563 - INFO - Loaded existing metadata for 5 employees
+2025-02-06 10:48:16,563 - INFO - Fetching employee photos
+2025-02-06 10:48:16,928 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-06 10:48:18,656 - INFO - ✅ Photo sync completed successfully
+2025-02-06 10:48:38,066 - INFO - DracoAPIClient initialized successfully
+2025-02-06 10:48:38,066 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 10:48:38,561 - INFO - ✅ Successfully fetched shift details
+2025-02-06 10:48:38,564 - INFO - DracoAPIClient initialized successfully
+2025-02-06 10:48:38,565 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 10:48:39,010 - INFO - ✅ Successfully fetched shift details
+2025-02-06 10:48:39,013 - INFO - DracoAPIClient initialized successfully
+2025-02-06 10:48:39,013 - INFO - Starting employee photo sync
+2025-02-06 10:48:39,013 - INFO - Loaded existing metadata for 5 employees
+2025-02-06 10:48:39,014 - INFO - Fetching employee photos
+2025-02-06 10:48:39,521 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-06 10:48:40,812 - INFO - ✅ Photo sync completed successfully
+2025-02-06 10:57:57,517 - INFO - DracoAPIClient initialized successfully
+2025-02-06 10:57:57,517 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 10:57:57,776 - ERROR - ❌ Network error: 521 Server Error:  for url: https://ecom.draerp.vn/api/method/hrms.hr.doctype.shift_type.shift_type.get_shift_details?shift_name=Ca+chu%E1%BA%A9n
+2025-02-06 10:57:57,780 - INFO - DracoAPIClient initialized successfully
+2025-02-06 10:57:57,780 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 10:57:57,959 - ERROR - ❌ Network error: 521 Server Error:  for url: https://ecom.draerp.vn/api/method/hrms.hr.doctype.shift_type.shift_type.get_shift_details?shift_name=Ca+chu%E1%BA%A9n
+2025-02-06 10:57:57,961 - INFO - DracoAPIClient initialized successfully
+2025-02-06 10:57:57,962 - INFO - Starting employee photo sync
+2025-02-06 10:57:57,962 - INFO - Loaded existing metadata for 5 employees
+2025-02-06 10:57:57,962 - INFO - Fetching employee photos
+2025-02-06 10:57:58,121 - ERROR - ❌ Error fetching employee photos: 521 Server Error:  for url: https://ecom.draerp.vn/api/method/draerp.setup.doctype.employee.employee.get_employee_photos
+2025-02-06 10:57:58,125 - INFO - Removed folder for ex-employee: dunght@draco.biz
+2025-02-06 10:57:58,126 - INFO - Removed folder for ex-employee: dothesang20@gmail.com
+2025-02-06 10:57:58,126 - INFO - Removed folder for ex-employee: sangnhl@draco.biz
+2025-02-06 10:57:58,127 - INFO - Removed folder for ex-employee: an@gmai.com
+2025-02-06 10:57:58,128 - INFO - Removed folder for ex-employee: vinh@gmail.com
+2025-02-06 10:57:58,128 - INFO - ✅ Photo sync completed successfully
+2025-02-06 14:44:18,284 - INFO - DracoAPIClient initialized successfully
+2025-02-06 14:44:18,285 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 14:44:19,161 - INFO - ✅ Successfully fetched shift details
+2025-02-06 14:44:19,165 - INFO - DracoAPIClient initialized successfully
+2025-02-06 14:44:19,165 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 14:44:19,525 - INFO - ✅ Successfully fetched shift details
+2025-02-06 14:44:19,531 - INFO - DracoAPIClient initialized successfully
+2025-02-06 14:44:19,531 - INFO - Starting employee photo sync
+2025-02-06 14:44:19,531 - INFO - Loaded existing metadata for 0 employees
+2025-02-06 14:44:19,531 - INFO - Fetching employee photos
+2025-02-06 14:44:19,893 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-06 14:44:21,217 - INFO - ✅ Updated photo for: dothesang20@gmail.com
+2025-02-06 14:44:22,089 - INFO - ✅ Updated photo for: vinh@gmail.com
+2025-02-06 14:44:22,879 - INFO - ✅ Updated photo for: dunght@draco.biz
+2025-02-06 14:44:23,780 - INFO - ✅ Updated photo for: an@gmai.com
+2025-02-06 14:44:24,472 - INFO - ✅ Updated photo for: sangnhl@draco.biz
+2025-02-06 14:44:24,473 - INFO - ✅ Photo sync completed successfully
+2025-02-06 14:49:31,181 - INFO - DracoAPIClient initialized successfully
+2025-02-06 14:49:31,181 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 14:49:31,723 - INFO - ✅ Successfully fetched shift details
+2025-02-06 14:49:31,727 - INFO - DracoAPIClient initialized successfully
+2025-02-06 14:49:31,728 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 14:49:32,080 - INFO - ✅ Successfully fetched shift details
+2025-02-06 14:49:32,083 - INFO - DracoAPIClient initialized successfully
+2025-02-06 14:49:32,083 - INFO - Starting employee photo sync
+2025-02-06 14:49:32,083 - INFO - Loaded existing metadata for 5 employees
+2025-02-06 14:49:32,083 - INFO - Fetching employee photos
+2025-02-06 14:49:32,437 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-06 14:49:33,459 - INFO - ✅ Photo sync completed successfully
+2025-02-06 14:50:14,924 - INFO - DracoAPIClient initialized successfully
+2025-02-06 14:50:14,924 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 14:50:15,813 - INFO - ✅ Successfully fetched shift details
+2025-02-06 14:50:15,817 - INFO - DracoAPIClient initialized successfully
+2025-02-06 14:50:15,817 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 14:50:16,426 - INFO - ✅ Successfully fetched shift details
+2025-02-06 14:50:16,431 - INFO - DracoAPIClient initialized successfully
+2025-02-06 14:50:16,431 - INFO - Starting employee photo sync
+2025-02-06 14:50:16,431 - INFO - Loaded existing metadata for 5 employees
+2025-02-06 14:50:16,431 - INFO - Fetching employee photos
+2025-02-06 14:50:16,710 - INFO - ✅ Successfully retrieved 6 employee photos
+2025-02-06 14:50:18,476 - INFO - ✅ Updated photo for: wonhee07@company.com
+2025-02-06 14:50:20,138 - INFO - ✅ Photo sync completed successfully
+2025-02-06 14:51:57,561 - INFO - DracoAPIClient initialized successfully
+2025-02-06 14:51:57,561 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 14:51:58,323 - INFO - ✅ Successfully fetched shift details
+2025-02-06 14:51:58,326 - INFO - DracoAPIClient initialized successfully
+2025-02-06 14:51:58,326 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 14:51:58,963 - INFO - ✅ Successfully fetched shift details
+2025-02-06 14:51:58,966 - INFO - DracoAPIClient initialized successfully
+2025-02-06 14:51:58,967 - INFO - Starting employee photo sync
+2025-02-06 14:51:58,967 - INFO - Loaded existing metadata for 6 employees
+2025-02-06 14:51:58,967 - INFO - Fetching employee photos
+2025-02-06 14:51:59,555 - INFO - ✅ Successfully retrieved 6 employee photos
+2025-02-06 14:52:00,911 - INFO - ✅ Updated photo for: wonhee07@company.com
+2025-02-06 14:52:03,128 - INFO - ✅ Photo sync completed successfully
+2025-02-06 14:57:40,603 - INFO - DracoAPIClient initialized successfully
+2025-02-06 14:57:40,603 - INFO - Starting employee photo sync
+2025-02-06 14:57:40,603 - INFO - Loaded existing metadata for 6 employees
+2025-02-06 14:57:40,603 - INFO - Fetching employee photos
+2025-02-06 14:57:40,603 - INFO - Fetching employee photos
+2025-02-06 14:57:41,168 - INFO - ✅ Successfully retrieved 6 employee photos
+2025-02-06 14:57:41,169 - INFO - ✅ Successfully retrieved 6 employee photos
+2025-02-06 14:57:41,170 - INFO - Removed folder for ex-employee: loint@draco.biz
+2025-02-06 14:57:41,170 - INFO - Removed folder for ex-employee: phuoctth@draco.biz
+2025-02-06 14:57:41,170 - INFO - Removed folder for ex-employee: duyth@draco.biz
+2025-02-06 14:57:41,171 - INFO - Removed folder for ex-employee: tuanla@draco.biz
+2025-02-06 14:57:43,507 - INFO - ✅ Photo sync completed successfully
+2025-02-06 14:58:31,937 - INFO - DracoAPIClient initialized successfully
+2025-02-06 14:58:31,937 - INFO - Starting employee photo sync
+2025-02-06 14:58:31,937 - INFO - Fetching employee photos
+2025-02-06 14:58:31,938 - INFO - Fetching employee photos
+2025-02-06 14:58:32,302 - INFO - ✅ Successfully retrieved 6 employee photos
+2025-02-06 14:58:32,304 - INFO - ✅ Successfully retrieved 6 employee photos
+2025-02-06 14:58:33,092 - INFO - ✅ Updated photo for: wonhee07@company.com
+2025-02-06 14:58:34,249 - INFO - ✅ Updated photo for: dothesang20@gmail.com
+2025-02-06 14:58:34,805 - INFO - ✅ Updated photo for: vinh@gmail.com
+2025-02-06 14:58:35,271 - INFO - ✅ Updated photo for: dunght@draco.biz
+2025-02-06 14:58:35,543 - INFO - ✅ Updated photo for: an@gmai.com
+2025-02-06 14:58:36,241 - INFO - ✅ Updated photo for: sangnhl@draco.biz
+2025-02-06 14:58:36,241 - INFO - ✅ Photo sync completed successfully
+2025-02-06 14:59:00,200 - INFO - DracoAPIClient initialized successfully
+2025-02-06 14:59:00,200 - INFO - Starting employee photo sync
+2025-02-06 14:59:00,200 - INFO - Loaded existing metadata for 6 employees
+2025-02-06 14:59:00,201 - INFO - Fetching employee photos
+2025-02-06 14:59:00,201 - INFO - Fetching employee photos
+2025-02-06 14:59:00,790 - INFO - ✅ Successfully retrieved 6 employee photos
+2025-02-06 14:59:00,791 - INFO - ✅ Successfully retrieved 6 employee photos
+2025-02-06 14:59:02,225 - INFO - ✅ Photo sync completed successfully
+2025-02-06 14:59:10,570 - INFO - DracoAPIClient initialized successfully
+2025-02-06 14:59:10,570 - INFO - Starting employee photo sync
+2025-02-06 14:59:10,570 - INFO - Loaded existing metadata for 6 employees
+2025-02-06 14:59:10,570 - INFO - Fetching employee photos
+2025-02-06 14:59:10,570 - INFO - Fetching employee photos
+2025-02-06 14:59:10,907 - INFO - ✅ Successfully retrieved 6 employee photos
+2025-02-06 14:59:10,908 - INFO - ✅ Successfully retrieved 6 employee photos
+2025-02-06 14:59:11,869 - INFO - ✅ Updated photo for: wonhee07@company.com
+2025-02-06 14:59:12,467 - INFO - ✅ Photo sync completed successfully
+2025-02-06 15:01:01,758 - INFO - DracoAPIClient initialized successfully
+2025-02-06 15:01:01,758 - INFO - Starting employee photo sync
+2025-02-06 15:01:01,759 - INFO - Loaded existing metadata for 6 employees
+2025-02-06 15:01:01,759 - INFO - Fetching employee photos
+2025-02-06 15:01:01,759 - INFO - Fetching employee photos
+2025-02-06 15:01:02,214 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-06 15:01:02,215 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-06 15:01:02,216 - INFO - Removed folder for ex-employee: wonhee07@company.com
+2025-02-06 15:01:03,078 - INFO - ✅ Photo sync completed successfully
+2025-02-06 15:22:15,109 - INFO - DracoAPIClient initialized successfully
+2025-02-06 15:22:15,109 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 15:22:15,748 - INFO - ✅ Successfully fetched shift details
+2025-02-06 16:12:42,790 - INFO - DracoAPIClient initialized successfully
+2025-02-06 16:12:42,918 - INFO - Starting employee photo sync
+2025-02-06 16:12:42,920 - INFO - Loaded existing metadata for 5 employees
+2025-02-06 16:12:42,920 - INFO - Fetching employee photos
+2025-02-06 16:12:42,920 - INFO - Fetching employee photos
+2025-02-06 16:12:43,989 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-06 16:12:43,990 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-06 16:12:44,544 - INFO - ✅ Photo sync completed successfully
+2025-02-06 16:14:09,960 - INFO - DracoAPIClient initialized successfully
+2025-02-06 16:14:10,064 - INFO - Starting employee photo sync
+2025-02-06 16:14:10,066 - INFO - Loaded existing metadata for 5 employees
+2025-02-06 16:14:10,066 - INFO - Fetching employee photos
+2025-02-06 16:14:10,066 - INFO - Fetching employee photos
+2025-02-06 16:14:10,442 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-06 16:14:10,442 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-06 16:14:10,993 - INFO - ✅ Photo sync completed successfully
+2025-02-06 16:15:48,194 - INFO - DracoAPIClient initialized successfully
+2025-02-06 16:15:48,286 - INFO - Starting employee photo sync
+2025-02-06 16:15:48,288 - INFO - Loaded existing metadata for 5 employees
+2025-02-06 16:15:48,288 - INFO - Fetching employee photos
+2025-02-06 16:15:48,288 - INFO - Fetching employee photos
+2025-02-06 16:15:48,840 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-06 16:15:48,841 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-06 16:15:49,976 - INFO - ✅ Photo sync completed successfully
+2025-02-06 16:18:09,422 - INFO - DracoAPIClient initialized successfully
+2025-02-06 16:18:09,491 - INFO - Starting employee photo sync
+2025-02-06 16:18:09,492 - INFO - Loaded existing metadata for 5 employees
+2025-02-06 16:18:09,492 - INFO - Fetching employee photos
+2025-02-06 16:18:09,492 - INFO - Fetching employee photos
+2025-02-06 16:18:09,939 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-06 16:18:09,939 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-06 16:18:10,543 - INFO - ✅ Photo sync completed successfully
+2025-02-06 16:22:09,418 - INFO - DracoAPIClient initialized successfully
+2025-02-06 16:22:09,511 - INFO - Starting employee photo sync
+2025-02-06 16:22:09,512 - INFO - Loaded existing metadata for 5 employees
+2025-02-06 16:22:09,513 - INFO - Fetching employee photos
+2025-02-06 16:22:09,513 - INFO - Fetching employee photos
+2025-02-06 16:22:09,881 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-06 16:22:09,881 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-06 16:22:10,668 - INFO - ✅ Photo sync completed successfully
+2025-02-06 16:24:00,163 - INFO - DracoAPIClient initialized successfully
+2025-02-06 16:24:00,253 - INFO - Starting employee photo sync
+2025-02-06 16:24:00,255 - INFO - Loaded existing metadata for 5 employees
+2025-02-06 16:24:00,255 - INFO - Fetching employee photos
+2025-02-06 16:24:00,255 - INFO - Fetching employee photos
+2025-02-06 16:24:00,719 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-06 16:24:00,720 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-06 16:24:01,313 - INFO - ✅ Photo sync completed successfully
+2025-02-06 16:26:46,912 - INFO - DracoAPIClient initialized successfully
+2025-02-06 16:26:46,915 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 16:26:47,505 - INFO - ✅ Successfully fetched shift details
+2025-02-06 16:26:47,598 - INFO - Starting employee photo sync
+2025-02-06 16:26:47,600 - INFO - Loaded existing metadata for 5 employees
+2025-02-06 16:26:47,600 - INFO - Fetching employee photos
+2025-02-06 16:26:47,600 - INFO - Fetching employee photos
+2025-02-06 16:26:47,930 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-06 16:26:47,931 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-06 16:26:48,523 - INFO - ✅ Photo sync completed successfully
+2025-02-06 16:27:17,951 - INFO - Creating check-in for dothesang20@gmail.com at 2025-02-06 16:27:16
+2025-02-06 16:27:20,110 - INFO - ✅ Check-in successful - dothesang20@gmail.com - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000007', 'pdf_url': None}}
+2025-02-06 17:03:09,362 - INFO - DracoAPIClient initialized successfully
+2025-02-06 17:03:09,362 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 17:03:09,857 - INFO - ✅ Successfully fetched shift details
+2025-02-06 17:04:11,046 - INFO - DracoAPIClient initialized successfully
+2025-02-06 17:04:11,046 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 17:04:11,434 - INFO - ✅ Successfully fetched shift details
+2025-02-06 17:04:41,129 - INFO - DracoAPIClient initialized successfully
+2025-02-06 17:04:41,129 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 17:04:41,466 - INFO - ✅ Successfully fetched shift details
+2025-02-06 17:05:10,738 - INFO - DracoAPIClient initialized successfully
+2025-02-06 17:05:10,739 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 17:05:11,082 - INFO - ✅ Successfully fetched shift details
+2025-02-06 17:06:00,399 - INFO - DracoAPIClient initialized successfully
+2025-02-06 17:06:00,399 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 17:06:00,803 - INFO - ✅ Successfully fetched shift details
+2025-02-06 17:07:17,732 - INFO - DracoAPIClient initialized successfully
+2025-02-06 17:07:17,733 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 17:07:18,083 - INFO - ✅ Successfully fetched shift details
+2025-02-06 17:08:48,317 - INFO - DracoAPIClient initialized successfully
+2025-02-06 17:08:48,317 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 17:08:48,738 - INFO - ✅ Successfully fetched shift details
+2025-02-06 17:18:11,107 - INFO - DracoAPIClient initialized successfully
+2025-02-06 17:18:11,111 - INFO - Fetching shift details for: Ca Chuẩn
+2025-02-06 17:18:11,628 - INFO - ✅ Successfully fetched shift details
+2025-02-06 17:18:11,726 - INFO - Starting employee photo sync
+2025-02-06 17:18:11,728 - INFO - Loaded existing metadata for 5 employees
+2025-02-06 17:18:11,728 - INFO - Fetching employee photos
+2025-02-06 17:18:11,728 - INFO - Fetching employee photos
+2025-02-06 17:18:12,055 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-06 17:18:12,056 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-06 17:18:13,720 - INFO - ✅ Photo sync completed successfully
+2025-02-06 17:21:10,705 - INFO - DracoAPIClient initialized successfully
+2025-02-06 17:21:10,707 - INFO - Fetching shift details for: Ca Chuẩn
+2025-02-06 17:21:11,201 - INFO - ✅ Successfully fetched shift details
+2025-02-06 17:21:11,329 - INFO - Starting employee photo sync
+2025-02-06 17:21:11,330 - INFO - Loaded existing metadata for 5 employees
+2025-02-06 17:21:11,331 - INFO - Fetching employee photos
+2025-02-06 17:21:11,331 - INFO - Fetching employee photos
+2025-02-06 17:21:11,710 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-06 17:21:11,711 - INFO - ✅ Successfully retrieved 5 employee photos
+2025-02-06 17:21:13,146 - INFO - ✅ Photo sync completed successfully
+2025-02-06 17:23:11,183 - INFO - DracoAPIClient initialized successfully
+2025-02-06 17:23:11,185 - INFO - Fetching shift details for: Ca Chuẩn
+2025-02-06 17:23:11,660 - ERROR - ❌ Network error: 403 Client Error: FORBIDDEN for url: https://fintechdraco.draerp.vn/api/method/hrms.hr.doctype.shift_type.shift_type.get_shift_details?shift_name=Ca+Chu%E1%BA%A9n
+2025-02-06 17:26:10,627 - INFO - DracoAPIClient initialized successfully
+2025-02-06 17:26:10,628 - INFO - Fetching shift details for: Ca Chuẩn
+2025-02-06 17:26:10,995 - ERROR - ❌ Network error: 403 Client Error: FORBIDDEN for url: https://fintechdraco.draerp.vn/api/method/hrms.hr.doctype.shift_type.shift_type.get_shift_details?shift_name=Ca+Chu%E1%BA%A9n
+2025-02-06 17:30:02,227 - INFO - DracoAPIClient initialized successfully
+2025-02-06 17:30:02,227 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 17:30:02,760 - ERROR - ❌ Network error: 403 Client Error: FORBIDDEN for url: https://fintechdraco.draerp.vn/api/method/hrms.hr.doctype.shift_type.shift_type.get_shift_details?shift_name=Ca+chu%E1%BA%A9n
+2025-02-06 17:30:33,526 - INFO - DracoAPIClient initialized successfully
+2025-02-06 17:30:33,526 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 17:30:33,920 - ERROR - ❌ Network error: 403 Client Error: FORBIDDEN for url: https://fintechdraco.draerp.vn/api/method/hrms.hr.doctype.shift_type.shift_type.get_shift_details?shift_name=Ca+chu%E1%BA%A9n
+2025-02-06 17:35:58,618 - INFO - DracoAPIClient initialized successfully
+2025-02-06 17:35:58,618 - INFO - Creating check-in for nghianhm@draco.biz at 2025-02-06 17:30:11
+2025-02-06 17:35:59,087 - ERROR - ❌ Error creating check-in - nghianhm@draco.biz: 417 Client Error: EXPECTATION FAILED for url: https://fintechdraco.draerp.vn/api/method/hrms.hr.doctype.employee_checkin.employee_checkin.create_employee_checkin - Data: {'email': 'nghianhm@draco.biz', 'timestamp': '2025-02-06 17:30:11', 'log_type': 'IN', 'image_base64': None, 'pdf_base64': None} - Response: No response
+2025-02-06 17:35:59,089 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 17:35:59,465 - ERROR - ❌ Network error: 403 Client Error: FORBIDDEN for url: https://fintechdraco.draerp.vn/api/method/hrms.hr.doctype.shift_type.shift_type.get_shift_details?shift_name=Ca+chu%E1%BA%A9n
+2025-02-06 17:36:18,394 - INFO - DracoAPIClient initialized successfully
+2025-02-06 17:36:18,394 - INFO - Creating check-in for sangdt@draco.biz at 2025-02-06 17:30:11
+2025-02-06 17:36:18,796 - ERROR - ❌ Error creating check-in - sangdt@draco.biz: 417 Client Error: EXPECTATION FAILED for url: https://fintechdraco.draerp.vn/api/method/hrms.hr.doctype.employee_checkin.employee_checkin.create_employee_checkin - Data: {'email': 'sangdt@draco.biz', 'timestamp': '2025-02-06 17:30:11', 'log_type': 'IN', 'image_base64': None, 'pdf_base64': None} - Response: No response
+2025-02-06 17:36:18,798 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-06 17:36:19,158 - ERROR - ❌ Network error: 403 Client Error: FORBIDDEN for url: https://fintechdraco.draerp.vn/api/method/hrms.hr.doctype.shift_type.shift_type.get_shift_details?shift_name=Ca+chu%E1%BA%A9n
+2025-02-07 08:52:59,474 - INFO - DracoAPIClient initialized successfully
+2025-02-07 08:52:59,474 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-07 08:52:59,670 - ERROR - ❌ API Error: No holiday list found for shift
+2025-02-07 08:54:02,204 - INFO - DracoAPIClient initialized successfully
+2025-02-07 08:54:02,204 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-07 08:54:02,341 - ERROR - ❌ API Error: No holiday list found for shift
+2025-02-07 08:54:44,720 - INFO - DracoAPIClient initialized successfully
+2025-02-07 08:54:44,720 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-07 08:54:44,856 - ERROR - ❌ Network error: 502 Server Error: Bad Gateway for url: https://fintechdraco.draerp.vn/api/method/hrms.hr.doctype.shift_type.shift_type.get_shift_details?shift_name=Ca+chu%E1%BA%A9n
+2025-02-07 08:54:49,992 - INFO - DracoAPIClient initialized successfully
+2025-02-07 08:54:49,992 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-07 08:54:50,082 - ERROR - ❌ Network error: 502 Server Error: Bad Gateway for url: https://fintechdraco.draerp.vn/api/method/hrms.hr.doctype.shift_type.shift_type.get_shift_details?shift_name=Ca+chu%E1%BA%A9n
+2025-02-07 08:57:23,207 - INFO - DracoAPIClient initialized successfully
+2025-02-07 08:57:23,207 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-07 08:57:23,665 - INFO - ✅ Successfully fetched shift details
+2025-02-07 08:57:35,123 - INFO - DracoAPIClient initialized successfully
+2025-02-07 08:57:35,123 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-07 08:57:35,243 - INFO - ✅ Successfully fetched shift details
+2025-02-07 09:04:20,033 - INFO - DracoAPIClient initialized successfully
+2025-02-07 09:04:20,037 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-07 09:04:20,265 - INFO - ✅ Successfully fetched shift details
+2025-02-07 09:04:20,402 - INFO - Starting employee photo sync
+2025-02-07 09:04:20,404 - INFO - Loaded existing metadata for 5 employees
+2025-02-07 09:04:20,405 - INFO - Fetching employee photos
+2025-02-07 09:04:20,405 - INFO - Fetching employee photos
+2025-02-07 09:04:20,596 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-07 09:04:20,596 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-07 09:04:20,603 - INFO - Removed folder for ex-employee: vinh@gmail.com
+2025-02-07 09:04:20,603 - INFO - Removed folder for ex-employee: an@gmai.com
+2025-02-07 09:04:20,603 - INFO - Removed folder for ex-employee: sangnhl@draco.biz
+2025-02-07 09:04:20,609 - INFO - Removed folder for ex-employee: dothesang20@gmail.com
+2025-02-07 09:04:21,444 - ERROR - Failed to download photo for: duyth@draco.biz
+2025-02-07 09:04:22,414 - ERROR - Failed to download photo for: loint@draco.biz
+2025-02-07 09:04:22,625 - INFO - ✅ Updated photo for: dungntk@draco.biz
+2025-02-07 09:04:22,815 - INFO - ✅ Updated photo for: nghianhm@draco.biz
+2025-02-07 09:04:23,003 - INFO - ✅ Updated photo for: khanhtn@draco.biz
+2025-02-07 09:04:23,200 - INFO - ✅ Updated photo for: vinhnh@draco.biz
+2025-02-07 09:04:23,400 - INFO - ✅ Updated photo for: sangnlh@dracorp.com.vn
+2025-02-07 09:04:23,605 - INFO - ✅ Updated photo for: sangdt@draco.biz
+2025-02-07 09:04:23,812 - INFO - ✅ Updated photo for: minhvdx@draco.biz
+2025-02-07 09:04:24,022 - INFO - ✅ Updated photo for: annh@draco.biz
+2025-02-07 09:04:24,228 - INFO - ✅ Updated photo for: dunght@draco.biz
+2025-02-07 09:04:25,117 - ERROR - Failed to download photo for: phuoctth@draco.biz
+2025-02-07 09:04:25,892 - ERROR - Failed to download photo for: tuanla@draco.biz
+2025-02-07 09:04:25,893 - INFO - ✅ Photo sync completed successfully
+2025-02-07 09:11:25,477 - INFO - DracoAPIClient initialized successfully
+2025-02-07 09:11:25,477 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-07 09:11:25,656 - ERROR - ❌ API Error: No holiday list found for shift
+2025-02-07 09:12:18,279 - INFO - DracoAPIClient initialized successfully
+2025-02-07 09:12:18,280 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-07 09:12:18,401 - INFO - ✅ Successfully fetched shift details
+2025-02-07 09:19:39,747 - INFO - DracoAPIClient initialized successfully
+2025-02-07 09:19:39,747 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-07 09:19:39,991 - INFO - ✅ Successfully fetched shift details

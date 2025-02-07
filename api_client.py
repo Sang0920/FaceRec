@@ -7,8 +7,11 @@ import sys
 from datetime import datetime
 from dotenv import load_dotenv
 from typing import Union, Literal
-from functools import lru_cache
+# from functools import lru_cache
 from time import time
+from dotenv import load_dotenv
+load_dotenv()
+SHIFT_NAME = os.getenv('SHIFT_NAME')
 
 os.makedirs('logs', exist_ok=True)
 logging.basicConfig(
@@ -29,11 +32,9 @@ class DracoAPIClient:
         self.base_url = os.getenv('BASE_URL')
         self.api_key = os.getenv('API_KEY')
         self.api_secret = os.getenv('API_SECRET')
-        
         if not all([self.api_url, self.base_url, self.api_key, self.api_secret]):
             logger.error("Missing required environment variables")
             raise ValueError("Missing required environment variables")
-            
         self.headers = {
             "Authorization": f"token {self.api_key}:{self.api_secret}",
             "Content-Type": "application/json"
@@ -50,14 +51,12 @@ class DracoAPIClient:
             "image_base64": image_base64,
             "pdf_base64": pdf_base64
         }
-        
         response = None
         try:
             logger.info(f"Creating check-in for {email} at {timestamp}")
             response = requests.post(url, headers=self.headers, json=data)
             response.raise_for_status()
             result = response.json() # {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000011', 'pdf_url': None}}
-            
             # if result.get('message', {}).get('name'):
             if result.get('message', {}).get('status') == 'success':
                 logger.info(f"✅ Check-in successful - {email} - Response: {result}")
@@ -65,7 +64,6 @@ class DracoAPIClient:
             else:
                 logger.error(f"❌ Check-in failed - {email} - Response: {result}")
                 return False, result
-                
         except Exception as e:
             error_response = response.text if response else "No response"
             logger.error(f"❌ Error creating check-in - {email}: {str(e)} - Data: {data} - Response: {error_response}")
@@ -75,165 +73,93 @@ class DracoAPIClient:
         """Get employee photos with logging"""
         url = f"{self.api_url}/draerp.setup.doctype.employee.employee.get_employee_photos"
         params = {"branch": branch} if branch else {}
-        
         try:
             logger.info(f"Fetching employee photos{' for ' + branch if branch else ''}")
             response = requests.get(url, headers=self.headers, params=params)
             response.raise_for_status()
-            
             data = response.json()
             photos = data.get("message", {})
-            
             if photos:
                 logger.info(f"✅ Successfully retrieved {len(photos)} employee photos")
                 return photos
             else:
                 logger.warning("No photo data found in response")
                 return {}
-                
         except Exception as e:
             logger.error(f"❌ Error fetching employee photos: {str(e)}")
             return {}
 
-    def sync_employee_photos(self, base_dir="faces"):
-        """Synchronize employee photos with logging"""
+    def sync_employee_photos(self):
+        """Synchronize employee photos with the system"""
         logger.info("Starting employee photo sync")
+        base_dir = "./faces"
         os.makedirs(base_dir, exist_ok=True)
-        metadata_file = "sync_metadata.json"
-        
-        try:
-            # Load metadata
-            if os.path.exists(metadata_file):
-                with open(metadata_file, 'r') as f:
-                    metadata = json.load(f)
+        metadata_file = "./logs/sync_metadata.json"
+        if os.path.exists(metadata_file):
+            with open(metadata_file, 'r') as f:
+                metadata = json.load(f)
                 logger.info(f"Loaded existing metadata for {len(metadata)} employees")
-            else:
-                metadata = {}
-                logger.info("No existing metadata found, starting fresh")
-
-            # Get current photos
-            photo_map = self.get_employee_photos()
-            
-            # Process removals
-            current_emails = set(photo_map.keys())
-            existing_emails = set(metadata.keys())
-            removed = existing_emails - current_emails
-            
-            for email in removed:
+        else:
+            metadata = {}
+        logger.info("Fetching employee photos")
+        photo_map = self.get_employee_photos()
+        logger.info(f"✅ Successfully retrieved {len(photo_map)} employee photos")
+        existing_folders = set(os.listdir(base_dir))
+        current_emails = set(photo_map.keys())
+        folders_to_remove = existing_folders - current_emails
+        for folder in folders_to_remove:
+            folder_path = os.path.join(base_dir, folder)
+            if os.path.exists(folder_path):
+                shutil.rmtree(folder_path)
+                logger.info(f"Removed folder for ex-employee: {folder}")
+                metadata.pop(folder, None)
+        for email, photo_path in photo_map.items():
+            try:
                 email_dir = os.path.join(base_dir, email)
-                if os.path.exists(email_dir):
-                    shutil.rmtree(email_dir)
-                    logger.info(f"Removed folder for ex-employee: {email}")
-                metadata.pop(email, None)
-
-            # Process updates
-            for email, photo_path in photo_map.items():
-                try:
-                    email_dir = os.path.join(base_dir, email)
-                    os.makedirs(email_dir, exist_ok=True)
-                    
-                    photo_url = f"{self.base_url}{photo_path}"
-                    last_modified = metadata.get(email, {}).get('last_modified', '')
-                    
-                    response = requests.head(photo_url)
-                    current_modified = response.headers.get('Last-Modified', 
-                                                         datetime.now().isoformat())
-                    
-                    if last_modified != current_modified:
-                        image_response = requests.get(photo_url)
-                        if image_response.status_code == 200:
-                            photo_file = os.path.join(email_dir, "profile.jpg")
-                            with open(photo_file, 'wb') as f:
-                                f.write(image_response.content)
-                            metadata[email] = {
-                                'last_modified': current_modified,
-                                'last_synced': datetime.now().isoformat()
-                            }
-                            logger.info(f"✅ Updated photo for: {email}")
-                        else:
-                            logger.error(f"❌ Failed to download photo for: {email}")
-                            
-                except Exception as e:
-                    logger.error(f"❌ Error processing {email}: {str(e)}")
-
-            # Save metadata
-            with open(metadata_file, 'w') as f:
-                json.dump(metadata, f, indent=2)
-            logger.info("✅ Photo sync completed successfully")
-            
-        except Exception as e:
-            logger.error(f"❌ Error during photo sync: {str(e)}")
- 
+                os.makedirs(email_dir, exist_ok=True)
+                photo_url = f"{self.base_url}{photo_path}"
+                last_modified = metadata.get(email, {}).get('last_modified', '')
+                response = requests.head(photo_url)
+                current_modified = response.headers.get('Last-Modified', datetime.now().isoformat())
+                if last_modified != current_modified:
+                    image_response = requests.get(photo_url)
+                    if image_response.status_code == 200:
+                        photo_file = os.path.join(email_dir, "profile.jpg")
+                        with open(photo_file, 'wb') as f:
+                            f.write(image_response.content)
+                        metadata[email] = {
+                            'last_modified': current_modified,
+                            'last_synced': datetime.now().isoformat()
+                        }
+                        logger.info(f"✅ Updated photo for: {email}")
+                    else:
+                        logger.error(f"Failed to download photo for: {email}")
+            except Exception as e:
+                logger.error(f"Error processing {email}: {str(e)}")
+        with open(metadata_file, 'w') as f:
+            json.dump(metadata, f, indent=2)
+        logger.info("✅ Photo sync completed successfully")
+        return True
+    
     # @lru_cache(maxsize=1)
-    # def get_shift_details(self, shift_name: str = "Ca chuẩn") -> dict:
-    #     """Get shift details including holidays and timing"""
-    #     url = f"{self.api_url}/hrms.hr.doctype.shift_type.shift_type.get_shift_details"
-    #     params = {"shift_name": shift_name}
-        
-    #     try:
-    #         logger.info(f"Fetching shift details for: {shift_name}")
-    #         response = requests.get(url, headers=self.headers, params=params)
-    #         response.raise_for_status()
-    #         data = response.json()
-            
-    #         # Only log error if not successful
-    #         if data.get("success"):
-    #             # Parse timing strings to time objects
-    #             shift_timing = data["shift_timing"]
-    #             for key in ["start_time", "end_time"]:
-    #                 if shift_timing.get(key):
-    #                     time_str = shift_timing[key]
-    #                     try:
-    #                         h, m, s = map(int, time_str.split(":"))
-    #                         shift_timing[key] = time(h, m, s)
-    #                     except ValueError as e:
-    #                         logger.warning(f"Could not parse time {time_str}: {e}")
-                
-    #             # Parse holiday dates
-    #             holidays = data["holiday_list"]["holidays"]
-    #             for holiday in holidays:
-    #                 if holiday.get("date"):
-    #                     holiday["date"] = datetime.strptime(
-    #                         holiday["date"], 
-    #                         "%Y-%m-%d"
-    #                     ).date()
-                
-    #             logger.info("✅ Successfully fetched shift details")
-    #             return data
-                
-    #         logger.error(f"❌ API Error: {data.get('message')}")
-    #         return data
-            
-    #     except requests.RequestException as e:
-    #         logger.error(f"❌ Network error: {str(e)}")
-    #         return {"success": False, "message": str(e)}
-    #     except Exception as e:
-    #         logger.error(f"❌ Processing error: {str(e)}")
-    #         return {"success": False, "message": str(e)}
-
-    @lru_cache(maxsize=1)
     def get_shift_details(self, shift_name: str = "Ca chuẩn") -> dict:
         """Get shift details including holidays and timing"""
         url = f"{self.api_url}/hrms.hr.doctype.shift_type.shift_type.get_shift_details"
         params = {"shift_name": shift_name}
-        
         try:
             logger.info(f"Fetching shift details for: {shift_name}")
             response = requests.get(url, headers=self.headers, params=params)
             response.raise_for_status()
             data = response.json()
-            
             if isinstance(data, dict) and data.get("message"):
                 # Extract actual data from message wrapper
                 data = data["message"]
-                
             if data.get("success"):
                 logger.info("✅ Successfully fetched shift details")
                 return data
             else:
                 logger.error(f"❌ API Error: {data.get('message')}")
                 return data
-                
         except requests.RequestException as e:
             logger.error(f"❌ Network error: {str(e)}")
             return {"success": False, "message": str(e)}
@@ -241,30 +167,10 @@ class DracoAPIClient:
             logger.error(f"❌ Processing error: {str(e)}")
             return {"success": False, "message": str(e)}
 
-# Main script
-if __name__ == "__main__":
-    client = DracoAPIClient()
-    details = client.get_shift_details()
-    if details.get("success"):
-        print("\nShift Details:")
-        print(json.dumps(details, indent=2, default=str))
-    else:
-        print(f"\nError: {details.get('message')}")
-
-# Main script
-if __name__ == "__main__":
-    client = DracoAPIClient()
-    details = client.get_shift_details()
-    if details.get("success"):
-        print(json.dumps(details, indent=2, default=str))
-    else:
-        print(f"Error: {details.get('message')}")
-
-
 if __name__ == "__main__":
     client = DracoAPIClient()
     # Example usage:
     # client.sync_employee_photos()
-    # client.create_checkin("sangdt@draco.biz", "2025-02-03 08:10:11")
-    shift_details = client.get_shift_details()
+    # client.create_checkin("sangdt@draco.biz", "2025-02-06 17:30:11")
+    shift_details = client.get_shift_details(shift_name=SHIFT_NAME)
     print(json.dumps(shift_details, indent=2, default=str))
