@@ -144,7 +144,7 @@ class DracoAPIClient:
     # @lru_cache(maxsize=1)
     def get_shift_details(self, shift_name: str = "Ca chuẩn") -> dict:
         """Get shift details including holidays and timing"""
-        url = f"{self.api_url}/hrms.hr.doctype.shift_type.shift_type.get_shift_details"
+        url = f"{self.api_url}/hrms.hr.doctype.shift_type.shift_type.get_shift_details_with_holidays"
         params = {"shift_name": shift_name}
         try:
             logger.info(f"Fetching shift details for: {shift_name}")

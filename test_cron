@@ -1,1 +1,1 @@
-4 9 * * * /home/teamdev/FaceRec/testing_app/run_main.sh -d 60 -t IN >> /home/teamdev/FaceRec/testing_app/logs/checkin.log 2>&1
+28 9 * * * /home/teamdev/FaceRec/testing_app/run_main.sh -d 60 -t IN >> /home/teamdev/FaceRec/testing_app/logs/checkin.log 2>&1

@@ -669,3 +669,273 @@
 2025-02-07 09:19:39,747 - INFO - DracoAPIClient initialized successfully
 2025-02-07 09:19:39,747 - INFO - Fetching shift details for: Ca chuẩn Draco
 2025-02-07 09:19:39,991 - INFO - ✅ Successfully fetched shift details
+2025-02-07 09:24:31,725 - INFO - DracoAPIClient initialized successfully
+2025-02-07 09:24:31,725 - INFO - Creating check-in for sangdt@draco.biz at 2025-02-06 17:30:11
+2025-02-07 09:24:32,029 - INFO - ✅ Check-in successful - sangdt@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000071', 'pdf_url': None}}
+2025-02-07 09:28:11,190 - INFO - DracoAPIClient initialized successfully
+2025-02-07 09:28:11,193 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-07 09:28:11,391 - INFO - ✅ Successfully fetched shift details
+2025-02-07 09:28:11,484 - INFO - Starting employee photo sync
+2025-02-07 09:28:11,485 - INFO - Loaded existing metadata for 9 employees
+2025-02-07 09:28:11,485 - INFO - Fetching employee photos
+2025-02-07 09:28:11,486 - INFO - Fetching employee photos
+2025-02-07 09:28:11,638 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-07 09:28:11,639 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-07 09:28:12,380 - ERROR - Failed to download photo for: duyth@draco.biz
+2025-02-07 09:28:13,275 - ERROR - Failed to download photo for: loint@draco.biz
+2025-02-07 09:28:14,840 - ERROR - Failed to download photo for: phuoctth@draco.biz
+2025-02-07 09:28:15,510 - ERROR - Failed to download photo for: tuanla@draco.biz
+2025-02-07 09:28:15,511 - INFO - ✅ Photo sync completed successfully
+2025-02-07 09:29:07,247 - INFO - Creating check-in for annh@draco.biz at 2025-02-07 09:29:06
+2025-02-07 09:29:07,641 - INFO - ✅ Check-in successful - annh@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000072', 'pdf_url': None}}
+2025-02-07 09:36:22,351 - INFO - DracoAPIClient initialized successfully
+2025-02-07 09:36:22,351 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-07 09:36:22,631 - INFO - ✅ Successfully fetched shift details
+2025-02-07 09:50:11,356 - INFO - DracoAPIClient initialized successfully
+2025-02-07 09:50:11,358 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-07 09:50:11,543 - INFO - ✅ Successfully fetched shift details
+2025-02-07 09:50:11,633 - INFO - Starting employee photo sync
+2025-02-07 09:50:11,634 - INFO - Loaded existing metadata for 9 employees
+2025-02-07 09:50:11,635 - INFO - Fetching employee photos
+2025-02-07 09:50:11,635 - INFO - Fetching employee photos
+2025-02-07 09:50:11,882 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-07 09:50:11,882 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-07 09:50:12,711 - ERROR - Failed to download photo for: duyth@draco.biz
+2025-02-07 09:50:13,693 - ERROR - Failed to download photo for: loint@draco.biz
+2025-02-07 09:50:15,241 - ERROR - Failed to download photo for: phuoctth@draco.biz
+2025-02-07 09:50:15,939 - ERROR - Failed to download photo for: tuanla@draco.biz
+2025-02-07 09:50:15,940 - INFO - ✅ Photo sync completed successfully
+2025-02-07 09:51:16,464 - INFO - DracoAPIClient initialized successfully
+2025-02-07 09:51:16,466 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-07 09:51:16,603 - INFO - ✅ Successfully fetched shift details
+2025-02-07 09:51:16,711 - INFO - Starting employee photo sync
+2025-02-07 09:51:16,713 - INFO - Loaded existing metadata for 9 employees
+2025-02-07 09:51:16,713 - INFO - Fetching employee photos
+2025-02-07 09:51:16,713 - INFO - Fetching employee photos
+2025-02-07 09:51:16,886 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-07 09:51:16,886 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-07 09:51:17,689 - ERROR - Failed to download photo for: duyth@draco.biz
+2025-02-07 09:51:18,840 - ERROR - Failed to download photo for: loint@draco.biz
+2025-02-07 09:51:20,372 - ERROR - Failed to download photo for: phuoctth@draco.biz
+2025-02-07 09:51:21,140 - ERROR - Failed to download photo for: tuanla@draco.biz
+2025-02-07 09:51:21,141 - INFO - ✅ Photo sync completed successfully
+2025-02-07 09:51:49,614 - INFO - Creating check-in for dungntk@draco.biz at 2025-02-07 09:51:49
+2025-02-07 09:51:50,188 - INFO - ✅ Check-in successful - dungntk@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000073', 'pdf_url': None}}
+2025-02-07 09:55:12,157 - INFO - DracoAPIClient initialized successfully
+2025-02-07 09:55:12,160 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-07 09:55:12,287 - INFO - ✅ Successfully fetched shift details
+2025-02-07 09:55:12,396 - INFO - Starting employee photo sync
+2025-02-07 09:55:12,397 - INFO - Loaded existing metadata for 9 employees
+2025-02-07 09:55:12,398 - INFO - Fetching employee photos
+2025-02-07 09:55:12,398 - INFO - Fetching employee photos
+2025-02-07 09:55:12,533 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-07 09:55:12,534 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-07 09:55:13,218 - ERROR - Failed to download photo for: duyth@draco.biz
+2025-02-07 09:55:14,114 - ERROR - Failed to download photo for: loint@draco.biz
+2025-02-07 09:55:15,585 - ERROR - Failed to download photo for: phuoctth@draco.biz
+2025-02-07 09:55:16,322 - ERROR - Failed to download photo for: tuanla@draco.biz
+2025-02-07 09:55:16,323 - INFO - ✅ Photo sync completed successfully
+2025-02-07 09:56:17,313 - INFO - Creating check-in for dungntk@draco.biz at 2025-02-07 09:56:17
+2025-02-07 09:56:17,782 - INFO - ✅ Check-in successful - dungntk@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000074', 'pdf_url': None}}
+2025-02-07 09:58:11,214 - INFO - DracoAPIClient initialized successfully
+2025-02-07 09:58:11,216 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-07 09:58:11,374 - INFO - ✅ Successfully fetched shift details
+2025-02-07 09:58:11,475 - INFO - Starting employee photo sync
+2025-02-07 09:58:11,477 - INFO - Loaded existing metadata for 9 employees
+2025-02-07 09:58:11,477 - INFO - Fetching employee photos
+2025-02-07 09:58:11,477 - INFO - Fetching employee photos
+2025-02-07 09:58:11,632 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-07 09:58:11,633 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-07 09:58:12,422 - ERROR - Failed to download photo for: duyth@draco.biz
+2025-02-07 09:58:13,334 - ERROR - Failed to download photo for: loint@draco.biz
+2025-02-07 09:58:14,829 - ERROR - Failed to download photo for: phuoctth@draco.biz
+2025-02-07 09:58:15,545 - ERROR - Failed to download photo for: tuanla@draco.biz
+2025-02-07 09:58:15,545 - INFO - ✅ Photo sync completed successfully
+2025-02-07 09:58:54,795 - INFO - Creating check-in for annh@draco.biz at 2025-02-07 09:58:54
+2025-02-07 09:58:55,289 - INFO - ✅ Check-in successful - annh@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000075', 'pdf_url': None}}
+2025-02-07 09:58:58,079 - INFO - Creating check-in for sangdt@draco.biz at 2025-02-07 09:58:57
+2025-02-07 09:58:58,364 - INFO - ✅ Check-in successful - sangdt@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000076', 'pdf_url': None}}
+2025-02-07 09:59:08,265 - INFO - Creating check-in for sangnlh@dracorp.com.vn at 2025-02-07 09:59:07
+2025-02-07 09:59:08,575 - INFO - ✅ Check-in successful - sangnlh@dracorp.com.vn - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000077', 'pdf_url': None}}
+2025-02-07 10:03:48,767 - INFO - DracoAPIClient initialized successfully
+2025-02-07 10:03:48,767 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-07 10:03:49,015 - INFO - ✅ Successfully fetched shift details
+2025-02-07 17:20:14,185 - INFO - DracoAPIClient initialized successfully
+2025-02-07 17:20:14,187 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-07 17:20:14,428 - INFO - ✅ Successfully fetched shift details
+2025-02-07 17:20:14,529 - INFO - Starting employee photo sync
+2025-02-07 17:20:14,530 - INFO - Loaded existing metadata for 9 employees
+2025-02-07 17:20:14,530 - INFO - Fetching employee photos
+2025-02-07 17:20:14,530 - INFO - Fetching employee photos
+2025-02-07 17:20:14,662 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-07 17:20:14,663 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-07 17:20:15,418 - ERROR - Failed to download photo for: duyth@draco.biz
+2025-02-07 17:20:15,625 - INFO - ✅ Updated photo for: loint@draco.biz
+2025-02-07 17:20:17,398 - ERROR - Failed to download photo for: phuoctth@draco.biz
+2025-02-07 17:20:18,105 - ERROR - Failed to download photo for: tuanla@draco.biz
+2025-02-07 17:20:18,106 - INFO - ✅ Photo sync completed successfully
+2025-02-07 17:22:41,995 - INFO - Creating check-in for dunght@draco.biz at 2025-02-07 17:22:41
+2025-02-07 17:22:42,601 - INFO - ✅ Check-in successful - dunght@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000078', 'pdf_url': None}}
+2025-02-07 17:23:04,771 - INFO - Creating check-in for minhvdx@draco.biz at 2025-02-07 17:23:04
+2025-02-07 17:23:05,127 - INFO - ✅ Check-in successful - minhvdx@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000079', 'pdf_url': None}}
+2025-02-07 17:23:52,434 - INFO - Creating check-in for annh@draco.biz at 2025-02-07 17:23:52
+2025-02-07 17:23:52,878 - INFO - ✅ Check-in successful - annh@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000080', 'pdf_url': None}}
+2025-02-07 18:20:19,028 - INFO - Creating check-in for dungntk@draco.biz at 2025-02-07 18:20:19
+2025-02-07 18:20:19,485 - INFO - ✅ Check-in successful - dungntk@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000086', 'pdf_url': None}}
+2025-02-08 07:30:14,075 - INFO - DracoAPIClient initialized successfully
+2025-02-08 07:30:14,078 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-08 07:30:14,319 - INFO - ✅ Successfully fetched shift details
+2025-02-08 07:30:14,405 - INFO - Starting employee photo sync
+2025-02-08 07:30:14,407 - INFO - Loaded existing metadata for 10 employees
+2025-02-08 07:30:14,407 - INFO - Fetching employee photos
+2025-02-08 07:30:14,407 - INFO - Fetching employee photos
+2025-02-08 07:30:14,547 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-08 07:30:14,548 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-08 07:30:15,426 - ERROR - Failed to download photo for: duyth@draco.biz
+2025-02-08 07:30:17,381 - ERROR - Failed to download photo for: phuoctth@draco.biz
+2025-02-08 07:30:18,213 - ERROR - Failed to download photo for: tuanla@draco.biz
+2025-02-08 07:30:18,215 - INFO - ✅ Photo sync completed successfully
+2025-02-08 17:20:12,337 - INFO - DracoAPIClient initialized successfully
+2025-02-08 17:20:12,339 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-08 17:20:12,573 - INFO - ✅ Successfully fetched shift details
+2025-02-08 17:20:12,654 - INFO - Starting employee photo sync
+2025-02-08 17:20:12,655 - INFO - Loaded existing metadata for 10 employees
+2025-02-08 17:20:12,655 - INFO - Fetching employee photos
+2025-02-08 17:20:12,655 - INFO - Fetching employee photos
+2025-02-08 17:20:12,887 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-08 17:20:12,888 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-08 17:20:13,948 - ERROR - Failed to download photo for: duyth@draco.biz
+2025-02-08 17:20:16,132 - ERROR - Failed to download photo for: phuoctth@draco.biz
+2025-02-08 17:20:16,935 - ERROR - Failed to download photo for: tuanla@draco.biz
+2025-02-08 17:20:16,936 - INFO - ✅ Photo sync completed successfully
+2025-02-09 07:30:12,559 - INFO - DracoAPIClient initialized successfully
+2025-02-09 07:30:12,561 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-09 07:30:12,803 - INFO - ✅ Successfully fetched shift details
+2025-02-09 17:20:12,038 - INFO - DracoAPIClient initialized successfully
+2025-02-09 17:20:12,040 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-09 17:20:12,310 - INFO - ✅ Successfully fetched shift details
+2025-02-10 07:30:12,195 - INFO - DracoAPIClient initialized successfully
+2025-02-10 07:30:12,198 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-10 07:30:12,449 - INFO - ✅ Successfully fetched shift details
+2025-02-10 07:30:12,540 - INFO - Starting employee photo sync
+2025-02-10 07:30:12,541 - INFO - Loaded existing metadata for 10 employees
+2025-02-10 07:30:12,541 - INFO - Fetching employee photos
+2025-02-10 07:30:12,541 - INFO - Fetching employee photos
+2025-02-10 07:30:12,697 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-10 07:30:12,698 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-10 07:30:13,551 - ERROR - Failed to download photo for: duyth@draco.biz
+2025-02-10 07:30:15,537 - ERROR - Failed to download photo for: phuoctth@draco.biz
+2025-02-10 07:30:16,262 - ERROR - Failed to download photo for: tuanla@draco.biz
+2025-02-10 07:30:16,263 - INFO - ✅ Photo sync completed successfully
+2025-02-10 08:49:33,927 - INFO - DracoAPIClient initialized successfully
+2025-02-10 08:49:33,927 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-10 08:49:34,094 - ERROR - ❌ Network error: 417 Client Error: EXPECTATION FAILED for url: https://fintechdraco.draerp.vn/api/method/hrms.hr.doctype.shift_type.shift_type.get_shift_details_with_holidays?shift_name=Ca+chu%E1%BA%A9n+Draco
+2025-02-10 17:16:48,743 - INFO - DracoAPIClient initialized successfully
+2025-02-10 17:16:48,744 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-10 17:16:48,916 - ERROR - ❌ Network error: 417 Client Error: EXPECTATION FAILED for url: https://fintechdraco.draerp.vn/api/method/hrms.hr.doctype.shift_type.shift_type.get_shift_details_with_holidays?shift_name=Ca+chu%E1%BA%A9n+Draco
+2025-02-10 17:20:16,120 - INFO - DracoAPIClient initialized successfully
+2025-02-10 17:20:16,124 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-10 17:20:16,281 - ERROR - ❌ Network error: 417 Client Error: EXPECTATION FAILED for url: https://fintechdraco.draerp.vn/api/method/hrms.hr.doctype.shift_type.shift_type.get_shift_details_with_holidays?shift_name=Ca+chu%E1%BA%A9n+Draco
+2025-02-10 17:21:31,258 - INFO - DracoAPIClient initialized successfully
+2025-02-10 17:21:31,258 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-10 17:21:31,438 - ERROR - ❌ Network error: 417 Client Error: EXPECTATION FAILED for url: https://fintechdraco.draerp.vn/api/method/hrms.hr.doctype.shift_type.shift_type.get_shift_details_with_holidays?shift_name=Ca+chu%E1%BA%A9n+Draco
+2025-02-10 17:26:47,439 - INFO - DracoAPIClient initialized successfully
+2025-02-10 17:26:47,439 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-10 17:26:47,612 - INFO - ✅ Successfully fetched shift details
+2025-02-10 17:28:25,076 - INFO - DracoAPIClient initialized successfully
+2025-02-10 17:28:25,079 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-10 17:28:25,239 - INFO - ✅ Successfully fetched shift details
+2025-02-10 17:28:25,384 - INFO - Starting employee photo sync
+2025-02-10 17:28:25,386 - INFO - Loaded existing metadata for 10 employees
+2025-02-10 17:28:25,386 - INFO - Fetching employee photos
+2025-02-10 17:28:25,386 - INFO - Fetching employee photos
+2025-02-10 17:28:25,568 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-10 17:28:25,569 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-10 17:28:26,472 - ERROR - Failed to download photo for: duyth@draco.biz
+2025-02-10 17:28:28,537 - ERROR - Failed to download photo for: phuoctth@draco.biz
+2025-02-10 17:28:29,362 - ERROR - Failed to download photo for: tuanla@draco.biz
+2025-02-10 17:28:29,363 - INFO - ✅ Photo sync completed successfully
+2025-02-10 17:31:17,930 - INFO - Creating check-in for sangdt@draco.biz at 2025-02-10 17:31:17
+2025-02-10 17:31:18,834 - INFO - ✅ Check-in successful - sangdt@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000096', 'pdf_url': None}}
+2025-02-10 17:31:26,191 - INFO - Creating check-in for sangnlh@dracorp.com.vn at 2025-02-10 17:31:25
+2025-02-10 17:31:26,546 - INFO - ✅ Check-in successful - sangnlh@dracorp.com.vn - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000097', 'pdf_url': None}}
+2025-02-10 17:31:27,706 - INFO - Creating check-in for dungntk@draco.biz at 2025-02-10 17:31:27
+2025-02-10 17:31:28,124 - INFO - ✅ Check-in successful - dungntk@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000098', 'pdf_url': None}}
+2025-02-10 17:32:33,511 - INFO - Creating check-in for nghianhm@draco.biz at 2025-02-10 17:32:33
+2025-02-10 17:32:33,952 - INFO - ✅ Check-in successful - nghianhm@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000099', 'pdf_url': None}}
+2025-02-10 17:32:55,821 - INFO - Creating check-in for loint@draco.biz at 2025-02-10 17:32:55
+2025-02-10 17:32:56,253 - INFO - ✅ Check-in successful - loint@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000100', 'pdf_url': None}}
+2025-02-11 07:30:14,095 - INFO - DracoAPIClient initialized successfully
+2025-02-11 07:30:14,102 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-11 07:30:14,261 - INFO - ✅ Successfully fetched shift details
+2025-02-11 07:30:14,368 - INFO - Starting employee photo sync
+2025-02-11 07:30:14,370 - INFO - Loaded existing metadata for 10 employees
+2025-02-11 07:30:14,370 - INFO - Fetching employee photos
+2025-02-11 07:30:14,370 - INFO - Fetching employee photos
+2025-02-11 07:30:14,551 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-11 07:30:14,552 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-11 07:30:15,366 - ERROR - Failed to download photo for: duyth@draco.biz
+2025-02-11 07:30:17,360 - ERROR - Failed to download photo for: phuoctth@draco.biz
+2025-02-11 07:30:18,139 - ERROR - Failed to download photo for: tuanla@draco.biz
+2025-02-11 07:30:18,140 - INFO - ✅ Photo sync completed successfully
+2025-02-11 08:28:05,222 - INFO - DracoAPIClient initialized successfully
+2025-02-11 08:28:05,222 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-11 08:28:05,415 - INFO - ✅ Successfully fetched shift details
+2025-02-11 09:00:11,067 - INFO - DracoAPIClient initialized successfully
+2025-02-11 09:00:11,078 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-11 09:00:11,440 - INFO - ✅ Successfully fetched shift details
+2025-02-11 09:00:11,567 - INFO - Starting employee photo sync
+2025-02-11 09:00:11,569 - INFO - Loaded existing metadata for 10 employees
+2025-02-11 09:00:11,569 - INFO - Fetching employee photos
+2025-02-11 09:00:11,569 - INFO - Fetching employee photos
+2025-02-11 09:00:11,753 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-11 09:00:11,754 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-11 09:00:12,570 - ERROR - Failed to download photo for: duyth@draco.biz
+2025-02-11 09:00:14,572 - ERROR - Failed to download photo for: phuoctth@draco.biz
+2025-02-11 09:00:15,276 - ERROR - Failed to download photo for: tuanla@draco.biz
+2025-02-11 09:00:15,277 - INFO - ✅ Photo sync completed successfully
+2025-02-11 09:01:16,294 - INFO - Creating check-in for dungntk@draco.biz at 2025-02-11 09:01:15
+2025-02-11 09:01:16,996 - INFO - ✅ Check-in successful - dungntk@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000111', 'pdf_url': None}}
+2025-02-11 09:07:20,986 - INFO - DracoAPIClient initialized successfully
+2025-02-11 09:07:20,989 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-11 09:07:21,187 - INFO - ✅ Successfully fetched shift details
+2025-02-11 09:07:21,289 - INFO - Starting employee photo sync
+2025-02-11 09:07:21,290 - INFO - Loaded existing metadata for 10 employees
+2025-02-11 09:07:21,291 - INFO - Fetching employee photos
+2025-02-11 09:07:21,291 - INFO - Fetching employee photos
+2025-02-11 09:07:21,427 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-11 09:07:21,428 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-11 09:07:22,201 - ERROR - Failed to download photo for: duyth@draco.biz
+2025-02-11 09:07:24,125 - ERROR - Failed to download photo for: phuoctth@draco.biz
+2025-02-11 09:07:24,979 - ERROR - Failed to download photo for: tuanla@draco.biz
+2025-02-11 09:07:24,980 - INFO - ✅ Photo sync completed successfully
+2025-02-11 09:08:10,411 - INFO - Creating check-in for dungntk@draco.biz at 2025-02-11 09:08:10
+2025-02-11 09:08:11,010 - INFO - ✅ Check-in successful - dungntk@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000112', 'pdf_url': None}}
+2025-02-11 09:08:56,831 - INFO - DracoAPIClient initialized successfully
+2025-02-11 09:08:56,834 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-11 09:08:57,008 - INFO - ✅ Successfully fetched shift details
+2025-02-11 09:08:57,099 - INFO - Starting employee photo sync
+2025-02-11 09:08:57,101 - INFO - Loaded existing metadata for 10 employees
+2025-02-11 09:08:57,101 - INFO - Fetching employee photos
+2025-02-11 09:08:57,101 - INFO - Fetching employee photos
+2025-02-11 09:08:57,238 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-11 09:08:57,239 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-11 09:08:58,038 - ERROR - Failed to download photo for: duyth@draco.biz
+2025-02-11 09:08:59,960 - ERROR - Failed to download photo for: phuoctth@draco.biz
+2025-02-11 09:09:00,681 - ERROR - Failed to download photo for: tuanla@draco.biz
+2025-02-11 09:09:00,682 - INFO - ✅ Photo sync completed successfully
+2025-02-11 09:09:19,058 - INFO - Creating check-in for dungntk@draco.biz at 2025-02-11 09:09:19
+2025-02-11 09:09:19,675 - INFO - ✅ Check-in successful - dungntk@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000113', 'pdf_url': None}}
+2025-02-11 09:13:13,390 - INFO - DracoAPIClient initialized successfully
+2025-02-11 09:13:13,392 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-11 09:13:13,576 - INFO - ✅ Successfully fetched shift details
+2025-02-11 09:13:13,671 - INFO - Starting employee photo sync
+2025-02-11 09:13:13,673 - INFO - Loaded existing metadata for 10 employees
+2025-02-11 09:13:13,673 - INFO - Fetching employee photos
+2025-02-11 09:13:13,673 - INFO - Fetching employee photos
+2025-02-11 09:13:13,795 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-11 09:13:13,795 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-11 09:13:14,562 - ERROR - Failed to download photo for: duyth@draco.biz
+2025-02-11 09:13:16,536 - ERROR - Failed to download photo for: phuoctth@draco.biz
+2025-02-11 09:13:17,279 - ERROR - Failed to download photo for: tuanla@draco.biz
+2025-02-11 09:13:17,280 - INFO - ✅ Photo sync completed successfully

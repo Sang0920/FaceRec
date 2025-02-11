@@ -19,6 +19,7 @@ from api_client import DracoAPIClient
 import base64
 from queue import Empty, Full
 import argparse
+import psutil
 
 load_dotenv()
 # Environment and configuration
@@ -78,6 +79,28 @@ PROCESS_DURATION = args.process_duration
 CHECKIN_TYPE = args.checkin_type
 BASE_PROFILE_DIR = os.path.join(PROFILES_DIR, datetime.now().strftime("%Y-%m-%d"), CHECKIN_TYPE)
 os.makedirs(BASE_PROFILE_DIR, exist_ok=True)
+
+def get_memory_usage():
+    """Get current memory usage of the process"""
+    process = psutil.Process(os.getpid())
+    memory_info = process.memory_info()
+    
+    return {
+        'rss': memory_info.rss / 1024 / 1024,  # RSS in MB
+        'vms': memory_info.vms / 1024 / 1024,  # VMS in MB
+    }
+
+def signal_handler(signum, frame):
+    """Handle shutdown signals and display memory usage"""
+    mem_stats = get_memory_usage()
+    print("\n=== Memory Usage at Shutdown ===")
+    print(f"RSS Memory: {mem_stats['rss']:.2f} MB")
+    print(f"Virtual Memory: {mem_stats['vms']:.2f} MB")
+    print("=== Shutting down gracefully ===")
+    # sys.exit(0)
+
+signal.signal(signal.SIGINT, signal_handler)
+signal.signal(signal.SIGTERM, signal_handler)
 
 class ProfileManager:
     def __init__(self):
@@ -164,6 +187,12 @@ class RecognitionProcess:
 
     def shutdown(self):
         print("Shutting down recognition process...")
+        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Initiating recognition process shutdown...")
+        # Show the RAM usage before shutdown
+        mem_stats = get_memory_usage()
+        print(f"RSS Memory: {mem_stats['rss']:.2f} MB")
+        print(f"Virtual Memory: {mem_stats['vms']:.2f} MB")
+
         self.stop_event.set()
         # Wait for queue to empty
         while not self.input_queue.empty():
@@ -172,7 +201,7 @@ class RecognitionProcess:
             except Empty:
                 break
                 
-        self.process.join(timeout=5)
+        self.process.join(timeout=5) # secs
         if self.process.is_alive():
             print("Force terminating recognition process...")
             self.process.terminate()

@@ -1,0 +1,1152 @@
+Running on device: cpu
+Track buffer: 150
+Frame rate: 12.0 FPS
+Track buffer timeout: 60 frames
+2025-02-11 09:13:13,390 - INFO - DracoAPIClient initialized successfully
+2025-02-11 09:13:13,392 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-11 09:13:13,576 - INFO - ✅ Successfully fetched shift details
+Current date: 2025-02-11
+First holiday: 2025-01-01
+Starting face tracking...
+2025-02-11 09:13:13,671 - INFO - Starting employee photo sync
+2025-02-11 09:13:13,673 - INFO - Loaded existing metadata for 10 employees
+2025-02-11 09:13:13,673 - INFO - Fetching employee photos
+2025-02-11 09:13:13,673 - INFO - Fetching employee photos
+2025-02-11 09:13:13,795 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-11 09:13:13,795 - INFO - ✅ Successfully retrieved 13 employee photos
+2025-02-11 09:13:14,562 - ERROR - Failed to download photo for: duyth@draco.biz
+2025-02-11 09:13:16,536 - ERROR - Failed to download photo for: phuoctth@draco.biz
+2025-02-11 09:13:17,279 - ERROR - Failed to download photo for: tuanla@draco.biz
+2025-02-11 09:13:17,280 - INFO - ✅ Photo sync completed successfully
+
+0: 640x384 (no detections), 185.1ms
+
+0: 640x384 (no detections), 86.0ms
+
+0: 640x384 (no detections), 66.0ms
+
+0: 640x384 (no detections), 62.3ms
+
+0: 640x384 (no detections), 67.9ms
+
+0: 640x384 (no detections), 71.2ms
+
+0: 640x384 (no detections), 67.2ms
+
+0: 640x384 (no detections), 63.6ms
+
+0: 640x384 (no detections), 67.1ms
+
+0: 640x384 (no detections), 62.5ms
+
+0: 640x384 (no detections), 66.2ms
+
+0: 640x384 (no detections), 66.5ms
+
+0: 640x384 (no detections), 67.5ms
+
+0: 640x384 (no detections), 66.2ms
+
+0: 640x384 (no detections), 65.5ms
+
+0: 640x384 (no detections), 67.8ms
+
+0: 640x384 (no detections), 61.8ms
+
+0: 640x384 (no detections), 66.3ms
+
+0: 640x384 (no detections), 66.2ms
+
+0: 640x384 (no detections), 69.7ms
+
+0: 640x384 (no detections), 65.2ms
+
+0: 640x384 (no detections), 66.6ms
+
+0: 640x384 (no detections), 71.2ms
+
+0: 640x384 (no detections), 67.7ms
+
+0: 640x384 (no detections), 68.1ms
+
+0: 640x384 (no detections), 68.0ms
+
+0: 640x384 1 face, 65.3ms
+
+0: 640x384 1 face, 85.7ms
+
+0: 640x384 1 face, 61.4ms
+
+0: 640x384 1 face, 78.0ms
+
+0: 640x384 1 face, 68.7ms
+
+0: 640x384 1 face, 64.9ms
+
+0: 640x384 1 face, 64.5ms
+
+0: 640x384 1 face, 64.1ms
+
+0: 640x384 1 face, 66.2ms
+
+0: 640x384 1 face, 66.6ms
+
+0: 640x384 1 face, 67.1ms
+
+0: 640x384 1 face, 64.5ms
+
+0: 640x384 1 face, 64.0ms
+
+0: 640x384 1 face, 63.4ms
+
+0: 640x384 1 face, 62.8ms
+
+0: 640x384 1 face, 63.7ms
+
+0: 640x384 1 face, 63.1ms
+
+0: 640x384 (no detections), 62.1ms
+
+0: 640x384 (no detections), 61.6ms
+
+0: 640x384 (no detections), 63.7ms
+
+0: 640x384 (no detections), 63.8ms
+
+0: 640x384 (no detections), 61.2ms
+
+0: 640x384 1 face, 64.8ms
+
+0: 640x384 (no detections), 62.3ms
+
+0: 640x384 (no detections), 64.2ms
+
+0: 640x384 (no detections), 61.7ms
+
+0: 640x384 (no detections), 61.6ms
+
+0: 640x384 (no detections), 61.2ms
+
+0: 640x384 (no detections), 62.2ms
+
+0: 640x384 (no detections), 61.5ms
+
+0: 640x384 (no detections), 61.8ms
+
+0: 640x384 (no detections), 64.0ms
+
+0: 640x384 (no detections), 62.5ms
+
+0: 640x384 (no detections), 222.3ms
+
+0: 640x384 (no detections), 60.0ms
+
+0: 640x384 (no detections), 63.7ms
+
+0: 640x384 (no detections), 61.8ms
+
+0: 640x384 (no detections), 60.7ms
+
+0: 640x384 1 face, 60.8ms
+
+0: 640x384 1 face, 61.4ms
+
+0: 640x384 (no detections), 63.3ms
+
+0: 640x384 (no detections), 67.8ms
+
+0: 640x384 (no detections), 65.5ms
+
+0: 640x384 (no detections), 65.5ms
+
+0: 640x384 (no detections), 63.3ms
+
+0: 640x384 (no detections), 61.1ms
+
+0: 640x384 (no detections), 63.7ms
+
+0: 640x384 (no detections), 62.5ms
+
+0: 640x384 (no detections), 61.8ms
+
+0: 640x384 (no detections), 62.4ms
+
+0: 640x384 (no detections), 63.6ms
+
+0: 640x384 (no detections), 62.7ms
+
+0: 640x384 1 face, 62.1ms
+
+0: 640x384 (no detections), 65.0ms
+
+0: 640x384 1 face, 61.9ms
+
+0: 640x384 1 face, 77.5ms
+
+0: 640x384 1 face, 88.3ms
+
+0: 640x384 1 face, 110.5ms
+
+0: 640x384 1 face, 64.9ms
+
+0: 640x384 1 face, 67.3ms
+
+0: 640x384 1 face, 112.7ms
+
+0: 640x384 1 face, 104.8ms
+
+0: 640x384 1 face, 83.5ms
+
+0: 640x384 1 face, 109.2ms
+
+0: 640x384 1 face, 105.7ms
+
+0: 640x384 1 face, 119.2ms
+
+0: 640x384 1 face, 103.0ms
+
+0: 640x384 1 face, 102.0ms
+
+0: 640x384 1 face, 100.1ms
+
+0: 640x384 1 face, 62.0ms
+
+0: 640x384 1 face, 83.8ms
+
+0: 640x384 1 face, 103.6ms
+
+0: 640x384 1 face, 94.8ms
+
+0: 640x384 1 face, 94.5ms
+
+0: 640x384 1 face, 88.6ms
+
+0: 640x384 1 face, 90.0ms
+
+0: 640x384 1 face, 99.9ms
+
+0: 640x384 1 face, 69.7ms
+
+0: 640x384 1 face, 73.2ms
+
+0: 640x384 1 face, 108.4ms
+
+0: 640x384 1 face, 98.0ms
+
+0: 640x384 1 face, 68.8ms
+
+0: 640x384 1 face, 74.7ms
+
+0: 640x384 1 face, 71.0ms
+
+0: 640x384 1 face, 69.6ms
+
+0: 640x384 1 face, 71.6ms
+
+0: 640x384 1 face, 71.5ms
+
+0: 640x384 1 face, 71.6ms
+
+0: 640x384 1 face, 66.2ms
+
+0: 640x384 1 face, 65.2ms
+
+0: 640x384 1 face, 69.9ms
+
+0: 640x384 1 face, 70.6ms
+
+0: 640x384 1 face, 69.0ms
+
+0: 640x384 1 face, 74.3ms
+
+0: 640x384 (no detections), 73.7ms
+
+0: 640x384 (no detections), 71.6ms
+
+0: 640x384 (no detections), 67.4ms
+
+0: 640x384 (no detections), 71.2ms
+
+0: 640x384 (no detections), 64.5ms
+
+0: 640x384 1 face, 64.6ms
+
+0: 640x384 (no detections), 61.8ms
+
+0: 640x384 (no detections), 64.3ms
+
+0: 640x384 1 face, 61.5ms
+
+0: 640x384 (no detections), 62.5ms
+
+0: 640x384 (no detections), 62.5ms
+
+0: 640x384 (no detections), 60.9ms
+
+0: 640x384 (no detections), 63.1ms
+
+0: 640x384 1 face, 61.7ms
+
+0: 640x384 (no detections), 62.7ms
+
+0: 640x384 1 face, 61.0ms
+
+0: 640x384 (no detections), 61.9ms
+
+0: 640x384 (no detections), 61.7ms
+
+0: 640x384 (no detections), 63.7ms
+
+0: 640x384 (no detections), 61.6ms
+
+0: 640x384 (no detections), 62.3ms
+
+0: 640x384 (no detections), 61.6ms
+
+0: 640x384 (no detections), 61.6ms
+
+0: 640x384 (no detections), 61.7ms
+
+0: 640x384 (no detections), 66.2ms
+
+0: 640x384 (no detections), 63.8ms
+
+0: 640x384 (no detections), 61.6ms
+
+0: 640x384 (no detections), 62.9ms
+
+0: 640x384 1 face, 62.0ms
+
+0: 640x384 (no detections), 63.3ms
+
+0: 640x384 (no detections), 62.9ms
+
+0: 640x384 1 face, 62.9ms
+
+0: 640x384 (no detections), 61.5ms
+
+0: 640x384 (no detections), 62.5ms
+
+0: 640x384 (no detections), 68.7ms
+
+0: 640x384 (no detections), 61.6ms
+
+0: 640x384 (no detections), 62.9ms
+
+0: 640x384 1 face, 61.3ms
+
+0: 640x384 1 face, 66.2ms
+
+0: 640x384 1 face, 62.1ms
+
+0: 640x384 (no detections), 63.5ms
+
+0: 640x384 (no detections), 62.3ms
+
+0: 640x384 1 face, 69.6ms
+
+0: 640x384 (no detections), 63.2ms
+
+0: 640x384 (no detections), 64.6ms
+
+0: 640x384 (no detections), 61.9ms
+
+0: 640x384 (no detections), 61.3ms
+
+0: 640x384 (no detections), 62.6ms
+
+0: 640x384 (no detections), 61.2ms
+
+0: 640x384 (no detections), 62.8ms
+
+0: 640x384 (no detections), 61.8ms
+
+0: 640x384 (no detections), 64.1ms
+
+0: 640x384 (no detections), 67.0ms
+
+0: 640x384 (no detections), 62.8ms
+
+0: 640x384 (no detections), 63.6ms
+
+0: 640x384 (no detections), 60.9ms
+
+0: 640x384 (no detections), 61.6ms
+
+0: 640x384 (no detections), 208.1ms
+
+0: 640x384 (no detections), 63.2ms
+
+0: 640x384 (no detections), 62.1ms
+
+0: 640x384 (no detections), 61.7ms
+
+0: 640x384 (no detections), 62.5ms
+
+0: 640x384 (no detections), 62.2ms
+
+0: 640x384 (no detections), 204.9ms
+
+0: 640x384 (no detections), 62.1ms
+
+0: 640x384 (no detections), 62.8ms
+
+0: 640x384 (no detections), 61.9ms
+
+0: 640x384 (no detections), 62.4ms
+
+0: 640x384 (no detections), 62.7ms
+
+0: 640x384 (no detections), 62.5ms
+
+0: 640x384 (no detections), 220.1ms
+
+0: 640x384 (no detections), 60.7ms
+
+0: 640x384 (no detections), 61.8ms
+
+0: 640x384 (no detections), 62.6ms
+
+0: 640x384 (no detections), 62.1ms
+
+0: 640x384 (no detections), 62.0ms
+
+0: 640x384 (no detections), 62.0ms
+
+0: 640x384 (no detections), 63.2ms
+
+0: 640x384 (no detections), 61.4ms
+
+0: 640x384 (no detections), 63.0ms
+
+0: 640x384 (no detections), 62.5ms
+
+0: 640x384 (no detections), 62.7ms
+
+0: 640x384 (no detections), 63.0ms
+
+0: 640x384 (no detections), 63.5ms
+
+0: 640x384 (no detections), 62.6ms
+
+0: 640x384 (no detections), 62.7ms
+
+0: 640x384 (no detections), 62.2ms
+
+0: 640x384 (no detections), 62.1ms
+
+0: 640x384 (no detections), 63.4ms
+
+0: 640x384 (no detections), 62.4ms
+
+0: 640x384 (no detections), 63.1ms
+
+0: 640x384 (no detections), 62.5ms
+
+0: 640x384 (no detections), 62.4ms
+
+0: 640x384 (no detections), 61.7ms
+
+0: 640x384 (no detections), 63.5ms
+
+0: 640x384 1 face, 62.2ms
+
+0: 640x384 (no detections), 62.1ms
+
+0: 640x384 1 face, 61.9ms
+
+0: 640x384 1 face, 62.7ms
+
+0: 640x384 1 face, 62.9ms
+
+0: 640x384 (no detections), 64.2ms
+
+0: 640x384 1 face, 62.7ms
+
+0: 640x384 (no detections), 61.7ms
+
+0: 640x384 (no detections), 61.9ms
+
+0: 640x384 (no detections), 62.3ms
+
+0: 640x384 (no detections), 61.0ms
+
+0: 640x384 (no detections), 66.1ms
+
+0: 640x384 (no detections), 61.4ms
+
+0: 640x384 (no detections), 61.9ms
+
+0: 640x384 (no detections), 61.6ms
+
+0: 640x384 (no detections), 61.5ms
+
+0: 640x384 (no detections), 61.8ms
+
+0: 640x384 (no detections), 61.5ms
+
+0: 640x384 (no detections), 62.5ms
+
+0: 640x384 (no detections), 61.5ms
+
+0: 640x384 (no detections), 61.5ms
+
+0: 640x384 (no detections), 61.5ms
+
+0: 640x384 (no detections), 61.8ms
+
+0: 640x384 (no detections), 62.3ms
+
+0: 640x384 (no detections), 63.4ms
+
+0: 640x384 (no detections), 61.5ms
+
+0: 640x384 (no detections), 62.7ms
+
+0: 640x384 (no detections), 61.8ms
+
+0: 640x384 (no detections), 62.7ms
+
+0: 640x384 (no detections), 61.3ms
+
+0: 640x384 (no detections), 61.9ms
+
+0: 640x384 (no detections), 62.4ms
+
+0: 640x384 (no detections), 62.2ms
+
+0: 640x384 (no detections), 61.9ms
+
+0: 640x384 (no detections), 61.8ms
+
+0: 640x384 (no detections), 63.2ms
+
+0: 640x384 (no detections), 62.4ms
+
+0: 640x384 (no detections), 61.7ms
+
+0: 640x384 (no detections), 62.8ms
+
+0: 640x384 (no detections), 64.2ms
+
+0: 640x384 (no detections), 63.0ms
+
+0: 640x384 (no detections), 63.6ms
+
+0: 640x384 (no detections), 64.2ms
+
+0: 640x384 (no detections), 62.0ms
+
+0: 640x384 (no detections), 63.1ms
+
+0: 640x384 (no detections), 62.1ms
+
+0: 640x384 (no detections), 62.5ms
+
+0: 640x384 (no detections), 61.6ms
+
+0: 640x384 (no detections), 63.3ms
+
+0: 640x384 (no detections), 62.8ms
+
+0: 640x384 (no detections), 62.6ms
+
+0: 640x384 (no detections), 61.7ms
+
+0: 640x384 (no detections), 61.3ms
+
+0: 640x384 (no detections), 65.1ms
+
+0: 640x384 (no detections), 61.3ms
+
+0: 640x384 (no detections), 63.1ms
+
+0: 640x384 (no detections), 61.1ms
+
+0: 640x384 (no detections), 63.4ms
+
+0: 640x384 (no detections), 61.3ms
+
+0: 640x384 (no detections), 61.9ms
+
+0: 640x384 (no detections), 61.3ms
+
+0: 640x384 (no detections), 62.4ms
+
+0: 640x384 (no detections), 61.1ms
+
+0: 640x384 (no detections), 61.4ms
+
+0: 640x384 (no detections), 63.2ms
+
+0: 640x384 (no detections), 61.9ms
+
+0: 640x384 (no detections), 62.6ms
+
+0: 640x384 (no detections), 68.4ms
+
+0: 640x384 1 face, 73.4ms
+
+0: 640x384 (no detections), 75.7ms
+
+0: 640x384 (no detections), 82.4ms
+
+0: 640x384 1 face, 74.4ms
+
+0: 640x384 1 face, 75.0ms
+
+0: 640x384 1 face, 72.7ms
+
+0: 640x384 1 face, 74.4ms
+
+0: 640x384 1 face, 78.5ms
+
+0: 640x384 1 face, 74.8ms
+
+0: 640x384 1 face, 80.2ms
+
+0: 640x384 1 face, 78.9ms
+
+0: 640x384 1 face, 65.8ms
+
+0: 640x384 1 face, 66.1ms
+
+0: 640x384 1 face, 64.2ms
+
+0: 640x384 1 face, 65.3ms
+
+0: 640x384 1 face, 64.0ms
+
+0: 640x384 1 face, 65.7ms
+
+0: 640x384 1 face, 65.1ms
+
+0: 640x384 1 face, 66.3ms
+
+0: 640x384 1 face, 65.3ms
+
+0: 640x384 1 face, 66.1ms
+
+0: 640x384 1 face, 64.2ms
+
+0: 640x384 1 face, 63.3ms
+
+0: 640x384 1 face, 63.2ms
+
+0: 640x384 1 face, 63.6ms
+
+0: 640x384 1 face, 64.1ms
+
+0: 640x384 1 face, 63.3ms
+
+0: 640x384 1 face, 65.0ms
+
+0: 640x384 1 face, 67.7ms
+
+0: 640x384 1 face, 64.0ms
+
+0: 640x384 1 face, 62.3ms
+
+0: 640x384 1 face, 63.9ms
+
+0: 640x384 1 face, 63.1ms
+
+0: 640x384 1 face, 64.1ms
+
+0: 640x384 1 face, 63.3ms
+
+0: 640x384 1 face, 62.2ms
+
+0: 640x384 (no detections), 61.9ms
+
+0: 640x384 1 face, 63.8ms
+
+0: 640x384 1 face, 60.8ms
+
+0: 640x384 (no detections), 68.6ms
+
+0: 640x384 1 face, 65.5ms
+
+0: 640x384 1 face, 69.6ms
+
+0: 640x384 1 face, 64.8ms
+
+0: 640x384 1 face, 67.0ms
+
+0: 640x384 1 face, 64.1ms
+
+0: 640x384 1 face, 62.8ms
+
+0: 640x384 1 face, 63.1ms
+
+0: 640x384 1 face, 62.2ms
+
+0: 640x384 (no detections), 63.6ms
+
+0: 640x384 1 face, 62.4ms
+
+0: 640x384 1 face, 62.8ms
+
+0: 640x384 1 face, 69.5ms
+
+0: 640x384 1 face, 64.1ms
+
+0: 640x384 1 face, 62.8ms
+
+0: 640x384 1 face, 62.5ms
+
+0: 640x384 1 face, 62.9ms
+
+0: 640x384 1 face, 61.7ms
+
+0: 640x384 1 face, 61.2ms
+
+0: 640x384 1 face, 62.4ms
+
+0: 640x384 1 face, 62.1ms
+
+0: 640x384 1 face, 62.8ms
+
+0: 640x384 1 face, 62.3ms
+
+0: 640x384 1 face, 64.1ms
+
+0: 640x384 1 face, 62.2ms
+
+0: 640x384 1 face, 62.5ms
+
+0: 640x384 (no detections), 61.8ms
+
+0: 640x384 1 face, 63.4ms
+
+0: 640x384 (no detections), 63.3ms
+
+0: 640x384 (no detections), 64.7ms
+
+0: 640x384 (no detections), 64.3ms
+
+0: 640x384 (no detections), 65.7ms
+
+0: 640x384 (no detections), 63.3ms
+
+0: 640x384 1 face, 65.9ms
+
+0: 640x384 (no detections), 64.0ms
+
+0: 640x384 (no detections), 63.4ms
+
+0: 640x384 (no detections), 63.7ms
+
+0: 640x384 1 face, 63.1ms
+
+0: 640x384 (no detections), 62.9ms
+
+0: 640x384 (no detections), 70.7ms
+
+0: 640x384 (no detections), 63.5ms
+
+0: 640x384 1 face, 63.3ms
+
+0: 640x384 1 face, 64.2ms
+
+0: 640x384 (no detections), 63.1ms
+
+0: 640x384 1 face, 63.0ms
+
+0: 640x384 1 face, 62.9ms
+
+0: 640x384 1 face, 63.7ms
+
+0: 640x384 1 face, 64.8ms
+
+0: 640x384 1 face, 63.4ms
+
+0: 640x384 1 face, 62.3ms
+
+0: 640x384 1 face, 67.5ms
+
+0: 640x384 1 face, 62.9ms
+
+0: 640x384 1 face, 63.8ms
+
+0: 640x384 1 face, 61.5ms
+
+0: 640x384 1 face, 62.3ms
+
+0: 640x384 1 face, 63.4ms
+
+0: 640x384 1 face, 67.0ms
+
+0: 640x384 1 face, 62.9ms
+
+0: 640x384 1 face, 65.4ms
+
+0: 640x384 1 face, 213.6ms
+
+0: 640x384 1 face, 189.0ms
+
+0: 640x384 1 face, 61.1ms
+
+0: 640x384 1 face, 64.6ms
+
+0: 640x384 1 face, 61.1ms
+
+0: 640x384 1 face, 62.6ms
+
+0: 640x384 1 face, 65.1ms
+
+0: 640x384 1 face, 63.4ms
+
+0: 640x384 1 face, 61.7ms
+
+0: 640x384 1 face, 63.3ms
+
+0: 640x384 1 face, 61.7ms
+
+0: 640x384 1 face, 63.9ms
+
+0: 640x384 1 face, 62.5ms
+
+0: 640x384 1 face, 62.3ms
+
+0: 640x384 1 face, 62.1ms
+
+0: 640x384 1 face, 63.7ms
+
+0: 640x384 1 face, 61.9ms
+
+0: 640x384 1 face, 61.4ms
+
+0: 640x384 1 face, 60.9ms
+
+0: 640x384 1 face, 64.1ms
+
+0: 640x384 1 face, 63.1ms
+
+0: 640x384 1 face, 66.9ms
+
+0: 640x384 1 face, 62.5ms
+
+0: 640x384 1 face, 61.4ms
+
+0: 640x384 1 face, 61.8ms
+
+0: 640x384 1 face, 62.6ms
+
+0: 640x384 1 face, 62.5ms
+
+0: 640x384 1 face, 63.7ms
+
+0: 640x384 1 face, 62.2ms
+
+0: 640x384 1 face, 62.5ms
+
+0: 640x384 1 face, 63.1ms
+
+0: 640x384 1 face, 65.0ms
+
+0: 640x384 1 face, 64.1ms
+
+0: 640x384 1 face, 61.5ms
+
+0: 640x384 1 face, 62.8ms
+
+0: 640x384 1 face, 62.4ms
+
+0: 640x384 1 face, 63.0ms
+
+0: 640x384 1 face, 61.9ms
+
+0: 640x384 1 face, 63.5ms
+
+0: 640x384 1 face, 62.9ms
+
+0: 640x384 1 face, 62.3ms
+
+0: 640x384 1 face, 64.1ms
+
+0: 640x384 1 face, 63.9ms
+
+0: 640x384 1 face, 63.8ms
+
+0: 640x384 1 face, 63.1ms
+
+0: 640x384 1 face, 63.2ms
+
+0: 640x384 1 face, 62.7ms
+
+0: 640x384 1 face, 62.2ms
+
+0: 640x384 1 face, 62.6ms
+
+0: 640x384 1 face, 63.8ms
+
+0: 640x384 1 face, 63.8ms
+
+0: 640x384 1 face, 64.6ms
+
+0: 640x384 1 face, 63.9ms
+
+0: 640x384 1 face, 63.4ms
+
+0: 640x384 1 face, 63.0ms
+
+0: 640x384 1 face, 115.7ms
+
+0: 640x384 1 face, 61.9ms
+
+0: 640x384 1 face, 64.1ms
+
+0: 640x384 1 face, 63.3ms
+
+0: 640x384 1 face, 63.2ms
+
+0: 640x384 1 face, 61.7ms
+
+0: 640x384 1 face, 63.5ms
+
+0: 640x384 1 face, 64.2ms
+
+0: 640x384 1 face, 63.9ms
+
+0: 640x384 1 face, 63.3ms
+
+0: 640x384 1 face, 63.1ms
+
+0: 640x384 1 face, 62.8ms
+
+0: 640x384 1 face, 62.2ms
+
+0: 640x384 1 face, 62.3ms
+
+0: 640x384 1 face, 64.0ms
+
+0: 640x384 1 face, 62.2ms
+
+0: 640x384 1 face, 64.6ms
+
+0: 640x384 1 face, 62.6ms
+
+0: 640x384 1 face, 63.1ms
+
+0: 640x384 1 face, 62.5ms
+
+0: 640x384 1 face, 62.4ms
+
+0: 640x384 1 face, 61.8ms
+
+0: 640x384 1 face, 62.1ms
+
+0: 640x384 1 face, 61.5ms
+
+0: 640x384 1 face, 63.5ms
+
+0: 640x384 1 face, 62.7ms
+
+0: 640x384 1 face, 61.6ms
+
+0: 640x384 1 face, 61.1ms
+
+0: 640x384 1 face, 61.7ms
+
+0: 640x384 1 face, 62.6ms
+
+0: 640x384 1 face, 63.3ms
+
+0: 640x384 1 face, 61.8ms
+
+0: 640x384 1 face, 61.6ms
+
+0: 640x384 1 face, 62.4ms
+
+0: 640x384 1 face, 61.8ms
+
+0: 640x384 1 face, 62.8ms
+
+0: 640x384 1 face, 61.4ms
+
+0: 640x384 1 face, 62.2ms
+
+0: 640x384 1 face, 62.2ms
+
+0: 640x384 1 face, 61.4ms
+
+0: 640x384 1 face, 64.0ms
+
+0: 640x384 1 face, 63.5ms
+
+0: 640x384 1 face, 60.8ms
+
+0: 640x384 1 face, 64.6ms
+
+0: 640x384 1 face, 61.6ms
+
+0: 640x384 1 face, 61.8ms
+
+0: 640x384 1 face, 62.0ms
+
+0: 640x384 1 face, 63.2ms
+
+0: 640x384 1 face, 64.9ms
+
+0: 640x384 1 face, 64.0ms
+
+0: 640x384 1 face, 62.6ms
+
+0: 640x384 1 face, 62.9ms
+
+0: 640x384 1 face, 61.6ms
+
+0: 640x384 1 face, 64.1ms
+
+0: 640x384 1 face, 62.6ms
+
+0: 640x384 1 face, 62.0ms
+
+0: 640x384 1 face, 67.7ms
+
+0: 640x384 1 face, 63.9ms
+
+0: 640x384 1 face, 62.8ms
+
+0: 640x384 1 face, 62.2ms
+
+0: 640x384 1 face, 64.4ms
+
+0: 640x384 (no detections), 61.5ms
+
+0: 640x384 (no detections), 65.3ms
+
+0: 640x384 (no detections), 63.5ms
+
+0: 640x384 (no detections), 64.8ms
+
+0: 640x384 (no detections), 62.6ms
+
+0: 640x384 (no detections), 64.1ms
+
+0: 640x384 1 face, 61.3ms
+
+0: 640x384 1 face, 65.6ms
+
+0: 640x384 1 face, 65.2ms
+
+0: 640x384 1 face, 64.3ms
+
+0: 640x384 1 face, 62.5ms
+
+0: 640x384 1 face, 62.2ms
+
+0: 640x384 1 face, 62.3ms
+
+0: 640x384 1 face, 62.6ms
+
+0: 640x384 1 face, 61.9ms
+
+0: 640x384 1 face, 62.1ms
+
+0: 640x384 1 face, 61.1ms
+
+0: 640x384 (no detections), 62.8ms
+
+0: 640x384 1 face, 64.6ms
+
+0: 640x384 1 face, 62.0ms
+
+0: 640x384 1 face, 62.8ms
+
+0: 640x384 1 face, 61.6ms
+
+0: 640x384 1 face, 61.8ms
+
+0: 640x384 1 face, 61.9ms
+
+0: 640x384 1 face, 62.8ms
+
+0: 640x384 1 face, 62.5ms
+
+0: 640x384 1 face, 63.5ms
+
+0: 640x384 1 face, 61.4ms
+
+0: 640x384 1 face, 61.5ms
+
+0: 640x384 1 face, 62.3ms
+
+0: 640x384 1 face, 63.1ms
+
+0: 640x384 1 face, 62.0ms
+
+0: 640x384 1 face, 60.4ms
+
+0: 640x384 1 face, 61.5ms
+
+0: 640x384 1 face, 63.2ms
+
+0: 640x384 1 face, 61.1ms
+
+0: 640x384 1 face, 61.3ms
+
+0: 640x384 1 face, 63.6ms
+
+0: 640x384 1 face, 62.4ms
+
+0: 640x384 1 face, 63.6ms
+
+0: 640x384 1 face, 61.7ms
+
+0: 640x384 1 face, 64.1ms
+
+0: 640x384 1 face, 62.1ms
+
+0: 640x384 1 face, 62.5ms
+
+0: 640x384 1 face, 62.1ms
+
+0: 640x384 1 face, 62.5ms
+
+0: 640x384 1 face, 60.9ms
+
+0: 640x384 1 face, 63.4ms
+
+0: 640x384 1 face, 62.6ms
+
+0: 640x384 1 face, 62.6ms
+
+0: 640x384 1 face, 64.0ms
+
+0: 640x384 1 face, 63.0ms
+
+0: 640x384 1 face, 62.5ms
+
+0: 640x384 1 face, 61.8ms
+
+0: 640x384 1 face, 61.2ms
+
+0: 640x384 1 face, 62.3ms
+
+0: 640x384 1 face, 62.5ms
+
+0: 640x384 1 face, 62.4ms
+
+0: 640x384 1 face, 62.4ms
+
+0: 640x384 1 face, 62.5ms
+
+0: 640x384 1 face, 64.7ms
+
+0: 640x384 1 face, 61.8ms
+Loading cached features...
+Saved profile: profiles/2025-02-11/IN/track_1/profile_09-13-49-594878_0.620.png
+Track 1: Recognized as ['Unknown', 'Unknown'] ([0.08335362374782562, 0.09077291935682297])
+Saved profile: profiles/2025-02-11/IN/track_1/profile_09-13-50-305328_0.615.png
+Track 1: Recognized as ['Unknown'] ([0.1069759726524353])
+Saved profile: profiles/2025-02-11/IN/track_1/profile_09-13-50-654201_0.590.png
+Track 1: Recognized as ['Unknown'] ([0.17105993628501892])
+/home/teamdev/FaceRec/testing_app/face_alignment/mtcnn_pytorch/src/matlab_cp2tform.py:90: FutureWarning: `rcond` parameter will change to the default of machine precision times ``max(M, N)`` where M and N are the input matrix dimensions.
+To use the future default and silence this warning we advise to pass `rcond=None`, to keep using the old, explicitly pass `rcond=-1`.
+  r, _, _, _ = lstsq(X, U)
+Shutting down recognition process...
+[2025-02-11 09:14:17] Initiating recognition process shutdown...
+RSS Memory: 869.41 MB
+Virtual Memory: 4498.20 MB
