@@ -56,7 +56,6 @@ This script will run the check-in and check-out process every day at your shift 
 - System automatically skips processing on holidays
 - Face recognition threshold: 0.19
 - Minimum profiles per track: 3
-```
 
 ## Where to Find Information 📁
 
