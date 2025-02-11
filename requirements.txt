@@ -1,0 +1,6 @@
+ultralytics
+tqdm
+Pillow
+requests
+ffmpeg-python
+python-dotenv
