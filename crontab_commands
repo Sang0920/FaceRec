@@ -2,5 +2,5 @@
 30 07 * * * /home/teamdev/FaceRec/testing_app/run_main.sh -d 3600 -t IN > /home/teamdev/FaceRec/testing_app/logs/check-in.log 2>&1
 
 # Checkout everyday at 20 17 to 20 18
-20 17 * * * /home/teamdev/FaceRec/testing_app/run_main.sh -d 3600 -t OUT >> /home/teamdev/FaceRec/testing_app/logs/check-out.log 2>&1
+20 17 * * * /home/teamdev/FaceRec/testing_app/run_main.sh -d 3600 -t OUT > /home/teamdev/FaceRec/testing_app/logs/check-out.log 2>&1
 
