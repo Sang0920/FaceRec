@@ -171,6 +171,8 @@ if __name__ == "__main__":
     client = DracoAPIClient()
     # Example usage:
     # client.sync_employee_photos()
-    # client.create_checkin("sangdt@draco.biz", "2025-02-06 17:30:11")
-    shift_details = client.get_shift_details(shift_name=SHIFT_NAME)
-    print(json.dumps(shift_details, indent=2, default=str))
+
+    client.create_checkin("sangdt@draco.biz", "2025-02-12 08:15:00")
+
+    # shift_details = client.get_shift_details(shift_name=SHIFT_NAME)
+    # print(json.dumps(shift_details, indent=2, default=str))

@@ -20,6 +20,8 @@ import base64
 from queue import Empty, Full
 import argparse
 import psutil
+from threading import Timer
+import time
 
 load_dotenv()
 # Environment and configuration
@@ -301,10 +303,68 @@ def process_tracks(frames_buffers, track_last_seen, saved_tracks, recognition_ma
         del frames_buffers[track_id]
         del track_last_seen[track_id]
 
+class WatchdogTimer:
+    def __init__(self, timeout, callback):
+        self.timeout = timeout
+        self.callback = callback
+        self.timer = None
+
+    def reset(self):
+        if self.timer:
+            self.timer.cancel()
+        self.timer = Timer(self.timeout, self.callback)
+        self.timer.start()
+
+    def stop(self):
+        if self.timer:
+            self.timer.cancel()
+
+def watchdog_callback():
+    print("\nWatchdog timer expired - No frames received for too long")
+    print("Initiating emergency shutdown...")
+    os._exit(1)
+
+def create_capture():
+    """Create and verify camera capture with retry logic"""
+    MAX_RETRIES = 3
+    RECONNECT_DELAY = 2  # seconds
+    
+    def configure_capture(cap):
+        cap.set(cv2.CAP_PROP_BUFFERSIZE, 1)
+        cap.set(cv2.CAP_PROP_OPEN_TIMEOUT_MSEC, 5000)
+        cap.set(cv2.CAP_PROP_READ_TIMEOUT_MSEC, 1000)
+        return cap
+
+    for attempt in range(MAX_RETRIES):
+        try:
+            print(f"Attempting to connect to camera ({attempt + 1}/{MAX_RETRIES})...")
+            cap = cv2.VideoCapture(RTSP_URL)
+            if not cap.isOpened():
+                raise RuntimeError("Failed to open video capture")
+            
+            cap = configure_capture(cap)
+            
+            # Test read
+            ret, frame = cap.read()
+            if not ret or frame is None:
+                raise RuntimeError("Failed to read test frame")
+                
+            return cap
+        except Exception as e:
+            print(f"Connection attempt {attempt + 1} failed: {e}")
+            if cap:
+                cap.release()
+            if attempt < MAX_RETRIES - 1:
+                time.sleep(RECONNECT_DELAY)
+    
+    raise RuntimeError(f"Failed to connect to camera after {MAX_RETRIES} attempts")
+
 def main():
     print("Starting face tracking...")
     model = YOLO(MODEL_PATH)
     recognition_process = RecognitionProcess()
+    watchdog = WatchdogTimer(5.0, watchdog_callback)  # 5 second timeout
+    
     try:
         Client.sync_employee_photos()
         frames_buffers = {}
@@ -312,11 +372,59 @@ def main():
         saved_tracks = set()
         start_time = datetime.now()
         frame_count = 0
-        cap = cv2.VideoCapture(RTSP_URL)
-        while (datetime.now() - start_time).total_seconds() <= PROCESS_DURATION:
-            success, frame = cap.read()
-            if not success:
+        last_frame_time = time.time()
+        last_reconnect_time = time.time()
+        consecutive_failures = 0
+        MAX_CONSECUTIVE_FAILURES = 100
+        RECONNECT_INTERVAL = 30  # Force reconnect every 30 seconds if having issues
+
+        # cap = cv2.VideoCapture(RTSP_URL)
+        cap = create_capture()
+        while True:
+            if PROCESS_DURATION > 0 and (datetime.now() - start_time).total_seconds() > PROCESS_DURATION:
+                print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Processing duration reached. Stopping...")
+                break
+
+            # success, frame = cap.read()
+            try:
+                success, frame = cap.read()
+            except Exception as e:
+                print(f"Error reading frame: {e}")
+                # reset the cap
+                cap.release()
+                cap = cv2.VideoCapture(RTSP_URL)
+                success = False
+
+            current_time = time.time()
+            
+            if not success or frame is None:
+                consecutive_failures += 1
+                print(f"Failed to read frame: attempt {consecutive_failures}/{MAX_CONSECUTIVE_FAILURES}")
+                if consecutive_failures >= MAX_CONSECUTIVE_FAILURES or \
+                       (current_time - last_reconnect_time) > RECONNECT_INTERVAL:
+                        print("Attempting to reconnect to camera...")
+                        cap.release()
+                        cap = create_capture()
+                        consecutive_failures = 0
+                        last_reconnect_time = current_time
+                        time.sleep(1)
+                        continue
+                    
+                time.sleep(0.1)  # Short delay between retries
                 continue
+            
+            consecutive_failures = 0  # Reset on successful frame read
+            watchdog.reset()  # Reset watchdog timer
+
+            # Calculate FPS and log if too low
+            frame_time = current_time - last_frame_time
+            fps = 1 / frame_time if frame_time > 0 else 0
+            if fps < 5:  # Alert if FPS drops below 5
+                print(f"Warning: Low FPS detected: {fps:.2f}")
+
+            last_frame_time = current_time
+            
+            # ... rest of your existing frame processing code ...
             frame = np.rot90(frame, 3)
             results = next(model.track(
                 source=frame,
@@ -353,21 +461,42 @@ def main():
                     del frames_buffers[track_id]
                     del track_last_seen[track_id]
             frame_count += 1
-            
+                        
     except KeyboardInterrupt:
         print("\nStopping tracking...")
-    except Exception as e:
-        print(f"Error in main: {e}")
-    finally:
-        # Process any remaining unsaved tracks before shutdown
-        for track_id, frames in frames_buffers.items():
-            if track_id not in saved_tracks and frames:
-                recognition_process.add_track(track_id, frames)
-                saved_tracks.add(track_id)
 
-        cap.release()
-        recognition_process.shutdown()
-        cv2.destroyAllWindows()
+    # except Exception as e:
+    #     print(f"Error in main: {e}")
+    #     raise  # Re-raise to ensure proper shutdown
+
+    except Exception as e:
+        print(f"Error processing frame: {e}")
+        consecutive_failures += 1
+        if consecutive_failures >= MAX_CONSECUTIVE_FAILURES:
+            print("Too many failures, attempting to reconnect...")
+            cap.release()
+            cap = create_capture()
+            consecutive_failures = 0
+            last_reconnect_time = time.time()
+        time.sleep(0.1)
+        
+    finally:
+        watchdog.stop()
+        # Process remaining tracks
+        try:
+            for track_id, frames in frames_buffers.items():
+                if track_id not in saved_tracks and frames:
+                    recognition_process.add_track(track_id, frames)
+                    saved_tracks.add(track_id)
+        except Exception as e:
+            print(f"Error processing remaining tracks: {e}")
+
+        try:
+            cap.release()
+            recognition_process.shutdown()
+            cv2.destroyAllWindows()
+        except Exception as e:
+            print(f"Error during cleanup: {e}")
 
 if __name__ == "__main__": # python main.py --process_duration 60 --checkin_type IN
     try:
