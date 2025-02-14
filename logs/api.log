@@ -416,3 +416,58 @@
 2025-02-13 15:01:11,546 - INFO - ✅ Check-in successful - dungntk@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000134', 'pdf_url': None}}
 2025-02-13 15:12:37,760 - INFO - Creating check-in for annh@draco.biz at 2025-02-13 15:12:37
 2025-02-13 15:12:38,286 - INFO - ✅ Check-in successful - annh@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000135', 'pdf_url': None}}
+2025-02-13 17:20:11,867 - INFO - DracoAPIClient initialized successfully
+2025-02-13 17:20:11,869 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-13 17:20:14,076 - INFO - ✅ Successfully fetched shift details
+2025-02-13 17:20:14,162 - INFO - Starting employee photo sync
+2025-02-13 17:20:14,163 - INFO - Loaded existing metadata for 8 employees
+2025-02-13 17:20:14,163 - INFO - Fetching employee photos
+2025-02-13 17:20:14,163 - INFO - Fetching employee photos
+2025-02-13 17:20:14,351 - INFO - ✅ Successfully retrieved 11 employee photos
+2025-02-13 17:20:14,352 - INFO - ✅ Successfully retrieved 11 employee photos
+2025-02-13 17:20:15,606 - ERROR - Failed to download photo for: duyth@draco.biz
+2025-02-13 17:20:16,916 - ERROR - Failed to download photo for: phuoctth@draco.biz
+2025-02-13 17:20:18,650 - ERROR - Failed to download photo for: tuanla@draco.biz
+2025-02-13 17:20:18,651 - INFO - ✅ Photo sync completed successfully
+2025-02-13 17:21:09,963 - INFO - Creating check-in for sangdt@draco.biz at 2025-02-13 17:21:09
+2025-02-13 17:21:10,679 - INFO - ✅ Check-in successful - sangdt@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000136', 'pdf_url': None}}
+2025-02-13 17:22:34,906 - INFO - Creating check-in for annh@draco.biz at 2025-02-13 17:22:34
+2025-02-13 17:22:35,394 - INFO - ✅ Check-in successful - annh@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000137', 'pdf_url': None}}
+2025-02-13 17:22:50,296 - INFO - Creating check-in for dungntk@draco.biz at 2025-02-13 17:22:50
+2025-02-13 17:22:50,647 - INFO - ✅ Check-in successful - dungntk@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000138', 'pdf_url': None}}
+2025-02-13 17:22:51,700 - INFO - Creating check-in for sangnlh@dracorp.com.vn at 2025-02-13 17:22:51
+2025-02-13 17:22:52,029 - INFO - ✅ Check-in successful - sangnlh@dracorp.com.vn - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000139', 'pdf_url': None}}
+2025-02-13 17:23:05,890 - INFO - Creating check-in for nghianhm@draco.biz at 2025-02-13 17:23:05
+2025-02-13 17:23:06,349 - INFO - ✅ Check-in successful - nghianhm@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000140', 'pdf_url': None}}
+2025-02-13 17:26:31,129 - INFO - Creating check-in for loint@draco.biz at 2025-02-13 17:26:31
+2025-02-13 17:26:31,501 - INFO - ✅ Check-in successful - loint@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000141', 'pdf_url': None}}
+2025-02-13 17:30:33,594 - INFO - DracoAPIClient initialized successfully
+2025-02-13 17:30:33,594 - INFO - Creating check-in for sangdt@draco.biz at 2025-02-13 08:30:00
+2025-02-13 17:30:33,835 - INFO - ✅ Check-in successful - sangdt@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000142', 'pdf_url': None}}
+2025-02-13 17:32:55,344 - INFO - Creating check-in for dunght@draco.biz at 2025-02-13 17:32:54
+2025-02-13 17:32:55,711 - INFO - ✅ Check-in successful - dunght@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000143', 'pdf_url': None}}
+2025-02-14 07:30:14,477 - INFO - DracoAPIClient initialized successfully
+2025-02-14 07:30:14,480 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-14 07:30:14,656 - INFO - ✅ Successfully fetched shift details
+2025-02-14 07:30:14,770 - INFO - Starting employee photo sync
+2025-02-14 07:30:14,771 - INFO - Loaded existing metadata for 8 employees
+2025-02-14 07:30:14,771 - INFO - Fetching employee photos
+2025-02-14 07:30:14,771 - INFO - Fetching employee photos
+2025-02-14 07:30:14,931 - INFO - ✅ Successfully retrieved 11 employee photos
+2025-02-14 07:30:14,933 - INFO - ✅ Successfully retrieved 11 employee photos
+2025-02-14 07:30:16,157 - ERROR - Failed to download photo for: duyth@draco.biz
+2025-02-14 07:30:17,448 - ERROR - Failed to download photo for: phuoctth@draco.biz
+2025-02-14 07:30:18,245 - ERROR - Failed to download photo for: tuanla@draco.biz
+2025-02-14 07:30:18,245 - INFO - ✅ Photo sync completed successfully
+2025-02-14 07:54:30,345 - INFO - Creating check-in for nghianhm@draco.biz at 2025-02-14 07:54:29
+2025-02-14 07:54:30,815 - INFO - ✅ Check-in successful - nghianhm@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000146', 'pdf_url': None}}
+2025-02-14 08:05:01,207 - INFO - Creating check-in for loint@draco.biz at 2025-02-14 08:05:00
+2025-02-14 08:05:01,603 - INFO - ✅ Check-in successful - loint@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000147', 'pdf_url': None}}
+2025-02-14 08:11:20,197 - INFO - Creating check-in for annh@draco.biz at 2025-02-14 08:11:19
+2025-02-14 08:11:20,578 - INFO - ✅ Check-in successful - annh@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000149', 'pdf_url': None}}
+2025-02-14 08:14:59,639 - INFO - Creating check-in for dungntk@draco.biz at 2025-02-14 08:14:58
+2025-02-14 08:15:00,090 - INFO - ✅ Check-in successful - dungntk@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000151', 'pdf_url': None}}
+2025-02-14 08:18:12,134 - INFO - Creating check-in for sangdt@draco.biz at 2025-02-14 08:18:12
+2025-02-14 08:18:12,551 - INFO - ✅ Check-in successful - sangdt@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000152', 'pdf_url': None}}
+2025-02-14 08:21:42,504 - INFO - Creating check-in for sangnlh@dracorp.com.vn at 2025-02-14 08:21:42
+2025-02-14 08:21:42,921 - INFO - ✅ Check-in successful - sangnlh@dracorp.com.vn - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000153', 'pdf_url': None}}

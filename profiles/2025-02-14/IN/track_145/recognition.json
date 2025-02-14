@@ -1,0 +1,11 @@
+{
+  "confidence": 0.5227643251419067,
+  "name": "sangdt@draco.biz",
+  "timestamp": "2025-02-14 08:18:12",
+  "profiles": [
+    "profiles/2025-02-14/IN/track_145/profile_08-18-11-085671_0.825.png",
+    "profiles/2025-02-14/IN/track_145/profile_08-18-11-441381_0.820.png",
+    "profiles/2025-02-14/IN/track_145/profile_08-18-11-799331_0.814.png"
+  ],
+  "best_profile": "profiles/2025-02-14/IN/track_145/profile_08-18-11-799331_0.814.png"
+}
