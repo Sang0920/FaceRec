@@ -172,7 +172,7 @@ if __name__ == "__main__":
     # Example usage:
     # client.sync_employee_photos()
 
-    client.create_checkin("sangdt@draco.biz", "2025-02-13 08:30:00")
+    client.create_checkin("sangdt@draco.biz", "2025-02-17 08:30:00", "IN")
 
     # shift_details = client.get_shift_details(shift_name=SHIFT_NAME)
     # print(json.dumps(shift_details, indent=2, default=str))

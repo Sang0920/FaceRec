@@ -112,7 +112,7 @@ def process_batch(images):
             features.append(feature.cpu())
     return features
 
-def recognize_image(img, gallery_features, gallery_names, threshold=.35):
+def recognize_image(img, gallery_features, gallery_names, threshold=.21):
     try:
         if isinstance(img, str):
             orig_img = Image.open(img).convert('RGB')

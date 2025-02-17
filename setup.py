@@ -38,8 +38,8 @@ def generate_crontab_commands():
         #22 16 * * * /home/teamdev/FaceRec/testing_app/run_main.sh -d 60 -t IN >> /home/teamdev/FaceRec/testing_app/logs/cron.log 2>&1
         f.write(f"# Checkin everyday at {earliest_checkin.strftime('%M %H')} to {start_time.strftime('%M %H')}\n")
         f.write(f"{earliest_checkin.strftime('%M %H')} * * * /home/teamdev/FaceRec/testing_app/run_main.sh -d {check_in_duration} -t IN > /home/teamdev/FaceRec/testing_app/logs/check-in.log 2>&1\n\n")
-        f.write(f"# Checkout everyday at {end_time.strftime('%M %H')} to {latest_checkout.strftime('%M %H')}\n")
-        f.write(f"{end_time.strftime('%M %H')} * * * /home/teamdev/FaceRec/testing_app/run_main.sh -d {check_out_duration} -t OUT > /home/teamdev/FaceRec/testing_app/logs/check-out.log 2>&1\n")
+        f.write(f"# Checkout From Mon to Fri at {end_time.strftime('%M %H')} to {latest_checkout.strftime('%M %H')}\n")
+        f.write(f"{end_time.strftime('%M %H')} * * MON-FRI /home/teamdev/FaceRec/testing_app/run_main.sh -d {check_out_duration} -t OUT > /home/teamdev/FaceRec/testing_app/logs/check-out.log 2>&1\n")
 
         f.write('\n')
     print(f"Generated crontab commands in {os.path.abspath('crontab_commands')}")

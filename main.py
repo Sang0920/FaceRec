@@ -250,7 +250,7 @@ def process_track_profiles(frames_buffers, track_id, profile_manager, gallery_fe
                     pil_img,
                     gallery_features,
                     gallery_names,
-                    threshold=0.19
+                    threshold=.22
                 )
                 print(f"Track {track_id}: Recognized as {names} ({confidences})")
                 if names and confidences and names[0] != "Unknown":

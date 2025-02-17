@@ -13,6 +13,14 @@ while getopts "d:t:" opt; do
   esac
 done
 
+# Kill any existing instances of main.py
+echo "Checking for existing main.py processes..."
+if pgrep -f "python3 main.py" > /dev/null; then
+    echo "Killing existing main.py processes..."
+    pkill -9 -f "python3 main.py"
+    sleep 1  # Give processes time to clean up
+fi
+
 # Get this path 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 ACTIVATION_DIR="$(dirname $DIR)"
