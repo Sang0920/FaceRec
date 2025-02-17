@@ -680,3 +680,44 @@
 2025-02-17 16:16:21,980 - INFO - DracoAPIClient initialized successfully
 2025-02-17 16:16:21,980 - INFO - Fetching shift details for: Ca chuẩn Draco
 2025-02-17 16:16:22,119 - INFO - ✅ Successfully fetched shift details
+2025-02-17 17:20:18,997 - INFO - DracoAPIClient initialized successfully
+2025-02-17 17:20:18,999 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-17 17:20:19,243 - INFO - ✅ Successfully fetched shift details
+2025-02-17 17:20:19,344 - INFO - Starting employee photo sync
+2025-02-17 17:20:19,345 - INFO - Loaded existing metadata for 8 employees
+2025-02-17 17:20:19,346 - INFO - Fetching employee photos
+2025-02-17 17:20:19,346 - INFO - Fetching employee photos
+2025-02-17 17:20:19,493 - INFO - ✅ Successfully retrieved 11 employee photos
+2025-02-17 17:20:19,493 - INFO - ✅ Successfully retrieved 11 employee photos
+2025-02-17 17:20:20,601 - ERROR - Failed to download photo for: duyth@draco.biz
+2025-02-17 17:20:21,614 - ERROR - Failed to download photo for: phuoctth@draco.biz
+2025-02-17 17:20:22,306 - ERROR - Failed to download photo for: tuanla@draco.biz
+2025-02-17 17:20:22,307 - INFO - ✅ Photo sync completed successfully
+2025-02-17 17:22:25,947 - INFO - DracoAPIClient initialized successfully
+2025-02-17 17:22:25,947 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-17 17:22:26,054 - INFO - ✅ Successfully fetched shift details
+2025-02-17 17:25:09,464 - INFO - DracoAPIClient initialized successfully
+2025-02-17 17:25:09,467 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-17 17:25:09,567 - INFO - ✅ Successfully fetched shift details
+2025-02-17 17:25:09,799 - INFO - Starting employee photo sync
+2025-02-17 17:25:09,801 - INFO - Loaded existing metadata for 8 employees
+2025-02-17 17:25:09,802 - INFO - Fetching employee photos
+2025-02-17 17:25:09,802 - INFO - Fetching employee photos
+2025-02-17 17:25:09,909 - INFO - ✅ Successfully retrieved 11 employee photos
+2025-02-17 17:25:09,910 - INFO - ✅ Successfully retrieved 11 employee photos
+2025-02-17 17:25:10,930 - ERROR - Failed to download photo for: duyth@draco.biz
+2025-02-17 17:25:12,051 - ERROR - Failed to download photo for: phuoctth@draco.biz
+2025-02-17 17:25:12,730 - ERROR - Failed to download photo for: tuanla@draco.biz
+2025-02-17 17:25:12,731 - INFO - ✅ Photo sync completed successfully
+2025-02-17 17:28:17,832 - INFO - Creating check-in for sangdt@draco.biz at 2025-02-17 17:28:17
+2025-02-17 17:28:18,437 - INFO - ✅ Check-in successful - sangdt@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000184', 'pdf_url': None}}
+2025-02-17 17:29:24,071 - INFO - Creating check-in for nghianhm@draco.biz at 2025-02-17 17:29:24
+2025-02-17 17:29:24,409 - INFO - ✅ Check-in successful - nghianhm@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000185', 'pdf_url': None}}
+2025-02-17 17:30:14,709 - INFO - Creating check-in for loint@draco.biz at 2025-02-17 17:30:14
+2025-02-17 17:30:15,042 - INFO - ✅ Check-in successful - loint@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000186', 'pdf_url': None}}
+2025-02-17 17:31:33,318 - INFO - Creating check-in for annh@draco.biz at 2025-02-17 17:31:32
+2025-02-17 17:31:33,773 - INFO - ✅ Check-in successful - annh@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000187', 'pdf_url': None}}
+2025-02-17 17:32:50,687 - INFO - Creating check-in for dunght@draco.biz at 2025-02-17 17:32:50
+2025-02-17 17:32:51,068 - INFO - ✅ Check-in successful - dunght@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000188', 'pdf_url': None}}
+2025-02-17 17:33:06,379 - INFO - Creating check-in for dungntk@draco.biz at 2025-02-17 17:33:05
+2025-02-17 17:33:06,794 - INFO - ✅ Check-in successful - dungntk@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000189', 'pdf_url': None}}

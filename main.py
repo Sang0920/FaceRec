@@ -9,7 +9,6 @@ import threading
 from queue import Queue
 from concurrent.futures import ThreadPoolExecutor
 import yaml
-# import asyncio
 from img_recg import load_gallery_faces, recognize_image, upscale_image
 from PIL import Image
 import json
@@ -24,7 +23,6 @@ from threading import Timer
 import time
 
 load_dotenv()
-# Environment and configuration
 RTSP_URL = os.getenv('RTSP_URL')
 if not RTSP_URL:
     raise ValueError("RTSP_URL not found in environment variables")
@@ -33,10 +31,13 @@ PROFILES_DIR = "profiles"
 CONFIG_FILE = "./new_bytetrack.yml"
 MODEL_PATH = "./yolov11n-face.pt"
 # Processing parameters
-PROCESS_DURATION = 60  # seconds
 MIN_PROFILES_PER_TRACK = 3
 MAX_BUFFER_SIZE = 15
 NUM_WORKERS = 5
+TRACK_CONFIDENCE = float(os.getenv('TRACK_CONFIDENCE', 0.5))
+TRACK_IOU = float(os.getenv('TRACK_IOU', 0.45))
+RECOGNITION_THRESHOLD = float(os.getenv('RECOGNITION_THRESHOLD', 0.22))
+TRACK_MAX_DET = int(os.getenv('TRACK_MAX_DET', 15))
 # Load tracker configuration
 try:
     with open(CONFIG_FILE, "r") as f:
@@ -67,7 +68,6 @@ CHECKIN_TYPES = ["IN", "OUT"]
 CHECKIN_TYPE = CHECKIN_TYPES[0]
 SHIFT_NAME = os.getenv('SHIFT_NAME')
 
-# get the process_duration and checkin_type from the command line (argparse)
 def parse_args():
     parser = argparse.ArgumentParser(description='Face Recognition Check-out System')
     parser.add_argument('--process_duration', type=int, default=60,
@@ -86,7 +86,6 @@ def get_memory_usage():
     """Get current memory usage of the process"""
     process = psutil.Process(os.getpid())
     memory_info = process.memory_info()
-    
     return {
         'rss': memory_info.rss / 1024 / 1024,  # RSS in MB
         'vms': memory_info.vms / 1024 / 1024,  # VMS in MB
@@ -109,7 +108,6 @@ class ProfileManager:
         self.save_queue = Queue()
         self.worker = threading.Thread(target=self._process_queue, daemon=True)
         self.current_date = datetime.now().strftime("%Y-%m-%d")
-        # self.profile_dir = os.path.join(PROFILES_DIR, self.current_date)
         self.profile_dir = BASE_PROFILE_DIR
         os.makedirs(self.profile_dir, exist_ok=True)
         self.worker.start()
@@ -190,19 +188,15 @@ class RecognitionProcess:
     def shutdown(self):
         print("Shutting down recognition process...")
         print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Initiating recognition process shutdown...")
-        # Show the RAM usage before shutdown
         mem_stats = get_memory_usage()
         print(f"RSS Memory: {mem_stats['rss']:.2f} MB")
         print(f"Virtual Memory: {mem_stats['vms']:.2f} MB")
-
         self.stop_event.set()
-        # Wait for queue to empty
         while not self.input_queue.empty():
             try:
                 self.input_queue.get_nowait()
             except Empty:
-                break
-                
+                break        
         self.process.join(timeout=5) # secs
         if self.process.is_alive():
             print("Force terminating recognition process...")
@@ -236,7 +230,7 @@ def process_track_profiles(frames_buffers, track_id, profile_manager, gallery_fe
     }
     
     if frames_buffers[track_id]:
-        best_frames = sorted(frames_buffers[track_id], 
+        best_frames = sorted(frames_buffers[track_id],
                            key=lambda x: x[1], 
                            reverse=True)[:MIN_PROFILES_PER_TRACK]
         for face_img, conf in best_frames:
@@ -250,7 +244,7 @@ def process_track_profiles(frames_buffers, track_id, profile_manager, gallery_fe
                     pil_img,
                     gallery_features,
                     gallery_names,
-                    threshold=.22
+                    threshold=RECOGNITION_THRESHOLD
                 )
                 print(f"Track {track_id}: Recognized as {names} ({confidences})")
                 if names and confidences and names[0] != "Unknown":
@@ -326,29 +320,23 @@ def watchdog_callback():
 
 def create_capture():
     """Create and verify camera capture with retry logic"""
-    MAX_RETRIES = 3
-    RECONNECT_DELAY = 2  # seconds
-    
+    MAX_RETRIES = 5
+    RECONNECT_DELAY = 1  # second(s)
     def configure_capture(cap):
         cap.set(cv2.CAP_PROP_BUFFERSIZE, 1)
         cap.set(cv2.CAP_PROP_OPEN_TIMEOUT_MSEC, 5000)
         cap.set(cv2.CAP_PROP_READ_TIMEOUT_MSEC, 1000)
         return cap
-
     for attempt in range(MAX_RETRIES):
         try:
             print(f"Attempting to connect to camera ({attempt + 1}/{MAX_RETRIES})...")
             cap = cv2.VideoCapture(RTSP_URL)
             if not cap.isOpened():
                 raise RuntimeError("Failed to open video capture")
-            
             cap = configure_capture(cap)
-            
-            # Test read
             ret, frame = cap.read()
             if not ret or frame is None:
                 raise RuntimeError("Failed to read test frame")
-                
             return cap
         except Exception as e:
             print(f"Connection attempt {attempt + 1} failed: {e}")
@@ -356,7 +344,6 @@ def create_capture():
                 cap.release()
             if attempt < MAX_RETRIES - 1:
                 time.sleep(RECONNECT_DELAY)
-    
     raise RuntimeError(f"Failed to connect to camera after {MAX_RETRIES} attempts")
 
 def main():
@@ -364,7 +351,6 @@ def main():
     model = YOLO(MODEL_PATH)
     recognition_process = RecognitionProcess()
     watchdog = WatchdogTimer(5.0, watchdog_callback)  # 5 second timeout
-    
     try:
         Client.sync_employee_photos()
         frames_buffers = {}
@@ -376,27 +362,14 @@ def main():
         last_reconnect_time = time.time()
         consecutive_failures = 0
         MAX_CONSECUTIVE_FAILURES = 100
-        RECONNECT_INTERVAL = 30  # Force reconnect every 30 seconds if having issues
-
-        # cap = cv2.VideoCapture(RTSP_URL)
+        RECONNECT_INTERVAL = 15  # Force reconnect every 15 seconds if having issues
         cap = create_capture()
         while True:
             if PROCESS_DURATION > 0 and (datetime.now() - start_time).total_seconds() > PROCESS_DURATION:
                 print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Processing duration reached. Stopping...")
                 break
-
-            # success, frame = cap.read()
-            try:
-                success, frame = cap.read()
-            except Exception as e:
-                print(f"Error reading frame: {e}")
-                # reset the cap
-                cap.release()
-                cap = cv2.VideoCapture(RTSP_URL)
-                success = False
-
+            success, frame = cap.read()
             current_time = time.time()
-            
             if not success or frame is None:
                 consecutive_failures += 1
                 print(f"Failed to read frame: attempt {consecutive_failures}/{MAX_CONSECUTIVE_FAILURES}")
@@ -409,31 +382,26 @@ def main():
                         last_reconnect_time = current_time
                         time.sleep(1)
                         continue
-                    
                 time.sleep(0.1)  # Short delay between retries
                 continue
-            
             consecutive_failures = 0  # Reset on successful frame read
             watchdog.reset()  # Reset watchdog timer
-
-            # Calculate FPS and log if too low
             frame_time = current_time - last_frame_time
             fps = 1 / frame_time if frame_time > 0 else 0
             if fps < 5:  # Alert if FPS drops below 5
                 print(f"Warning: Low FPS detected: {fps:.2f}")
-
             last_frame_time = current_time
-            
-            # ... rest of your existing frame processing code ...
             frame = np.rot90(frame, 3)
             results = next(model.track(
                 source=frame,
                 stream=True,
                 persist=True,
                 tracker=CONFIG_FILE,
-                iou=.35,
-                conf=.5,
-                show=False
+                iou=TRACK_IOU,
+                conf=TRACK_CONFIDENCE,
+                show=False,
+                max_det=15,
+                classes=[0],      # Only detect faces class
             ))
             if results.boxes is not None:
                 for box in results.boxes:
@@ -460,15 +428,9 @@ def main():
                         saved_tracks.add(track_id)
                     del frames_buffers[track_id]
                     del track_last_seen[track_id]
-            frame_count += 1
-                        
+            frame_count += 1                 
     except KeyboardInterrupt:
         print("\nStopping tracking...")
-
-    # except Exception as e:
-    #     print(f"Error in main: {e}")
-    #     raise  # Re-raise to ensure proper shutdown
-
     except Exception as e:
         print(f"Error processing frame: {e}")
         consecutive_failures += 1
@@ -479,10 +441,8 @@ def main():
             consecutive_failures = 0
             last_reconnect_time = time.time()
         time.sleep(0.1)
-        
     finally:
         watchdog.stop()
-        # Process remaining tracks
         try:
             for track_id, frames in frames_buffers.items():
                 if track_id not in saved_tracks and frames:
@@ -490,7 +450,6 @@ def main():
                     saved_tracks.add(track_id)
         except Exception as e:
             print(f"Error processing remaining tracks: {e}")
-
         try:
             cap.release()
             recognition_process.shutdown()
@@ -500,7 +459,6 @@ def main():
 
 if __name__ == "__main__": # python main.py --process_duration 60 --checkin_type IN
     try:
-        # shift_details = Client.get_shift_details()
         shift_details = Client.get_shift_details(shift_name=SHIFT_NAME)
         if not shift_details.get('success'):
             raise ValueError(f"Failed to get shift details: {shift_details.get('message')}")
@@ -512,7 +470,6 @@ if __name__ == "__main__": # python main.py --process_duration 60 --checkin_type
         if is_holiday:
             print(f"Today ({current_date}) is a holiday. Skipping processing.")
             exit()
-
         main()
     except Exception as e:
         print(f"Unexpected error: {e}")
