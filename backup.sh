@@ -18,6 +18,10 @@ exec 2>&1
 
 echo "Starting backup script..."
 
+# If .gitignore updated
+echo "Checking for changes in .gitignore..."
+/usr/bin/git add .gitignore
+
 echo "Adding files..."
 /usr/bin/git add .
 
