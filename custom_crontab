@@ -6,3 +6,5 @@
 
 # Check-out on Sat at 11:55
 55 11 * * SAT /home/teamdev/FaceRec/testing_app/run_main.sh -d 1800 -t OUT > /home/teamdev/FaceRec/testing_app/logs/check-out.log 2>&1
+
+# Always LEAVE A BLANK LINE at the end of this file

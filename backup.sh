@@ -17,11 +17,6 @@ exec 1> >(while read line; do echo "$(date '+%Y-%m-%d %H:%M:%S') $line" >> "$LOG
 exec 2>&1
 
 echo "Starting backup script..."
-
-# If .gitignore updated
-echo "Checking for changes in .gitignore..."
-/usr/bin/git add .gitignore
-
 echo "Adding files..."
 /usr/bin/git add .
 
