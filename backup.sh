@@ -13,7 +13,7 @@ LOG_FILE="/home/teamdev/FaceRec/testing_app/logs/backup.log"
 mkdir -p "$(dirname "$LOG_FILE")"
 
 # Redirect output with timestamps
-exec 1> >(while read line; do echo "$(date '+%Y-%m-%d %H:%M:%S') $line" > "$LOG_FILE"; done)
+exec 1> >(while read line; do echo "$(date '+%Y-%m-%d %H:%M:%S') $line" >> "$LOG_FILE"; done)
 exec 2>&1
 
 echo "Starting backup script..."
