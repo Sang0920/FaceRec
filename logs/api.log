@@ -635,3 +635,42 @@
 2025-02-17 15:17:02,620 - INFO - DracoAPIClient initialized successfully
 2025-02-17 15:17:02,620 - INFO - Creating check-in for sangdt@draco.biz at 2025-02-17 08:30:00
 2025-02-17 15:17:02,883 - INFO - ✅ Check-in successful - sangdt@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000183', 'pdf_url': None}}
+2025-02-17 15:35:06,811 - INFO - DracoAPIClient initialized successfully
+2025-02-17 15:35:06,812 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-17 15:35:06,953 - INFO - ✅ Successfully fetched shift details
+2025-02-17 15:36:22,755 - INFO - DracoAPIClient initialized successfully
+2025-02-17 15:36:22,755 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-17 15:36:22,901 - INFO - ✅ Successfully fetched shift details
+2025-02-17 15:49:09,764 - INFO - DracoAPIClient initialized successfully
+2025-02-17 15:49:09,764 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-17 15:49:09,944 - INFO - ✅ Successfully fetched shift details
+2025-02-17 15:50:57,387 - INFO - DracoAPIClient initialized successfully
+2025-02-17 15:50:57,387 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-17 15:50:57,495 - INFO - ✅ Successfully fetched shift details
+2025-02-17 15:51:52,270 - INFO - DracoAPIClient initialized successfully
+2025-02-17 15:51:52,271 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-17 15:51:52,396 - INFO - ✅ Successfully fetched shift details
+2025-02-17 15:56:42,719 - INFO - DracoAPIClient initialized successfully
+2025-02-17 15:56:42,719 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-17 15:56:42,844 - INFO - ✅ Successfully fetched shift details
+2025-02-17 15:58:46,838 - INFO - DracoAPIClient initialized successfully
+2025-02-17 15:58:46,838 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-17 15:58:47,013 - INFO - ✅ Successfully fetched shift details
+2025-02-17 15:59:26,883 - INFO - DracoAPIClient initialized successfully
+2025-02-17 15:59:26,883 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-17 15:59:26,990 - INFO - ✅ Successfully fetched shift details
+2025-02-17 16:00:44,264 - INFO - DracoAPIClient initialized successfully
+2025-02-17 16:00:44,265 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-17 16:00:44,366 - INFO - ✅ Successfully fetched shift details
+2025-02-17 16:01:26,747 - INFO - DracoAPIClient initialized successfully
+2025-02-17 16:01:26,747 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-17 16:01:26,870 - INFO - ✅ Successfully fetched shift details
+2025-02-17 16:01:40,697 - INFO - DracoAPIClient initialized successfully
+2025-02-17 16:01:40,697 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-17 16:01:40,831 - INFO - ✅ Successfully fetched shift details
+2025-02-17 16:02:46,409 - INFO - DracoAPIClient initialized successfully
+2025-02-17 16:02:46,409 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-17 16:02:46,518 - INFO - ✅ Successfully fetched shift details
+2025-02-17 16:03:10,830 - INFO - DracoAPIClient initialized successfully
+2025-02-17 16:03:10,830 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-17 16:03:10,948 - INFO - ✅ Successfully fetched shift details

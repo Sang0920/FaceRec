@@ -1,6 +1,6 @@
-# Checkin everyday at 30 07 to 30 08
+# Check-in everyday at 07:30 to 08:30
 30 07 * * * /home/teamdev/FaceRec/testing_app/run_main.sh -d 3600 -t IN > /home/teamdev/FaceRec/testing_app/logs/check-in.log 2>&1
 
-# Checkout everyday at 20 17 to 20 18
+# Check-out everyday at 17:20 to 18:20
 20 17 * * * /home/teamdev/FaceRec/testing_app/run_main.sh -d 3600 -t OUT > /home/teamdev/FaceRec/testing_app/logs/check-out.log 2>&1
 
