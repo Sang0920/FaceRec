@@ -1,6 +1,7 @@
 from ultralytics import YOLO
 from dotenv import load_dotenv
 import os
+import sys
 import cv2
 from datetime import datetime
 import numpy as np
@@ -9,7 +10,7 @@ import threading
 from queue import Queue
 from concurrent.futures import ThreadPoolExecutor
 import yaml
-from img_recg import load_gallery_faces, recognize_image, upscale_image
+from img_recg import load_gallery_faces, recognize_image
 from PIL import Image
 import json
 from multiprocessing import Process, Queue, Event
@@ -26,11 +27,10 @@ load_dotenv()
 RTSP_URL = os.getenv('RTSP_URL')
 if not RTSP_URL:
     raise ValueError("RTSP_URL not found in environment variables")
-# File paths and directories 
+K_ROTATION = int(os.getenv('K_ROTATION', 3))
 PROFILES_DIR = "profiles"
 CONFIG_FILE = "./new_bytetrack.yml"
 MODEL_PATH = "./yolov11n-face.pt"
-# Processing parameters
 MIN_PROFILES_PER_TRACK = 3
 MAX_BUFFER_SIZE = 15
 NUM_WORKERS = 5
@@ -38,7 +38,6 @@ TRACK_CONFIDENCE = float(os.getenv('TRACK_CONFIDENCE', 0.5))
 TRACK_IOU = float(os.getenv('TRACK_IOU', 0.45))
 RECOGNITION_THRESHOLD = float(os.getenv('RECOGNITION_THRESHOLD', 0.22))
 TRACK_MAX_DET = int(os.getenv('TRACK_MAX_DET', 15))
-# Load tracker configuration
 try:
     with open(CONFIG_FILE, "r") as f:
         config = yaml.safe_load(f)
@@ -49,7 +48,6 @@ try:
 except Exception as e:
     print(f"Error loading config: {e}")
     exit(1)
-# Initialize camera parameters
 try:
     cap = cv2.VideoCapture(RTSP_URL)
     if not cap.isOpened():
@@ -59,7 +57,6 @@ try:
 except Exception as e:
     print(f"Error initializing camera: {e}")
     exit(1)
-# Calculate tracking parameters
 TRACK_BUFFER_TIMEOUT = int(frame_rate/30.0 * track_buffer)  # frames
 print(f"Frame rate: {frame_rate} FPS")
 print(f"Track buffer timeout: {TRACK_BUFFER_TIMEOUT} frames")
@@ -76,11 +73,11 @@ def parse_args():
                         help='Check-in type (IN or OUT)')
     args = parser.parse_args()
     return args
+
 args = parse_args()
 PROCESS_DURATION = args.process_duration
 CHECKIN_TYPE = args.checkin_type
 BASE_PROFILE_DIR = os.path.join(PROFILES_DIR, datetime.now().strftime("%Y-%m-%d"), CHECKIN_TYPE)
-os.makedirs(BASE_PROFILE_DIR, exist_ok=True)
 
 def get_memory_usage():
     """Get current memory usage of the process"""
@@ -94,11 +91,11 @@ def get_memory_usage():
 def signal_handler(signum, frame):
     """Handle shutdown signals and display memory usage"""
     mem_stats = get_memory_usage()
-    print("\n=== Memory Usage at Shutdown ===")
+    print("\n=== Memory Usage at Shutdown (signal_handler) ===")
     print(f"RSS Memory: {mem_stats['rss']:.2f} MB")
     print(f"Virtual Memory: {mem_stats['vms']:.2f} MB")
     print("=== Shutting down gracefully ===")
-    # sys.exit(0)
+    sys.exit(0)
 
 signal.signal(signal.SIGINT, signal_handler)
 signal.signal(signal.SIGTERM, signal_handler)
@@ -153,7 +150,7 @@ class RecognitionProcess:
     def _recognition_worker(self):
         signal.signal(signal.SIGINT, signal.SIG_IGN)
         try:
-            gallery_features, gallery_names = load_gallery_faces("faces")
+            gallery_features, gallery_names = load_gallery_faces("./faces")
             profile_manager = ProfileManager()
             while not self.stop_event.is_set():
                 try:
@@ -169,8 +166,7 @@ class RecognitionProcess:
                     continue
                 except Exception as e:
                     print(f"Recognition worker error: {e}")
-                    continue
-                    
+                    continue            
         except Exception as e:
             print(f"Fatal worker error: {e}")
         finally:
@@ -197,13 +193,13 @@ class RecognitionProcess:
                 self.input_queue.get_nowait()
             except Empty:
                 break        
-        self.process.join(timeout=5) # secs
+        self.process.join(timeout=3) # secs
         if self.process.is_alive():
             print("Force terminating recognition process...")
             self.process.terminate()
             self.process.join()
 
-def extract_face(frame, box, padding=0.2):
+def extract_face(frame, box, padding: float=0.2):
     try:
         coords = box.xyxy[0].cpu().numpy().astype(np.int32)
         x1, y1, x2, y2 = coords
@@ -228,7 +224,6 @@ def process_track_profiles(frames_buffers, track_id, profile_manager, gallery_fe
         'timestamp': None,
         'profiles': []
     }
-    
     if frames_buffers[track_id]:
         best_frames = sorted(frames_buffers[track_id],
                            key=lambda x: x[1], 
@@ -279,6 +274,7 @@ def process_track_profiles(frames_buffers, track_id, profile_manager, gallery_fe
                                       log_type=CHECKIN_TYPE,
                                       image_base64=base64_image
                                       )
+                print(f"Check-in created: {email} ({CHECKIN_TYPE})")
                 checkins.add(best_recognition['name'])
             except Exception as e:
                 print(f"Error creating checkin: {e}")
@@ -289,7 +285,6 @@ def process_tracks(frames_buffers, track_last_seen, saved_tracks, recognition_ma
         track_id for track_id, last_seen in track_last_seen.items()
         if frame_count - last_seen >= TRACK_BUFFER_TIMEOUT
     ]
-    
     for track_id in expired_tracks:
         if track_id not in saved_tracks and frames_buffers[track_id]:
             recognition_manager.add_track(track_id, frames_buffers[track_id])
@@ -365,10 +360,16 @@ def main():
         RECONNECT_INTERVAL = 15  # Force reconnect every 15 seconds if having issues
         cap = create_capture()
         while True:
-            if PROCESS_DURATION > 0 and (datetime.now() - start_time).total_seconds() > PROCESS_DURATION:
-                print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Processing duration reached. Stopping...")
+            print((datetime.now() - start_time).total_seconds())
+            if (datetime.now() - start_time).total_seconds() > PROCESS_DURATION:
                 break
-            success, frame = cap.read()
+            try:
+                success, frame = cap.read()
+            except Exception as e:
+                print(f"Error reading frame: {e}")
+                cap.release()
+                cap = create_capture()  # cap = cv2.VideoCapture(RTSP_URL)
+                success = False
             current_time = time.time()
             if not success or frame is None:
                 consecutive_failures += 1
@@ -382,7 +383,7 @@ def main():
                         last_reconnect_time = current_time
                         time.sleep(1)
                         continue
-                time.sleep(0.1)  # Short delay between retries
+                time.sleep(0.1) # Short delay between retries
                 continue
             consecutive_failures = 0  # Reset on successful frame read
             watchdog.reset()  # Reset watchdog timer
@@ -391,7 +392,7 @@ def main():
             if fps < 5:  # Alert if FPS drops below 5
                 print(f"Warning: Low FPS detected: {fps:.2f}")
             last_frame_time = current_time
-            frame = np.rot90(frame, 3)
+            frame = np.rot90(frame, K_ROTATION) if K_ROTATION > 0 else frame
             results = next(model.track(
                 source=frame,
                 stream=True,
@@ -399,9 +400,8 @@ def main():
                 tracker=CONFIG_FILE,
                 iou=TRACK_IOU,
                 conf=TRACK_CONFIDENCE,
-                show=False,
-                max_det=15,
-                classes=[0],      # Only detect faces class
+                max_det=TRACK_MAX_DET,
+                classes=[0], # Only detect faces class
             ))
             if results.boxes is not None:
                 for box in results.boxes:
@@ -429,8 +429,11 @@ def main():
                     del frames_buffers[track_id]
                     del track_last_seen[track_id]
             frame_count += 1                 
+
+        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] Processing duration reached. Stopping...") # end while loop
+
     except KeyboardInterrupt:
-        print("\nStopping tracking...")
+        print("\nKeyboard interrupt. Stopping tracking...")
     except Exception as e:
         print(f"Error processing frame: {e}")
         consecutive_failures += 1
@@ -470,6 +473,7 @@ if __name__ == "__main__": # python main.py --process_duration 60 --checkin_type
         if is_holiday:
             print(f"Today ({current_date}) is a holiday. Skipping processing.")
             exit()
+        os.makedirs(BASE_PROFILE_DIR, exist_ok=True)    
         main()
     except Exception as e:
         print(f"Unexpected error: {e}")

@@ -173,6 +173,6 @@ def process_single_image(image_path, gallery_features, gallery_names, threshold=
 
 if __name__ == '__main__':
     start = time.time()
-    gallery_features, gallery_names = load_gallery_faces("faces")
-    process_single_image("./profiles/2025-02-04/track_1/profile_10-15-32-669438_0.795.png", gallery_features, gallery_names)
+    gallery_features, gallery_names = load_gallery_faces("./faces")
+    process_single_image("./profiles/2025-02-18/IN/track_111/profile_08-10-30-728205_0.793.png", gallery_features, gallery_names)
     print("Time elapsed:", time.time() - start)

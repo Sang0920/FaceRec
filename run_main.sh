@@ -18,6 +18,7 @@ echo "Checking for existing main.py processes..."
 if pgrep -f "python3 main.py" > /dev/null; then
     echo "Killing existing main.py processes..."
     pkill -9 -f "python3 main.py"
+    pkill -9 -f "python main.py"
     sleep 1  # Give processes time to clean up
 fi
 
@@ -27,4 +28,4 @@ ACTIVATION_DIR="$(dirname $DIR)"
 
 cd $DIR
 source $ACTIVATION_DIR/venv/bin/activate
-python3 main.py --process_duration "$DURATION" --checkin_type "$TYPE"
+exec python3 main.py --process_duration "$DURATION" --checkin_type "$TYPE"

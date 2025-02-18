@@ -1,0 +1,228 @@
+Checking for existing main.py processes...
+Running on device: cpu
+Track buffer: 150
+Frame rate: 12.0 FPS
+Track buffer timeout: 60 frames
+2025-02-18 14:48:56,002 - INFO - DracoAPIClient initialized successfully
+2025-02-18 14:48:56,003 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-18 14:48:56,149 - INFO - ✅ Successfully fetched shift details
+Current date: 2025-02-18
+First holiday: 2025-01-01
+Starting face tracking...
+2025-02-18 14:48:56,226 - INFO - Starting employee photo sync
+2025-02-18 14:48:56,228 - INFO - Loaded existing metadata for 8 employees
+2025-02-18 14:48:56,228 - INFO - Fetching employee photos
+2025-02-18 14:48:56,228 - INFO - Fetching employee photos
+2025-02-18 14:48:56,352 - INFO - ✅ Successfully retrieved 11 employee photos
+2025-02-18 14:48:56,353 - INFO - ✅ Successfully retrieved 11 employee photos
+2025-02-18 14:48:57,581 - ERROR - Failed to download photo for: duyth@draco.biz
+2025-02-18 14:48:58,660 - ERROR - Failed to download photo for: phuoctth@draco.biz
+2025-02-18 14:48:59,399 - ERROR - Failed to download photo for: tuanla@draco.biz
+2025-02-18 14:48:59,400 - INFO - ✅ Photo sync completed successfully
+Attempting to connect to camera (1/5)...
+3.123502
+Warning: Low FPS detected: 0.32
+
+0: 640x384 1 face, 175.7ms
+3.996378
+Warning: Low FPS detected: 1.15
+
+0: 640x384 1 face, 60.5ms
+4.09201
+
+0: 640x384 1 face, 63.2ms
+4.193926
+
+0: 640x384 1 face, 62.9ms
+4.299927
+
+0: 640x384 1 face, 63.5ms
+4.400323
+
+0: 640x384 1 face, 63.4ms
+4.497893
+
+0: 640x384 1 face, 62.8ms
+4.597699
+
+0: 640x384 1 face, 60.7ms
+4.693573
+
+0: 640x384 1 face, 62.6ms
+4.791024
+
+0: 640x384 1 face, 63.9ms
+4.890438
+
+0: 640x384 1 face, 62.1ms
+4.995074
+
+0: 640x384 1 face, 62.8ms
+5.092619
+
+0: 640x384 1 face, 65.5ms
+5.192203
+
+0: 640x384 1 face, 64.2ms
+5.290385
+
+0: 640x384 1 face, 64.6ms
+5.392018
+
+0: 640x384 1 face, 62.7ms
+5.491701
+
+0: 640x384 1 face, 61.0ms
+5.589819
+
+0: 640x384 1 face, 62.1ms
+5.687059
+
+0: 640x384 1 face, 65.1ms
+5.78851
+
+0: 640x384 1 face, 63.0ms
+5.887693
+
+0: 640x384 1 face, 62.3ms
+5.986137
+
+0: 640x384 1 face, 61.6ms
+6.083737
+
+0: 640x384 1 face, 62.2ms
+6.183821
+
+0: 640x384 1 face, 62.2ms
+6.283234
+
+0: 640x384 1 face, 62.3ms
+6.379743
+
+0: 640x384 1 face, 61.7ms
+6.476262
+
+0: 640x384 1 face, 61.5ms
+6.573887
+
+0: 640x384 1 face, 61.1ms
+6.671831
+
+0: 640x384 1 face, 60.3ms
+6.768141
+
+0: 640x384 1 face, 63.9ms
+6.871438
+
+0: 640x384 1 face, 64.3ms
+6.971114
+
+0: 640x384 1 face, 63.5ms
+7.070006
+
+0: 640x384 1 face, 63.0ms
+7.174168
+
+0: 640x384 1 face, 61.8ms
+7.271939
+
+0: 640x384 1 face, 65.0ms
+7.375255
+
+0: 640x384 1 face, 63.4ms
+7.473101
+
+0: 640x384 1 face, 64.3ms
+7.571377
+
+0: 640x384 1 face, 60.6ms
+7.674991
+
+0: 640x384 1 face, 61.3ms
+7.773152
+
+0: 640x384 1 face, 63.4ms
+7.873197
+
+0: 640x384 1 face, 60.9ms
+7.969074
+
+0: 640x384 1 face, 66.8ms
+8.071465
+
+0: 640x384 1 face, 60.6ms
+8.170794
+
+0: 640x384 1 face, 61.7ms
+8.269418
+
+0: 640x384 1 face, 60.7ms
+8.365285
+
+0: 640x384 1 face, 62.0ms
+8.46222
+
+0: 640x384 1 face, 59.7ms
+8.560529
+
+0: 640x384 1 face, 62.0ms
+8.661328
+
+0: 640x384 1 face, 60.7ms
+8.759557
+
+0: 640x384 1 face, 60.9ms
+8.855664
+
+0: 640x384 1 face, 59.7ms
+8.955147
+
+0: 640x384 1 face, 59.9ms
+9.049347
+
+0: 640x384 1 face, 61.2ms
+9.145866
+
+0: 640x384 1 face, 60.3ms
+9.240439
+
+0: 640x384 1 face, 61.2ms
+9.339667
+
+0: 640x384 1 face, 59.0ms
+9.433869
+
+0: 640x384 1 face, 62.1ms
+9.530481
+
+0: 640x384 1 face, 60.1ms
+9.626547
+
+0: 640x384 1 face, 62.7ms
+9.726821
+
+0: 640x384 1 face, 59.7ms
+9.821318
+
+0: 640x384 1 face, 61.0ms
+9.916247
+
+0: 640x384 1 face, 59.7ms
+Loading cached features...
+Saved profile: profiles/2025-02-18/OUT/track_1/profile_14-49-09-422164_0.805.png
+Track 1: Recognized as ['dungntk@draco.biz', 'Unknown'] ([0.30936890840530396, 0.04608796536922455])
+Track 1: Recognized as dungntk@draco.biz (0.309)
+Saved profile: profiles/2025-02-18/OUT/track_1/profile_14-49-09-982837_0.801.png
+Track 1: Recognized as ['dungntk@draco.biz', 'Unknown'] ([0.30384325981140137, 0.03754166141152382])
+Saved profile: profiles/2025-02-18/OUT/track_1/profile_14-49-10-505052_0.797.png
+Track 1: Recognized as ['dungntk@draco.biz', 'Unknown'] ([0.3314991891384125, 0.039171356707811356])
+Track 1: Recognized as dungntk@draco.biz (0.331)
+2025-02-18 14:49:11,018 - INFO - Creating check-in for dungntk@draco.biz at 2025-02-18 14:49:11
+2025-02-18 14:49:11,576 - INFO - ✅ Check-in successful - dungntk@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000198', 'pdf_url': None}}
+Check-in created: dungntk@draco.biz (OUT)
+10.01123
+[2025-02-18 14:49:09] Processing duration reached. Stopping...
+Shutting down recognition process...
+[2025-02-18 14:49:09] Initiating recognition process shutdown...
+RSS Memory: 930.08 MB
+Virtual Memory: 4494.78 MB
