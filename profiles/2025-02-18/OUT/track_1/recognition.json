@@ -1,0 +1,11 @@
+{
+  "confidence": 0.2821394205093384,
+  "name": "dungntk@draco.biz",
+  "timestamp": "2025-02-18 17:29:06",
+  "profiles": [
+    "profiles/2025-02-18/OUT/track_1/profile_17-29-05-460582_0.711.png",
+    "profiles/2025-02-18/OUT/track_1/profile_17-29-05-858567_0.699.png",
+    "profiles/2025-02-18/OUT/track_1/profile_17-29-06-487066_0.677.png"
+  ],
+  "best_profile": "profiles/2025-02-18/OUT/track_1/profile_17-29-06-487066_0.677.png"
+}

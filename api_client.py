@@ -12,6 +12,7 @@ from time import time
 from dotenv import load_dotenv
 load_dotenv()
 SHIFT_NAME = os.getenv('SHIFT_NAME')
+LOCATION_NAME = os.getenv('LOCATION_NAME')
 
 os.makedirs('logs', exist_ok=True)
 logging.basicConfig(
@@ -49,7 +50,8 @@ class DracoAPIClient:
             "timestamp": timestamp,
             "log_type": log_type,
             "image_base64": image_base64,
-            "pdf_base64": pdf_base64
+            "pdf_base64": pdf_base64,
+            # "location": LOCATION_NAME
         }
         response = None
         try:
@@ -166,13 +168,13 @@ class DracoAPIClient:
         except Exception as e:
             logger.error(f"❌ Processing error: {str(e)}")
             return {"success": False, "message": str(e)}
-
+    
 if __name__ == "__main__":
     client = DracoAPIClient()
     # Example usage:
     # client.sync_employee_photos()
 
-    client.create_checkin("sangdt@draco.biz", "2025-02-17 08:30:00", "IN")
+    client.create_checkin("dothesang20@gmail.com", "2025-02-18 08:29:00", "IN")
 
     # shift_details = client.get_shift_details(shift_name=SHIFT_NAME)
     # print(json.dumps(shift_details, indent=2, default=str))

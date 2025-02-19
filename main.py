@@ -274,7 +274,6 @@ def process_track_profiles(frames_buffers, track_id, profile_manager, gallery_fe
                                       log_type=CHECKIN_TYPE,
                                       image_base64=base64_image
                                       )
-                print(f"Check-in created: {email} ({CHECKIN_TYPE})")
                 checkins.add(best_recognition['name'])
             except Exception as e:
                 print(f"Error creating checkin: {e}")
@@ -360,7 +359,6 @@ def main():
         RECONNECT_INTERVAL = 15  # Force reconnect every 15 seconds if having issues
         cap = create_capture()
         while True:
-            print((datetime.now() - start_time).total_seconds())
             if (datetime.now() - start_time).total_seconds() > PROCESS_DURATION:
                 break
             try:

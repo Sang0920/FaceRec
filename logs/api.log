@@ -1094,3 +1094,126 @@
 2025-02-18 14:55:18,470 - INFO - DracoAPIClient initialized successfully
 2025-02-18 14:55:18,470 - INFO - Fetching shift details for: Ca chuẩn Draco
 2025-02-18 14:55:18,585 - INFO - ✅ Successfully fetched shift details
+2025-02-18 15:57:14,369 - INFO - DracoAPIClient initialized successfully
+2025-02-18 15:57:14,369 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-18 15:57:15,174 - ERROR - ❌ API Error: Error fetching shift details: Shift Type Ca chuẩn Draco not found
+2025-02-18 15:57:35,445 - INFO - DracoAPIClient initialized successfully
+2025-02-18 15:57:35,445 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-18 15:57:35,880 - INFO - ✅ Successfully fetched shift details
+2025-02-18 16:51:51,651 - INFO - DracoAPIClient initialized successfully
+2025-02-18 16:51:51,651 - INFO - Fetching location list
+2025-02-18 16:51:52,248 - ERROR - ❌ Processing error: 'list' object has no attribute 'get'
+2025-02-18 16:53:41,714 - INFO - DracoAPIClient initialized successfully
+2025-02-18 16:53:41,714 - INFO - Fetching location list
+2025-02-18 16:53:42,057 - ERROR - ❌ Processing error: 'list' object has no attribute 'get'
+2025-02-18 16:54:31,347 - INFO - DracoAPIClient initialized successfully
+2025-02-18 16:54:31,347 - INFO - Fetching location list
+2025-02-18 16:54:31,725 - INFO - ✅ Successfully fetched location list
+2025-02-18 16:54:57,080 - INFO - DracoAPIClient initialized successfully
+2025-02-18 16:54:57,080 - INFO - Fetching location list
+2025-02-18 16:54:57,203 - ERROR - ❌ Network error: 417 Client Error: EXPECTATION FAILED for url: https://fintechdraco.draerp.vn/api/method/hrms.hr.doctype.employee_checkin.employee_checkin.get_location_list
+2025-02-18 16:58:46,789 - INFO - DracoAPIClient initialized successfully
+2025-02-18 16:58:46,789 - INFO - Fetching coordinates for location: Draco HQ Loc
+2025-02-18 16:58:46,901 - ERROR - ❌ Network error: 417 Client Error: EXPECTATION FAILED for url: https://fintechdraco.draerp.vn/api/method/hrms.hr.doctype.location.location.get_location_coords?location_name=Draco+HQ+Loc
+2025-02-18 16:59:21,504 - INFO - DracoAPIClient initialized successfully
+2025-02-18 16:59:21,505 - INFO - Fetching coordinates for location: Draco HQ Loc
+2025-02-18 16:59:21,929 - ERROR - ❌ Network error: 417 Client Error: EXPECTATION FAILED for url: https://ecom.draerp.vn/api/method/hrms.hr.doctype.location.location.get_location_coords?location_name=Draco+HQ+Loc
+2025-02-18 17:01:50,131 - INFO - DracoAPIClient initialized successfully
+2025-02-18 17:01:50,131 - INFO - Fetching coordinates for location: Draco HQ Loc
+2025-02-18 17:01:50,635 - ERROR - ❌ Network error: 417 Client Error: EXPECTATION FAILED for url: https://ecom.draerp.vn/api/method/hrms.hr.doctype.location.location.get_location_coords?location_name=Draco+HQ+Loc
+2025-02-18 17:02:09,312 - INFO - DracoAPIClient initialized successfully
+2025-02-18 17:02:09,312 - INFO - Fetching coordinates for location: Draco HQ Loc
+2025-02-18 17:02:09,677 - ERROR - ❌ Network error: 417 Client Error: EXPECTATION FAILED for url: https://ecom.draerp.vn/api/method/hrms.hr.doctype.location.location.get_location_coords?location_name=Draco+HQ+Loc
+2025-02-18 17:02:14,815 - INFO - DracoAPIClient initialized successfully
+2025-02-18 17:02:14,815 - INFO - Fetching coordinates for location: Draco HQ Loc
+2025-02-18 17:02:15,163 - ERROR - ❌ Network error: 417 Client Error: EXPECTATION FAILED for url: https://ecom.draerp.vn/api/method/hrms.hr.doctype.location.location.get_location_coords?location_name=Draco+HQ+Loc
+2025-02-18 17:02:49,827 - INFO - DracoAPIClient initialized successfully
+2025-02-18 17:02:49,827 - INFO - Fetching coordinates for location: Draco HQ Loc
+2025-02-18 17:02:50,184 - ERROR - ❌ Network error: 417 Client Error: EXPECTATION FAILED for url: https://ecom.draerp.vn/api/method/hrms.hr.doctype.location.location.get_location_coords?location_name=Draco+HQ+Loc
+2025-02-18 17:04:03,967 - INFO - DracoAPIClient initialized successfully
+2025-02-18 17:04:03,967 - INFO - Fetching coordinates for location: Draco HQ Loc
+2025-02-18 17:04:04,318 - ERROR - ❌ Network error: 417 Client Error: EXPECTATION FAILED for url: https://ecom.draerp.vn/api/method/hrms.hr.doctype.location.location.get_location_coords?location_name=Draco+HQ+Loc
+2025-02-18 17:05:47,654 - INFO - DracoAPIClient initialized successfully
+2025-02-18 17:05:47,654 - INFO - Fetching coordinates for location: Draco HQ Loc
+2025-02-18 17:05:48,069 - ERROR - ❌ Network error fetching coordinates: 417 Client Error: EXPECTATION FAILED for url: https://ecom.draerp.vn/api/method/draerp.setup.doctype.location.location.get_location_coords?location_name=Draco+HQ+Loc
+2025-02-18 17:06:26,939 - INFO - DracoAPIClient initialized successfully
+2025-02-18 17:06:26,939 - INFO - Fetching coordinates for location: Draco HQ Loc
+2025-02-18 17:06:27,309 - INFO - ✅ Successfully fetched coordinates for Draco HQ Loc
+2025-02-18 17:13:16,427 - INFO - DracoAPIClient initialized successfully
+2025-02-18 17:13:16,427 - INFO - Creating check-in for sangdt@draco.biz at 2025-02-18 08:30:00
+2025-02-18 17:13:16,815 - ERROR - ❌ Error creating check-in - sangdt@draco.biz: 417 Client Error: EXPECTATION FAILED for url: https://ecom.draerp.vn/api/method/hrms.hr.doctype.employee_checkin.employee_checkin.create_employee_checkin - Data: {'email': 'sangdt@draco.biz', 'timestamp': '2025-02-18 08:30:00', 'log_type': 'IN', 'image_base64': None, 'pdf_base64': None, 'location_name': 'Draco HQ Loc'} - Response: No response
+2025-02-18 17:13:56,188 - INFO - DracoAPIClient initialized successfully
+2025-02-18 17:13:56,188 - INFO - Creating check-in for sangdt@draco.biz at 2025-02-18 08:30:00
+2025-02-18 17:13:56,535 - ERROR - ❌ Error creating check-in - sangdt@draco.biz: 417 Client Error: EXPECTATION FAILED for url: https://ecom.draerp.vn/api/method/hrms.hr.doctype.employee_checkin.employee_checkin.create_employee_checkin - Data: {'email': 'sangdt@draco.biz', 'timestamp': '2025-02-18 08:30:00', 'log_type': 'IN', 'image_base64': None, 'pdf_base64': None, 'location': 'Draco HQ Loc'} - Response: No response
+2025-02-18 17:16:36,353 - INFO - DracoAPIClient initialized successfully
+2025-02-18 17:16:36,353 - INFO - Creating check-in for sangdt@draco.biz at 2025-02-18 08:30:00
+2025-02-18 17:16:46,325 - ERROR - ❌ Error creating check-in - sangdt@draco.biz: 417 Client Error: EXPECTATION FAILED for url: https://ecom.draerp.vn/api/method/hrms.hr.doctype.employee_checkin.employee_checkin.create_employee_checkin - Data: {'email': 'sangdt@draco.biz', 'timestamp': '2025-02-18 08:30:00', 'log_type': 'IN', 'image_base64': None, 'pdf_base64': None, 'location': 'Draco HQ Loc'} - Response: No response
+2025-02-18 17:17:18,743 - INFO - DracoAPIClient initialized successfully
+2025-02-18 17:17:18,743 - INFO - Creating check-in for dothesang20@gmail.com at 2025-02-18 08:30:00
+2025-02-18 17:17:20,094 - INFO - ✅ Check-in successful - dothesang20@gmail.com - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000008', 'pdf_url': None}}
+2025-02-18 17:20:10,984 - INFO - DracoAPIClient initialized successfully
+2025-02-18 17:20:10,985 - INFO - Fetching shift details for: Ca chuẩn
+2025-02-18 17:20:11,247 - ERROR - ❌ API Error: No holiday list found for shift
+2025-02-18 17:22:21,509 - INFO - DracoAPIClient initialized successfully
+2025-02-18 17:22:21,509 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-18 17:22:21,642 - INFO - ✅ Successfully fetched shift details
+2025-02-18 17:25:09,068 - INFO - DracoAPIClient initialized successfully
+2025-02-18 17:25:09,069 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-18 17:25:09,452 - INFO - ✅ Successfully fetched shift details
+2025-02-18 17:25:09,542 - INFO - Starting employee photo sync
+2025-02-18 17:25:09,543 - INFO - Loaded existing metadata for 8 employees
+2025-02-18 17:25:09,543 - INFO - Fetching employee photos
+2025-02-18 17:25:09,543 - INFO - Fetching employee photos
+2025-02-18 17:25:09,668 - INFO - ✅ Successfully retrieved 11 employee photos
+2025-02-18 17:25:09,669 - INFO - ✅ Successfully retrieved 11 employee photos
+2025-02-18 17:25:10,792 - ERROR - Failed to download photo for: duyth@draco.biz
+2025-02-18 17:25:11,856 - ERROR - Failed to download photo for: phuoctth@draco.biz
+2025-02-18 17:25:12,542 - ERROR - Failed to download photo for: tuanla@draco.biz
+2025-02-18 17:25:12,544 - INFO - ✅ Photo sync completed successfully
+2025-02-18 17:25:36,569 - INFO - Creating check-in for sangdt@draco.biz at 2025-02-18 17:25:36
+2025-02-18 17:25:37,284 - INFO - ✅ Check-in successful - sangdt@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000199', 'pdf_url': None}}
+2025-02-18 17:26:59,979 - INFO - Creating check-in for nghianhm@draco.biz at 2025-02-18 17:26:59
+2025-02-18 17:27:00,280 - INFO - ✅ Check-in successful - nghianhm@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000200', 'pdf_url': None}}
+2025-02-18 17:29:06,842 - INFO - Creating check-in for dungntk@draco.biz at 2025-02-18 17:29:06
+2025-02-18 17:29:07,275 - INFO - ✅ Check-in successful - dungntk@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000201', 'pdf_url': None}}
+2025-02-18 17:33:27,443 - INFO - Creating check-in for annh@draco.biz at 2025-02-18 17:33:27
+2025-02-18 17:33:27,811 - INFO - ✅ Check-in successful - annh@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000202', 'pdf_url': None}}
+2025-02-18 17:34:36,556 - INFO - Creating check-in for loint@draco.biz at 2025-02-18 17:34:36
+2025-02-18 17:34:36,930 - INFO - ✅ Check-in successful - loint@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000203', 'pdf_url': None}}
+2025-02-18 17:34:45,601 - INFO - Creating check-in for dunght@draco.biz at 2025-02-18 17:34:45
+2025-02-18 17:34:46,004 - INFO - ✅ Check-in successful - dunght@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000204', 'pdf_url': None}}
+2025-02-18 17:37:37,002 - INFO - Creating check-in for sangnlh@dracorp.com.vn at 2025-02-18 17:37:37
+2025-02-18 17:37:37,445 - INFO - ✅ Check-in successful - sangnlh@dracorp.com.vn - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000205', 'pdf_url': None}}
+2025-02-19 07:30:35,128 - INFO - DracoAPIClient initialized successfully
+2025-02-19 07:30:35,130 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-19 07:30:35,298 - INFO - ✅ Successfully fetched shift details
+2025-02-19 07:30:35,465 - INFO - Starting employee photo sync
+2025-02-19 07:30:35,466 - INFO - Loaded existing metadata for 8 employees
+2025-02-19 07:30:35,466 - INFO - Fetching employee photos
+2025-02-19 07:30:35,466 - INFO - Fetching employee photos
+2025-02-19 07:30:35,592 - INFO - ✅ Successfully retrieved 11 employee photos
+2025-02-19 07:30:35,593 - INFO - ✅ Successfully retrieved 11 employee photos
+2025-02-19 07:30:36,772 - ERROR - Failed to download photo for: duyth@draco.biz
+2025-02-19 07:30:37,896 - ERROR - Failed to download photo for: phuoctth@draco.biz
+2025-02-19 07:30:38,566 - ERROR - Failed to download photo for: tuanla@draco.biz
+2025-02-19 07:30:38,567 - INFO - ✅ Photo sync completed successfully
+2025-02-19 08:14:45,052 - INFO - Creating check-in for nghianhm@draco.biz at 2025-02-19 08:14:44
+2025-02-19 08:14:45,417 - INFO - ✅ Check-in successful - nghianhm@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000207', 'pdf_url': None}}
+2025-02-19 08:14:46,514 - INFO - Creating check-in for sangdt@draco.biz at 2025-02-19 08:14:46
+2025-02-19 08:14:46,907 - INFO - ✅ Check-in successful - sangdt@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000208', 'pdf_url': None}}
+2025-02-19 08:15:02,414 - INFO - Creating check-in for annh@draco.biz at 2025-02-19 08:15:02
+2025-02-19 08:15:02,850 - INFO - ✅ Check-in successful - annh@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000209', 'pdf_url': None}}
+2025-02-19 08:15:20,396 - INFO - Creating check-in for loint@draco.biz at 2025-02-19 08:15:19
+2025-02-19 08:15:20,774 - INFO - ✅ Check-in successful - loint@draco.biz - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000210', 'pdf_url': None}}
+2025-02-19 09:09:01,869 - INFO - DracoAPIClient initialized successfully
+2025-02-19 09:09:01,870 - INFO - Fetching shift details for: Ca chuẩn Draco
+2025-02-19 09:09:02,020 - INFO - ✅ Successfully fetched shift details
+2025-02-19 10:03:35,209 - INFO - DracoAPIClient initialized successfully
+2025-02-19 10:03:35,209 - INFO - Creating check-in for dothesang20@gmail.com at 2025-02-18 08:30:00
+2025-02-19 10:03:42,129 - ERROR - ❌ Error creating check-in - dothesang20@gmail.com: 417 Client Error: EXPECTATION FAILED for url: https://ecom.draerp.vn/api/method/hrms.hr.doctype.employee_checkin.employee_checkin.create_employee_checkin - Data: {'email': 'dothesang20@gmail.com', 'timestamp': '2025-02-18 08:30:00', 'log_type': 'IN', 'image_base64': None, 'pdf_base64': None} - Response: No response
+2025-02-19 10:13:06,757 - INFO - DracoAPIClient initialized successfully
+2025-02-19 10:13:06,757 - INFO - Creating check-in for dothesang20@gmail.com at 2025-02-18 08:30:00
+2025-02-19 10:13:11,324 - ERROR - ❌ Error creating check-in - dothesang20@gmail.com: 417 Client Error: EXPECTATION FAILED for url: https://ecom.draerp.vn/api/method/hrms.hr.doctype.employee_checkin.employee_checkin.create_employee_checkin - Data: {'email': 'dothesang20@gmail.com', 'timestamp': '2025-02-18 08:30:00', 'log_type': 'IN', 'image_base64': None, 'pdf_base64': None} - Response: No response
+2025-02-19 10:13:36,636 - INFO - DracoAPIClient initialized successfully
+2025-02-19 10:13:36,636 - INFO - Creating check-in for dothesang20@gmail.com at 2025-02-18 08:29:00
+2025-02-19 10:13:37,659 - INFO - ✅ Check-in successful - dothesang20@gmail.com - Response: {'message': {'status': 'success', 'message': 'Check-in recorded', 'checkin_id': 'EMP-CKIN-02-2025-000009', 'pdf_url': None}}
