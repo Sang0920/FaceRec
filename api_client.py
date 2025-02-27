@@ -174,7 +174,12 @@ if __name__ == "__main__":
     # Example usage:
     # client.sync_employee_photos()
 
-    client.create_checkin("dothesang20@gmail.com", "2025-02-18 08:29:00", "IN")
+    import base64
+    img_path = "./faces/sangdt@draco.biz/profile.jpg"
+    with open(img_path, 'rb') as img_file:
+        base64_image = base64.b64encode(img_file.read()).decode('utf-8')
+
+    client.create_checkin("dothesang20@gmail.com", "2025-02-18 08:29:10", "IN", image_base64=base64_image)
 
     # shift_details = client.get_shift_details(shift_name=SHIFT_NAME)
     # print(json.dumps(shift_details, indent=2, default=str))
