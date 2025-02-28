@@ -20,7 +20,6 @@ import base64
 from queue import Empty, Full
 import argparse
 import psutil
-from threading import Timer
 import time
 
 load_dotenv()
@@ -269,11 +268,11 @@ def process_track_profiles(frames_buffers, track_id, profile_manager, gallery_fe
                         base64_image = base64.b64encode(img_file.read()).decode('utf-8')
                 else:
                     base64_image = None
-                # Client.create_checkin(email=email, 
-                #                       timestamp=timestamp,
-                #                       log_type=CHECKIN_TYPE,
-                #                       image_base64=base64_image
-                #                       )
+                Client.create_checkin(email=email, 
+                                      timestamp=timestamp,
+                                      log_type=CHECKIN_TYPE,
+                                      image_base64=base64_image
+                                      )
                 checkins.add(best_recognition['name'])
             except Exception as e:
                 print(f"Error creating checkin: {e}")
