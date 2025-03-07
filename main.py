@@ -26,7 +26,9 @@ load_dotenv()
 RTSP_URL = os.getenv('RTSP_URL')
 if not RTSP_URL:
     raise ValueError("RTSP_URL not found in environment variables")
-K_ROTATION = int(os.getenv('K_ROTATION', 3))
+K_ROTATION = int(os.getenv('K_ROTATION'))
+if K_ROTATION not in [0, 1, 2, 3]:
+    raise ValueError("Invalid K_ROTATION value")
 PROFILES_DIR = "profiles"
 CONFIG_FILE = "./new_bytetrack.yml"
 MODEL_PATH = "./yolov11n-face.pt"
