@@ -62,8 +62,6 @@ TRACK_BUFFER_TIMEOUT = int(frame_rate/30.0 * track_buffer)  # frames
 print(f"Frame rate: {frame_rate} FPS")
 print(f"Track buffer timeout: {TRACK_BUFFER_TIMEOUT} frames")
 Client = DracoAPIClient()
-CHECKIN_TYPES = ["IN", "OUT"]
-CHECKIN_TYPE = CHECKIN_TYPES[0]
 SHIFT_NAME = os.getenv('SHIFT_NAME')
 
 def parse_args():

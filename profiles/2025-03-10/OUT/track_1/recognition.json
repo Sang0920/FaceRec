@@ -1,0 +1,11 @@
+{
+  "confidence": 0.42488980293273926,
+  "name": "sangnlh@dracorp.com.vn",
+  "timestamp": "2025-03-10 17:22:10",
+  "profiles": [
+    "profiles/2025-03-10/OUT/track_1/profile_17-22-09-534969_0.747.png",
+    "profiles/2025-03-10/OUT/track_1/profile_17-22-09-891420_0.719.png",
+    "profiles/2025-03-10/OUT/track_1/profile_17-22-10-237283_0.716.png"
+  ],
+  "best_profile": "profiles/2025-03-10/OUT/track_1/profile_17-22-09-891420_0.719.png"
+}
